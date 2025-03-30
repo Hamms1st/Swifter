@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\WindowsApplications\\Swifter1\\Swifter1\\Swifter1.csproj": {}
+    "D:\\Text\\Swifter1\\Swifter1\\Swifter1.csproj": {}
   },
   "projects": {
-    "D:\\WindowsApplications\\Swifter1\\Swifter1\\Swifter1.csproj": {
+    "D:\\Text\\Swifter1\\Swifter1\\Swifter1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\WindowsApplications\\Swifter1\\Swifter1\\Swifter1.csproj",
+        "projectUniqueName": "D:\\Text\\Swifter1\\Swifter1\\Swifter1.csproj",
         "projectName": "Swifter1",
-        "projectPath": "D:\\WindowsApplications\\Swifter1\\Swifter1\\Swifter1.csproj",
+        "projectPath": "D:\\Text\\Swifter1\\Swifter1\\Swifter1.csproj",
         "packagesPath": "C:\\Users\\me\\.nuget\\packages\\",
-        "outputPath": "D:\\WindowsApplications\\Swifter1\\Swifter1\\obj\\",
+        "outputPath": "D:\\Text\\Swifter1\\Swifter1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

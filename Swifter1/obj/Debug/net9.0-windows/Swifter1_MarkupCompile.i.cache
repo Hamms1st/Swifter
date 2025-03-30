@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\WindowsApplications\Swifter1\Swifter1\obj\Debug\net9.0-windows\
+D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows\
 Swifter1
 none
 false
 TRACE;DEBUG;NET;NET9_0;NETCOREAPP
-D:\WindowsApplications\Swifter1\Swifter1\App.xaml
+D:\Text\Swifter1\Swifter1\App.xaml
 968388392
 17-22289062
 142096731375
 203-776496449
 ActionIN.xaml;AutoPage.xaml;CreateShort.xaml;Home.xaml;Load.xaml;MainPage.xaml;MainWindow.xaml;MiniBoxT.xaml;Welcome.xaml;
 
-True
+False
 
