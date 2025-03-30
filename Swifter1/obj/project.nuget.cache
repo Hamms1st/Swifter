@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "qT/SdpMbVGM=",
+  "success": true,
+  "projectFilePath": "D:\\WindowsApplications\\Swifter1\\Swifter1\\Swifter1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\me\\.nuget\\packages\\loadingspinner.wpf\\1.0.0\\loadingspinner.wpf.1.0.0.nupkg.sha512",
+    "C:\\Users\\me\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

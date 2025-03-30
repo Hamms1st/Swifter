@@ -1,0 +1,38 @@
+﻿<Page x:Class="Swifter1.Load"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:material="clr-namespace:LoadingSpinnerControl;assembly=LoadingSpinnerControl"
+      xmlns:materialexentension="clr-namespace:LoadingSpinnerControl.Converters;assembly=LoadingSpinnerControl"
+      xmlns:local="clr-namespace:Swifter1"
+      mc:Ignorable="d" 
+      d:DesignHeight="550"  d:DesignWidth="880"
+      Title="Load">
+    <Border Background="#CCCCCC" CornerRadius="10" BorderThickness="1"   BorderBrush="#CCCCCC" >
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="180px"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1" Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Source="/images/logo.png" Grid.Row="0" Height="180px" />
+
+                <material:LoadingSpinner x:Name="spin" IsLoading="False" Grid.Row="1" Diameter="30" Thickness="1.4" Color="#121D55" Margin="25px" ></material:LoadingSpinner>
+                <TextBlock x:Name="text" Margin="15px" Visibility="Hidden" Grid.Row="2" Text="loading.." FontFamily="/Fonts/Montserrat-VariableFont_wght.ttf" HorizontalAlignment="Center" FontSize="18" Foreground="#121D55" FontWeight="Thin" />
+            </Grid>
+            
+        </Grid>
+    </Border>
+</Page>

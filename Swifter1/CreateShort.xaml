@@ -1,0 +1,96 @@
+﻿<Page x:Class="Swifter1.CreateShort"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Swifter1"
+      mc:Ignorable="d" 
+      d:DesignHeight="550" d:DesignWidth="800"
+      Title="CreateShort">
+    <Border Background="#CCCCCC" CornerRadius="10"    BorderBrush="#CCCCCC" >
+        <Grid Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="435"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition ></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Horizontal">
+                    <Image Grid.Column="0" VerticalAlignment="Center" Source="/images/build.png" Width="45"  />
+                    <TextBlock VerticalAlignment="Center" FontSize="30" FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" Foreground="#121D55" FontWeight="Light" Grid.Column="0" Text="Build your Shortcut" />
+                </StackPanel>  
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="525"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0" Margin="20" Orientation="Vertical" VerticalAlignment="Center">
+                        <TextBlock Text="Set your Trigger"  FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" FontSize="20" HorizontalAlignment="Center" Foreground="#121D55" FontWeight="Light" ></TextBlock>
+                        <Button x:Name="Trigbut" Content="Add" Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="17" FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" Click="Trigbut_Click">
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border x:Name="ButtonBorder1" Width="225" Height="40" Background="#121D55" CornerRadius="15">
+                                        <Border.Effect>
+                                            <DropShadowEffect Color="Black" BlurRadius="8" ShadowDepth="2" Direction="270" Opacity="0.4"/>
+                                        </Border.Effect>
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Cursor" Value="Hand"/>
+                                            <Setter TargetName="ButtonBorder1" Property="Background" Value="#545C86" />
+                                        </Trigger>
+
+                                        <Trigger Property="IsPressed" Value="True">
+                                            <Setter TargetName="ButtonBorder1" Property="Background" Value="#5D6B98" />
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                    </StackPanel>
+                    
+                        <StackPanel Grid.Row="1" Margin="20" Orientation="Vertical"  VerticalAlignment="Center">
+                            <TextBlock Text="Setup Action"  FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" FontSize="20" HorizontalAlignment="Center" Foreground="#121D55" FontWeight="Light" ></TextBlock>
+                        <Button  x:Name="Stepbut" Content="Set"   Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="17" FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" Click="Stepbut_Click">
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                    <Border x:Name="ButtonBorder" Width="225" Height="40" Background="#B5BDD0" CornerRadius="15">
+                                        <Border.Effect>
+                                            <DropShadowEffect Color="Black" BlurRadius="8" ShadowDepth="2" Direction="90" Opacity="0.4"/>
+                                        </Border.Effect>
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Cursor" Value="No"/>
+                                        </Trigger>
+
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                        </StackPanel>
+                    
+                </Grid>
+                <Border Grid.Column="1">
+                    <Border.Effect>
+                    <DropShadowEffect BlurRadius="10" ShadowDepth="0" Opacity="0.4" Color="Black" Direction="270"/>
+                    </Border.Effect>
+                    <Frame x:Name="Miniframe" Margin="10"   NavigationUIVisibility="Hidden"> 
+                </Frame>
+                </Border>
+            </Grid>
+        </Grid>
+    </Border>
+</Page>
