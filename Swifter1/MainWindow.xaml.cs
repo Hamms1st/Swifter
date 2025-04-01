@@ -19,8 +19,9 @@ namespace Swifter1
         public MainWindow()
         {
             InitializeComponent();
-            
+
             Main2.Content = new Load();
+            
 
         }
 

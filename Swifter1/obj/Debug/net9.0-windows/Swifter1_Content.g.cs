@@ -11,6 +11,7 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("fonts/montserrat-variablefont_wght.ttf")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/auto.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/build.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/clock.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/cuwhole.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/edit.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/empty.png")]

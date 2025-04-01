@@ -113,3 +113,8 @@ D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows\refint\Swifter1.dll
 D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows\Swifter1.pdb
 D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows\Swifter1.genruntimeconfig.cache
 D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows\ref\Swifter1.dll
+D:\Text\Swifter1\Swifter1\bin\Debug\net9.0-windows\images\clock.png
+D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows\Procedure.g.cs
+D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows\Procedure.baml
+D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows\Ifcheck.g.cs
+D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows\Ifcheck.baml

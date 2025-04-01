@@ -10,90 +10,152 @@
 
     <Border Background="DarkGray" CornerRadius="10"    BorderBrush="#CCCCCC" >
         <Grid>
+
+            
+            
             <StackPanel>
+
                 <TextBlock Text="Setup your Actions" HorizontalAlignment="Center" Margin="5" FontSize="25"  FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" Foreground="#121D55" FontWeight="Light"></TextBlock>
                 <TextBlock Text="Add Steps/Conditions/Loops" HorizontalAlignment="Center" FontSize="14"  FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" Foreground="#121D55" FontWeight="Light"></TextBlock>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Button x:Name="Step1" Click="OnStepClick"  Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="17" FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" >
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="Step" Margin="2" VerticalAlignment="Center"  Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="17" FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost"></TextBlock>
-                            <Image Source="/images/plus.png" Margin="2" VerticalAlignment="Center" Width="15" Height="15"></Image>
-                        </StackPanel>
-                        <Button.Template>
-                            <ControlTemplate TargetType="Button">
-                                <Border x:Name="ButtonBorder" Width="90" Margin="20" Height="30" Background="#121D55" CornerRadius="15">
-                                    <Border.Effect>
-                                        <DropShadowEffect Color="Black" BlurRadius="8" ShadowDepth="2" Direction="270" Opacity="0.4"/>
-                                    </Border.Effect>
+                <ScrollViewer PanningMode="HorizontalOnly" IsManipulationEnabled="True" PreviewMouseWheel="ButtonScrollViewer_PreviewMouseWheel" BorderThickness="0" VerticalScrollBarVisibility="Disabled"   HorizontalScrollBarVisibility="Hidden"  CanContentScroll="True"  >
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="Step1" Click="OnStepClick"  Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="17" FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" >
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Step" Margin="2" VerticalAlignment="Center"  Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="17" FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost"></TextBlock>
+                                <Image Source="/images/plus.png" Margin="2" VerticalAlignment="Center" Width="15" Height="15"></Image>
+                            </StackPanel>
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border x:Name="ButtonBorder" Width="90" Margin="20" Height="30" Background="#121D55" CornerRadius="15">
+                                        <Border.Effect>
+                                            <DropShadowEffect Color="Black" BlurRadius="8" ShadowDepth="2" Direction="270" Opacity="0.4"/>
+                                        </Border.Effect>
 
-                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                </Border>
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
 
-                                <ControlTemplate.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Cursor" Value="Hand"/>
-                                        <Setter TargetName="ButtonBorder" Property="Background" Value="#545C86" />
-                                    </Trigger>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Cursor" Value="Hand"/>
+                                            <Setter TargetName="ButtonBorder" Property="Background" Value="#545C86" />
+                                        </Trigger>
 
-                                    <Trigger Property="IsPressed" Value="True">
-                                        <Setter TargetName="ButtonBorder" Property="Background" Value="#5D6B98" />
-                                    </Trigger>
-                                </ControlTemplate.Triggers>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
-                    <Button x:Name="If" Click="OnIfClick" Content="If {_ / _} " Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="17" FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" >
-                        <Button.Template>
-                            <ControlTemplate TargetType="Button">
-                                <Border x:Name="ButtonBorder" Width="90" Margin="20" Height="30" Background="#121D55" CornerRadius="15">
-                                    <Border.Effect>
-                                        <DropShadowEffect Color="Black" BlurRadius="8" ShadowDepth="2" Direction="270" Opacity="0.4"/>
-                                    </Border.Effect>
-                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                </Border>
-                                <ControlTemplate.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Cursor" Value="Hand"/>
-                                        <Setter TargetName="ButtonBorder" Property="Background" Value="#545C86" />
-                                    </Trigger>
+                                        <Trigger Property="IsPressed" Value="True">
+                                            <Setter TargetName="ButtonBorder" Property="Background" Value="#5D6B98" />
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <Button x:Name="If" Click="OnIfClick" Content="If {_ / _} " Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="17" FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" >
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border x:Name="ButtonBorder" Width="90" Margin="20" Height="30" Background="#121D55" CornerRadius="15">
+                                        <Border.Effect>
+                                            <DropShadowEffect Color="Black" BlurRadius="8" ShadowDepth="2" Direction="270" Opacity="0.4"/>
+                                        </Border.Effect>
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Cursor" Value="Hand"/>
+                                            <Setter TargetName="ButtonBorder" Property="Background" Value="#545C86" />
+                                        </Trigger>
 
-                                    <Trigger Property="IsPressed" Value="True">
-                                        <Setter TargetName="ButtonBorder" Property="Background" Value="#5D6B98" />
-                                    </Trigger>
-                                </ControlTemplate.Triggers>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
-                    <Button x:Name="Loop" Click="OnLoopClick"  Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="17" FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" >
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="Loop" Margin="2" VerticalAlignment="Center"  Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="17" FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost"></TextBlock>
-                            <Image Source="/images/refresh.png" Margin="2" VerticalAlignment="Center" Width="15" Height="15"></Image>
-                        </StackPanel>
-                        <Button.Template>
-                            <ControlTemplate TargetType="Button">
-                                <Border x:Name="ButtonBorder" Width="90" Margin="20" Height="30" Background="#121D55" CornerRadius="15">
-                                    <Border.Effect>
-                                        <DropShadowEffect Color="Black" BlurRadius="8" ShadowDepth="2" Direction="270" Opacity="0.4"/>
-                                    </Border.Effect>
-                                    
-                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                </Border>
-                                
-                                <ControlTemplate.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Cursor" Value="Hand"/>
-                                        <Setter TargetName="ButtonBorder" Property="Background" Value="#545C86" />
-                                    </Trigger>
+                                        <Trigger Property="IsPressed" Value="True">
+                                            <Setter TargetName="ButtonBorder" Property="Background" Value="#5D6B98" />
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
 
-                                    <Trigger Property="IsPressed" Value="True">
-                                        <Setter TargetName="ButtonBorder" Property="Background" Value="#5D6B98" />
-                                    </Trigger>
-                                </ControlTemplate.Triggers>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
-                </StackPanel>
-            <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Hidden" Grid.Column="1" BorderThickness="0"  Margin="0,5,0,5" HorizontalAlignment="Center">
+                        <Button x:Name="Else" Click="OnIfClick" Content="Else{_ / _} "  Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="17" FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" >
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border x:Name="ButtonBorder"  Width="90" Margin="20" Height="30" Background="#121D55" CornerRadius="15">
+                                        <Border.Effect>
+                                            <DropShadowEffect Color="Black" BlurRadius="8" ShadowDepth="2" Direction="270" Opacity="0.4"/>
+                                        </Border.Effect>
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Cursor" Value="Hand"/>
+                                            <Setter TargetName="ButtonBorder" Property="Background" Value="#545C86" />
+                                        </Trigger>
+
+                                        <Trigger Property="IsPressed" Value="True">
+                                            <Setter TargetName="ButtonBorder" Property="Background" Value="#5D6B98" />
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+
+
+                        <Button x:Name="Loop" Click="OnLoopClick"  Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="17" FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" >
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Loop" Margin="2" VerticalAlignment="Center"  Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="17" FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost"></TextBlock>
+                                <Image Source="/images/refresh.png" Margin="2" VerticalAlignment="Center" Width="15" Height="15"></Image>
+                            </StackPanel>
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border x:Name="ButtonBorder" Width="90" Margin="20" Height="30" Background="#121D55" CornerRadius="15">
+                                        <Border.Effect>
+                                            <DropShadowEffect Color="Black" BlurRadius="8" ShadowDepth="2" Direction="270" Opacity="0.4"/>
+                                        </Border.Effect>
+
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Cursor" Value="Hand"/>
+                                            <Setter TargetName="ButtonBorder" Property="Background" Value="#545C86" />
+                                        </Trigger>
+
+                                        <Trigger Property="IsPressed" Value="True">
+                                            <Setter TargetName="ButtonBorder" Property="Background" Value="#5D6B98" />
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+
+                        <Button x:Name="Del" Click="OnStepClick"  Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="17" FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" >
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Delay" Margin="2" VerticalAlignment="Center"  Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="17" FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost"></TextBlock>
+                                <Image Source="/images/clock.png" Margin="2" VerticalAlignment="Center" Width="15" Height="15"></Image>
+                            </StackPanel>
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border x:Name="ButtonBorder" Width="90" Margin="20" Height="30" Background="#121D55" CornerRadius="15">
+                                        <Border.Effect>
+                                            <DropShadowEffect Color="Black" BlurRadius="8" ShadowDepth="2" Direction="270" Opacity="0.4"/>
+                                        </Border.Effect>
+
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Cursor" Value="Hand"/>
+                                            <Setter TargetName="ButtonBorder" Property="Background" Value="#545C86" />
+                                        </Trigger>
+
+                                        <Trigger Property="IsPressed" Value="True">
+                                            <Setter TargetName="ButtonBorder" Property="Background" Value="#5D6B98" />
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+
+                    </StackPanel>
+                </ScrollViewer>
+
+                <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Hidden" Grid.Column="1" BorderThickness="0"  Margin="0,5,0,5" HorizontalAlignment="Center">
                 <StackPanel HorizontalAlignment="Center" Orientation="Vertical">
                         <WrapPanel  HorizontalAlignment="Center"  x:Name="StepsCOntainer">
                         </WrapPanel>

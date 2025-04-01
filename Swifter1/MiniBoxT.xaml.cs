@@ -11,7 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.IO;
 
 
 namespace Swifter1
@@ -26,7 +26,7 @@ namespace Swifter1
             InitializeComponent();
         }
 
-
+        public string jsonFileName = "json\\Temporary.json";
 
 
         private void TextBox_KeyUp(object sender, KeyEventArgs e)
@@ -75,7 +75,7 @@ namespace Swifter1
                 }
             }
 
-            // Numbers (0–9)
+            
             for (int i = 0; i <= 9; i++)
             {
                 Key key = (Key)Enum.Parse(typeof(Key), "D" + i); // D0–D9 are the main number keys
@@ -107,12 +107,15 @@ namespace Swifter1
                     otherKeyCount++;
             }
 
-            // ✅ Only accept if 3 modifiers and at least 1 key
-            if (modifierCount >= 1 && otherKeyCount >= 1)
+            
+            if (modifierCount >= 2 && otherKeyCount >= 1)
             {
                 var Create= new CreateShort();
                 Create.Trigbut_Set(Autoenter.Text);
-                NavigationService.Navigate(new ActionIN()); // Show or use valid shortcut
+                string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, jsonFileName);
+                File.WriteAllText(path, "[]");
+                NavigationService.Navigate(new ActionIN());
+
             }
             else
             {

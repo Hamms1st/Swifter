@@ -13,6 +13,7 @@
     <None Remove="Fonts\Montserrat-VariableFont_wght.ttf" />
     <None Remove="images\Auto.png" />
     <None Remove="images\build.png" />
+    <None Remove="images\clock.png" />
     <None Remove="images\Cuwhole.png" />
     <None Remove="images\Edit.png" />
     <None Remove="images\empty.png" />
@@ -34,6 +35,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="images\build.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\clock.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="images\Cuwhole.png">

@@ -24,10 +24,28 @@ namespace Swifter1
         public ActionIN()
         {
             InitializeComponent();
+            LoadShortcuts();
+            
         }
 
         public string jsonFileName = "json\\Temporary.json";
-        
+
+        private void ButtonScrollViewer_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
+        {
+            var sv = sender as ScrollViewer;
+            if (sv != null)
+            {
+                // Support Shift + Wheel for horizontal
+                if (Keyboard.Modifiers == ModifierKeys.Shift)
+                {
+                    sv.ScrollToHorizontalOffset(sv.HorizontalOffset - e.Delta);
+                    e.Handled = true;
+                }
+            }
+        }
+
+     
+
         public void LoadShortcuts()
         {
 
@@ -44,10 +62,7 @@ namespace Swifter1
                         AddShortcutCard(shortcut);
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Woops!");
-                }
+               
             }
 
             else
@@ -59,7 +74,6 @@ namespace Swifter1
         public class Step
         {
             public string Title { get; set; }
-            public string Key { get; set; }
             public string Count { get; set; }
         }
 
@@ -67,42 +81,21 @@ namespace Swifter1
 
         private void OnStepClick(object sender, RoutedEventArgs e)
         {
-            // Example shortcut data
-            var newShortcut = new Step
-            {
-                Title = "Click",
-                Key = "0",
-                Count = ((StepsCOntainer.Children.Count)+1).ToString()
-            };
-
-            AddShortcutCard(newShortcut);
+             
         }
 
         private void OnIfClick(object sender, RoutedEventArgs e)
         {
-            // Example shortcut data
-            var newShortcut = new Step
-            {
-                Title = "Click",
-                Key = "1",
-                Count = ((StepsCOntainer.Children.Count) + 1).ToString()
-            };
+           
 
-            AddShortcutCard(newShortcut);
+            
         }
 
 
         private void OnLoopClick(object sender, RoutedEventArgs e)
         {
-            // Example shortcut data
-            var newShortcut = new Step
-            {
-                Title = "Click",
-                Key = "2",
-                Count = ((StepsCOntainer.Children.Count) + 1).ToString()
-            };
-
-            AddShortcutCard(newShortcut);
+       
+            
         }
 
         
@@ -116,7 +109,6 @@ namespace Swifter1
                 BorderThickness = new Thickness(1),
                 CornerRadius = new CornerRadius(10),
                 Width = 250,
-                Height = 30,
                 Margin = new Thickness(5),
                 Padding = new Thickness(5),
                 Cursor = Cursors.Hand
@@ -124,25 +116,7 @@ namespace Swifter1
 
             card.MouseLeftButtonDown += (s, e) =>
             {
-                if (shortcut.Key == "0") 
-                {
-                    if (Int32.Parse(shortcut.Count) == StepsCOntainer.Children.Count) {
-                        MessageBox.Show("Hoo");
-                    }
-                    else
-                    {
-                        string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, jsonFileName);
-                        File.WriteAllText(path,"[]");
-                        NavigationService.Navigate(new ActionIN());
-                    }
-                }
-                if (shortcut.Key == "1") {
-
-                    MessageBox.Show("Its a If!");
-                }
-                if (shortcut.Key == "2") {
-                    MessageBox.Show("Its a Loop");
-                }
+               
                 
             };
 
