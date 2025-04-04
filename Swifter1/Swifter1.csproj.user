@@ -16,13 +16,22 @@
     <Compile Update="CreateShort.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Delay.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Home.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Ifcheck.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Keystroke.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Load.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Loop.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="MainPage.xaml.cs">
@@ -32,6 +41,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Procedure.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Sytemfunc.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Welcome.xaml.cs">
@@ -48,13 +60,22 @@
     <Page Update="CreateShort.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Delay.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Home.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Ifcheck.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Keystroke.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Load.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Loop.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainPage.xaml">
@@ -67,6 +88,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Procedure.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Sytemfunc.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Welcome.xaml">

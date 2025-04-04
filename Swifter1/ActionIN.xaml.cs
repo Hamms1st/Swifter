@@ -81,7 +81,7 @@ namespace Swifter1
 
         private void OnStepClick(object sender, RoutedEventArgs e)
         {
-             
+            NavigationService.Navigate(new Procedure());
         }
 
         private void OnIfClick(object sender, RoutedEventArgs e)
@@ -138,6 +138,16 @@ namespace Swifter1
         }
 
         private void Endif_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Else_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Procedure());
+        }
+
+        private void EndLoop_Click(object sender, RoutedEventArgs e)
         {
 
         }

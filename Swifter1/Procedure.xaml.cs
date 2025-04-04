@@ -24,5 +24,10 @@ namespace Swifter1
         {
             InitializeComponent();
         }
+
+        private void Sys_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Sytemfunc());
+        }
     }
 }

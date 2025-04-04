@@ -12,7 +12,7 @@
             
             <StackPanel VerticalAlignment="Center">
                 <TextBlock Text="Pick a Step from the options below" HorizontalAlignment="Center" Margin="5" FontSize="25"  FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" Foreground="#121D55" FontWeight="Light"></TextBlock>
-                <Button x:Name="Sys" Content="Sytem Functions" Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="17" FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost">
+                <Button x:Name="Sys" Content="Sytem Functions" Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="17" FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" Click="Sys_Click">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Border x:Name="ButtonBorder" Width="180" Margin="20" Height="30" Background="#121D55" CornerRadius="15">

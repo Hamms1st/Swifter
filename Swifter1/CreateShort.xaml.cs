@@ -24,7 +24,7 @@ namespace Swifter1
         public CreateShort()
         {
             InitializeComponent();
-            Miniframe.Content = new ActionIN();
+
         }
 
         private void Stepbut_Click(object sender, RoutedEventArgs e)
