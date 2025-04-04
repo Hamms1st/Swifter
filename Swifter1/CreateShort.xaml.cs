@@ -24,6 +24,7 @@ namespace Swifter1
         public CreateShort()
         {
             InitializeComponent();
+            Miniframe.Content = new Keystroke();
 
         }
 

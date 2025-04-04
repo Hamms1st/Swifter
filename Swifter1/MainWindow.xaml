@@ -12,6 +12,7 @@
          WindowStartupLocation="CenterScreen"
         Title="MainWindow" Height="550" Width="880">
     
+    
     <Border Background="#CCCCCC" CornerRadius="10"    BorderBrush="#CCCCCC" >
         
     <Grid>

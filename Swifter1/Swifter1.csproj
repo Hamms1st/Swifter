@@ -90,7 +90,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Fonts\Jost-VariableFont_wght.ttf" />
+    <Resource Include="Fonts\Jost-VariableFont_wght.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>

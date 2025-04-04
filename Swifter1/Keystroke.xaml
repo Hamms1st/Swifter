@@ -7,10 +7,175 @@
       mc:Ignorable="d" 
       d:DesignHeight="432" d:DesignWidth="525"
       Title="Keystroke">
+
+    <Page.Resources>
+        <!-- Define the ToggleButton style or control template resource -->
+        <Style x:Key="ComboBoxToggleButton" TargetType="ToggleButton">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ToggleButton">
+                        <Grid>
+                            <Border Background="{TemplateBinding Background}" 
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                CornerRadius="5">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="CustomComboBoxItem" TargetType="ComboBoxItem">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ComboBoxItem">
+                        <Border x:Name="Bd"
+                         
+                                Background="{TemplateBinding Background}" 
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                CornerRadius="5"
+                                
+                            SnapsToDevicePixels="True">
+                            <ContentPresenter />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsHighlighted" Value="True">
+                                <Setter TargetName="Bd" Property="Background" Value="#FFD6EAF8"/>
+                            </Trigger>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter TargetName="Bd" Property="Background" Value="#FFBEE6FD"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Foreground" Value="Gray"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </Page.Resources>
+
     <Border Background="DarkGray" CornerRadius="10"    BorderBrush="#CCCCCC" >
 
         <Grid>
+            <StackPanel>
+            <TextBlock Text="Capture Keystrokes" HorizontalAlignment="Center" Margin="5" FontSize="25"  FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" Foreground="#121D55" FontWeight="Light"></TextBlock>
+            <TextBlock Text="Simulate Keystrokes when running the Shortcut" HorizontalAlignment="Center" FontSize="14"  FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" Foreground="#121D55" FontWeight="Light"></TextBlock>
 
+                <Border Background="#7C7C7C" Margin="20" Height="320" CornerRadius="10"    BorderBrush="#CCCCCC" >
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="10" ShadowDepth="0" Opacity="0.4" Color="Black" Direction="270"/>
+                    </Border.Effect>
+
+                    <Border Background="DarkGray" Margin="10" Height="90" Width="270" VerticalAlignment="Top" CornerRadius="10"    BorderBrush="#CCCCCC" >
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="10" ShadowDepth="0" Opacity="0.4" Color="Black" Direction="270"/>
+                        </Border.Effect>
+
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Border Margin="3"  VerticalAlignment="Center" Grid.Column="1" CornerRadius="10" BorderThickness="2" BorderBrush="#7C7C7C" Background="#8A8A8A" Height="35" Width="170">
+                                    <TextBox  FontFamily="pack://application:,,,/Swifter1;component/Fonts/#Jost"  Foreground="#121D55" Background="Transparent"   BorderThickness="0" FontSize="13" Padding="4"  Text="" TextAlignment="Center"  Grid.Column="1"   VerticalContentAlignment="Center" />
+                                </Border>
+
+                                <Border Visibility="Visible"  Grid.Column="1" CornerRadius="10" BorderThickness="1.5" BorderBrush="#7C7C7C" Background="#8A8A8A" Height="25" Width="40">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="15"/>
+                                            <ColumnDefinition Width="25"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Image Margin="1"  Grid.Column="0" Source="/images/clock.png"></Image>
+                                        <TextBox FontFamily="pack://application:,,,/Swifter1;component/Fonts/#Jost"  Foreground="#121D55" Grid.Column="1" Background="Transparent" Text="0.0"  BorderThickness="0" FontSize="9.5"      VerticalContentAlignment="Center" />
+                                    </Grid>
+                                </Border>
+
+                                <ComboBox Width="48" Height="25">
+                                    <ComboBox.Template>
+                                        <ControlTemplate TargetType="ComboBox">
+                                            <Grid>
+                                                <!-- Add the ToggleButton here -->
+                                                <ToggleButton Name="ToggleButton" 
+                    Style="{StaticResource ComboBoxToggleButton}" 
+                    IsChecked="{Binding Path=IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource AncestorType=ComboBox}}"
+                    Background="#8A8A8A" BorderBrush="#7C7C7C" BorderThickness="1.5" 
+                    Margin="2">
+                                                    <ContentPresenter />
+                                                </ToggleButton>
+
+                                                <Popup Name="Popup" Placement="Bottom" 
+                           AllowsTransparency="True" 
+                           IsOpen="{Binding Path=IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource AncestorType=ComboBox}}">
+                                                    <Border Name="DropDownBorder" BorderThickness="1" BorderBrush="#7C7C7C" 
+                                Background="White">
+                                                        <ScrollViewer Margin="4" CanContentScroll="True">
+                                                            <ItemsPresenter />
+                                                        </ScrollViewer>
+                                                    </Border>
+                                                </Popup>
+
+                                            </Grid>
+                                        </ControlTemplate>
+                                    </ComboBox.Template>
+                                    <ComboBoxItem Content="KeyDown" />
+                                    <ComboBoxItem Content="KeyPress" />
+                                    <ComboBoxItem Content="KeyUp" />
+                                </ComboBox>
+
+
+                            </StackPanel>
+
+                            <Button  x:Name="Confirm" Content="Add"   Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="17" FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost">
+                                    <Button.Template>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border x:Name="ButtonBorder1" Margin="5" Width="125" Height="40" Background="#121D55" CornerRadius="15">
+                                                <Border.Effect>
+                                                    <DropShadowEffect Color="Black" BlurRadius="8" ShadowDepth="2" Direction="90" Opacity="0.4"/>
+                                                </Border.Effect>
+                                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter Property="Cursor" Value="Hand"/>
+                                                    <Setter TargetName="ButtonBorder1" Property="Background" Value="#545C86" />
+                                                </Trigger>
+
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+
+                                <Button  x:Name="Cancel" Content="Cancel"   Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="17" FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost">
+                                    <Button.Template>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border x:Name="ButtonBorder" Width="125" Margin="5" Height="40" Background="#B5BDD0" CornerRadius="15">
+                                                <Border.Effect>
+                                                    <DropShadowEffect Color="Black" BlurRadius="8" ShadowDepth="2" Direction="90" Opacity="0.4"/>
+                                                </Border.Effect>
+                                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter Property="Cursor" Value="Hand"/>
+                                                </Trigger>
+
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+
+                            
+                        </StackPanel>
+                        
+                    </Border>
+
+
+                </Border>
+
+            </StackPanel>
         </Grid>
     </Border>
 </Page>
