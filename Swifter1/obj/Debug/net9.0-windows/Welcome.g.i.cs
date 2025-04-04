@@ -62,7 +62,7 @@ namespace Swifter1 {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Swifter1;component/welcome.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Swifter1;V1.0.0.0;component/welcome.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\Welcome.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

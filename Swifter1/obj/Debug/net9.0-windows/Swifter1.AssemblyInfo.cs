@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Swifter1")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+19d7c72338e7624dba2d8e0ac318d138d7dc5d82")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+af760923b546e73de852e93e5fda7aba551e5951")]
 [assembly: System.Reflection.AssemblyProductAttribute("Swifter1")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Swifter1")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
