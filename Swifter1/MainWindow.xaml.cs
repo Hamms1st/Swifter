@@ -20,7 +20,9 @@ namespace Swifter1
         {
             InitializeComponent();
 
-            Main2.Content = new Load();
+            //Main2.Content = new Load();
+            MainFrame1.Content = new CreateShort();
+
             
 
         }

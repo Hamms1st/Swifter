@@ -24,5 +24,20 @@ namespace Swifter1
         {
             InitializeComponent();
         }
+
+        private void ButtonScrollViewer_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
+        {
+            var sv = sender as ScrollViewer;
+            if (sv != null)
+            {
+                // Support Shift + Wheel for horizontal
+                if (Keyboard.Modifiers == ModifierKeys.Shift)
+                {
+                    sv.ScrollToHorizontalOffset(sv.HorizontalOffset - e.Delta);
+                    e.Handled = true;
+                }
+            }
+        }
+
     }
 }

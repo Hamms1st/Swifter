@@ -8,12 +8,19 @@
       d:DesignHeight="432" d:DesignWidth="525"
       Title="Ifcheck">
     <Border Background="DarkGray" CornerRadius="10"    BorderBrush="#CCCCCC" >
-        <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
-            <TextBlock  Text="If the Condition is True" HorizontalAlignment="Center" Margin="10" FontSize="25"  FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" Foreground="#121D55" FontWeight="Light"></TextBlock>
-            <ScrollViewer VerticalScrollBarVisibility="Disabled">
-            <StackPanel>
-                    <StackPanel Margin="10" Orientation="Vertical" HorizontalAlignment="Center">
-                        <TextBlock  Text="If WiFi is On/Off ?" HorizontalAlignment="Center" Margin="1" FontSize="20"   FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" Foreground="#121D55" FontWeight="Light"></TextBlock>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" >
+            <TextBlock  Text="If the Condition is True"  Margin="10" FontSize="25"  FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" Foreground="#121D55" FontWeight="Light"></TextBlock>
+            <ScrollViewer Height="365"
+                VerticalScrollBarVisibility="Hidden"
+    HorizontalScrollBarVisibility="Disabled"
+    PanningMode="VerticalOnly"
+    CanContentScroll="True"
+    Margin="0,5,0,5"
+    BorderThickness="0"
+                >
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                    <StackPanel Margin="10" Width="200" Orientation="Vertical">
+                        <TextBlock  Text="If WiFi is On/Off ?" Margin="1" FontSize="20"   FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" Foreground="#121D55" FontWeight="Light"></TextBlock>
                         <StackPanel Orientation="Horizontal">
                             <Button x:Name="Ifon" Content="On" Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="17" FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" >
                                 <Button.Template>
@@ -62,9 +69,9 @@
                         </StackPanel>
                         
                     </StackPanel>
-                
-                    <StackPanel Margin="10" Orientation="Vertical" HorizontalAlignment="Center">
-                        <TextBlock  Text="If Bluetooth is On/Off ?" HorizontalAlignment="Center" Margin="1" FontSize="20"   FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" Foreground="#121D55" FontWeight="Light"></TextBlock>
+
+                    <StackPanel Margin="10" Width="200" Orientation="Vertical">
+                        <TextBlock  Text="If Bluetooth is On/Off ?"  Margin="1" FontSize="20"   FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" Foreground="#121D55" FontWeight="Light"></TextBlock>
                         <StackPanel Orientation="Horizontal">
                             <Button x:Name="IfBlon" Content="On" Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="17" FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" >
                                 <Button.Template>
@@ -114,8 +121,8 @@
 
                     </StackPanel>
 
-                    <StackPanel Margin="10" Orientation="Vertical" HorizontalAlignment="Center">
-                        <TextBlock  Text="If Charging is On/Off ?" HorizontalAlignment="Center" Margin="1" FontSize="20"   FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" Foreground="#121D55" FontWeight="Light"></TextBlock>
+                    <StackPanel Width="200" Margin="10" Orientation="Vertical">
+                        <TextBlock  Text="If Charging is On/Off ?"  Margin="1" FontSize="20"   FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" Foreground="#121D55" FontWeight="Light"></TextBlock>
                         <StackPanel Orientation="Horizontal">
                             <Button x:Name="IfChon" Content="On" Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="17" FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" >
                                 <Button.Template>
@@ -166,8 +173,8 @@
                     </StackPanel>
 
 
-                    <StackPanel Margin="10" Orientation="Vertical" HorizontalAlignment="Center">
-                        <TextBlock  Text="If Dark Mode is On/Off ?" HorizontalAlignment="Center" Margin="1" FontSize="20"   FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" Foreground="#121D55" FontWeight="Light"></TextBlock>
+                    <StackPanel Width="200" Margin="10" Orientation="Vertical">
+                        <TextBlock  Text="If Dark Mode is On/Off ?" Margin="1" FontSize="20"   FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" Foreground="#121D55" FontWeight="Light"></TextBlock>
                         <StackPanel Orientation="Horizontal">
                             <Button x:Name="IfNgon" Content="On" Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="17" FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" >
                                 <Button.Template>
@@ -218,8 +225,8 @@
                     </StackPanel>
 
 
-                    <StackPanel Margin="10" Orientation="Vertical" HorizontalAlignment="Center">
-                        <TextBlock  Text="If Airplane Mode is On/Off ?" HorizontalAlignment="Center" Margin="1" FontSize="20"   FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" Foreground="#121D55" FontWeight="Light"></TextBlock>
+                    <StackPanel Width="200" Margin="10" Orientation="Vertical" >
+                        <TextBlock  Text="If Airplane Mode is On/Off ?" Margin="1" FontSize="20"   FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" Foreground="#121D55" FontWeight="Light"></TextBlock>
                         <StackPanel Orientation="Horizontal">
                             <Button x:Name="IfAron" Content="On" Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="17" FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" >
                                 <Button.Template>

@@ -58,6 +58,7 @@ D:\WindowsApplications\Swifter1\Swifter1\bin\Debug\net9.0-windows\images\plus.pn
 D:\Text\Swifter1\Swifter1\bin\Debug\net9.0-windows\Swifter1.exe
 D:\Text\Swifter1\Swifter1\bin\Debug\net9.0-windows\images\Auto.png
 D:\Text\Swifter1\Swifter1\bin\Debug\net9.0-windows\images\build.png
+D:\Text\Swifter1\Swifter1\bin\Debug\net9.0-windows\images\clock.png
 D:\Text\Swifter1\Swifter1\bin\Debug\net9.0-windows\images\Cuwhole.png
 D:\Text\Swifter1\Swifter1\bin\Debug\net9.0-windows\images\Edit.png
 D:\Text\Swifter1\Swifter1\bin\Debug\net9.0-windows\images\empty.png
@@ -83,10 +84,12 @@ D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows\ActionIN.g.cs
 D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows\AutoPage.g.cs
 D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows\CreateShort.g.cs
 D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows\Home.g.cs
+D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows\Ifcheck.g.cs
 D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows\Load.g.cs
 D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows\MainPage.g.cs
 D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows\MainWindow.g.cs
 D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows\MiniBoxT.g.cs
+D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows\Procedure.g.cs
 D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows\Welcome.g.cs
 D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows\App.g.cs
 D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows\Swifter1_Content.g.cs
@@ -96,10 +99,12 @@ D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows\ActionIN.baml
 D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows\AutoPage.baml
 D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows\CreateShort.baml
 D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows\Home.baml
+D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows\Ifcheck.baml
 D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows\Load.baml
 D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows\MainPage.baml
 D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows\MainWindow.baml
 D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows\MiniBoxT.baml
+D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows\Procedure.baml
 D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows\Welcome.baml
 D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows\Swifter1.g.resources
 D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows\Swifter1.GeneratedMSBuildEditorConfig.editorconfig
@@ -113,8 +118,3 @@ D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows\refint\Swifter1.dll
 D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows\Swifter1.pdb
 D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows\Swifter1.genruntimeconfig.cache
 D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows\ref\Swifter1.dll
-D:\Text\Swifter1\Swifter1\bin\Debug\net9.0-windows\images\clock.png
-D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows\Procedure.g.cs
-D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows\Procedure.baml
-D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows\Ifcheck.g.cs
-D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows\Ifcheck.baml

@@ -137,5 +137,9 @@ namespace Swifter1
             StepsCOntainer.Children.Add(card);
         }
 
+        private void Endif_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

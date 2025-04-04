@@ -93,6 +93,29 @@
                             </Button.Template>
                         </Button>
 
+                        <Button x:Name="Endif" Click="Endif_Click" Content="End_If "  Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="17" FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" >
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border x:Name="ButtonBorder"  Width="90" Margin="20" Height="30" Background="#121D55" CornerRadius="15">
+                                        <Border.Effect>
+                                            <DropShadowEffect Color="Black" BlurRadius="8" ShadowDepth="2" Direction="270" Opacity="0.4"/>
+                                        </Border.Effect>
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Cursor" Value="Hand"/>
+                                            <Setter TargetName="ButtonBorder" Property="Background" Value="#545C86" />
+                                        </Trigger>
+
+                                        <Trigger Property="IsPressed" Value="True">
+                                            <Setter TargetName="ButtonBorder" Property="Background" Value="#5D6B98" />
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+
 
                         <Button x:Name="Loop" Click="OnLoopClick"  Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="17" FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" >
                             <StackPanel Orientation="Horizontal">
