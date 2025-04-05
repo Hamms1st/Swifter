@@ -94,6 +94,11 @@ namespace Swifter1
 
         private void Trigbut_Click(object sender, RoutedEventArgs e)
         {
+            if (Application.Current.Properties.Contains("UserCount"))
+            {
+                Application.Current.Properties["UserCount"] = 0;
+
+            }
             var parts = Autoenter.Text.Split(new[] { " + " }, StringSplitOptions.RemoveEmptyEntries);
 
             int modifierCount = 0;

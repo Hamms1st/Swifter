@@ -23,6 +23,35 @@ namespace Swifter1
         public Keystroke()
         {
             InitializeComponent();
+            
         }
+
+
+
+        private void hold_Checked(object sender, RoutedEventArgs e)
+        {
+            hold.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#121D55"));
+        
+        }
+
+
+        private void release_Checked(object sender, RoutedEventArgs e)
+        {
+            release.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#121D55"));
+           
+        }
+
+  
+
+        private void press_Checked(object sender, RoutedEventArgs e)
+        {
+
+            press.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#121D55"));
+        
+
+        }
+
+
+
     }
 }

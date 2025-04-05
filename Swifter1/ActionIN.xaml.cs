@@ -25,8 +25,21 @@ namespace Swifter1
         {
             InitializeComponent();
             LoadShortcuts();
-            
+            if (Application.Current.Properties.Contains("UserCount"))
+            {
+
+
+            }
+            else
+            {
+                Application.Current.Properties["UserCount"] = 0;
+            }
+
         }
+
+        public int ac_count { get; set; }
+
+        
 
         public string jsonFileName = "json\\Temporary.json";
 
@@ -75,18 +88,28 @@ namespace Swifter1
         {
             public string Title { get; set; }
             public string Count { get; set; }
+
+            public String code {  get; set; }
         }
 
+        
+        
        
 
         private void OnStepClick(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Procedure());
+            Application.Current.Properties["UserCount"] = (int)Application.Current.Properties["UserCount"]+1 ;
+
+            Procedure procPage = new Procedure();
+            NavigationService.Navigate(procPage);
+            
+
+
         }
 
         private void OnIfClick(object sender, RoutedEventArgs e)
         {
-           
+            NavigationService.Navigate(new Ifcheck());
 
             
         }
@@ -94,7 +117,7 @@ namespace Swifter1
 
         private void OnLoopClick(object sender, RoutedEventArgs e)
         {
-       
+            NavigationService.Navigate(new Loop());
             
         }
 
@@ -150,6 +173,11 @@ namespace Swifter1
         private void EndLoop_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Del_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Delay());
         }
     }
 }

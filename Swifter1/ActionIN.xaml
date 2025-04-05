@@ -176,7 +176,7 @@
                         </Button>
 
 
-                        <Button x:Name="Del" Click="OnStepClick"  Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="17" FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" >
+                        <Button x:Name="Del" Click="Del_Click"  Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="17" FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" >
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="Delay" Margin="2" VerticalAlignment="Center"  Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="17" FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost"></TextBlock>
                                 <Image Source="/images/clock.png" Margin="2" VerticalAlignment="Center" Width="15" Height="15"></Image>

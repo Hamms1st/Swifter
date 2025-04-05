@@ -23,10 +23,19 @@ namespace Swifter1
         public Procedure()
         {
             InitializeComponent();
+            
+
         }
+
+
+
+        
 
         private void Sys_Click(object sender, RoutedEventArgs e)
         {
+            
+            Sytemfunc procPage = new Sytemfunc();
+            
             NavigationService.Navigate(new Sytemfunc());
         }
     }
