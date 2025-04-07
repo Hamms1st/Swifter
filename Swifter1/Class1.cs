@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿
 
 namespace Swifter1
 {
@@ -15,16 +10,20 @@ namespace Swifter1
             test ts = new test();
             bluetooth bt = new bluetooth();
             dark dt = new dark();
-            
+            Mute mt = new Mute();
+            Energy eg = new Energy();
+
             try
             {
-                MessageBox.Show(dt.main(0).ToString());
+                eg.main();
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
             }
-            
+
         }
     }
 }
+
+

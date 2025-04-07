@@ -175,7 +175,7 @@ BorderThickness="0">
 
 
                     <StackPanel Width="250" Margin="10" Orientation="Vertical" >
-                        <TextBlock HorizontalAlignment="Center" Text="Turn Airplane Mode On/Off" Margin="1" FontSize="20"   FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" Foreground="#121D55" FontWeight="Light"></TextBlock>
+                        <TextBlock HorizontalAlignment="Center" Text="Turn Silent Mode On/Off" Margin="1" FontSize="20"   FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" Foreground="#121D55" FontWeight="Light"></TextBlock>
                         <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
                             <Button x:Name="IfAron" Content="On" Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="17" FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" >
                                 <Button.Template>

@@ -2,9 +2,7 @@
 
 using System.Runtime.InteropServices;
 
-
-namespace Swifter1
-{
+namespace Swifter1{
      class dark
     {
 
@@ -21,7 +19,7 @@ namespace Swifter1
                         return 1;
 
                     }
-                    catch (Exception e) { return 3; }
+                    catch (Exception) { return 3; }
 
                 case 1:
                     try
@@ -29,7 +27,7 @@ namespace Swifter1
                         SetDarkMode(true);
                         return 1;
                     }
-                    catch (Exception e) { return 3; }
+                    catch (Exception) { return 3; }
 
                 case 2:
                     try
@@ -38,7 +36,7 @@ namespace Swifter1
 
                         return ret;
                     }
-                    catch (Exception e) { return 3; }
+                    catch (Exception) { return 3; }
 
                 default:
                     return 0;

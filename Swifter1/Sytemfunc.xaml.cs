@@ -50,13 +50,11 @@ namespace Swifter1
         private List<Step> steps = new List<Step>();
 
         public string jsonFileName = "json\\Temporary.json";
-
-
         private int count = (int)Application.Current.Properties["UserCount"];
-        private string shname = "firstshort";
-        public string mainmeth = "\r\n    {\r\n        public void main()\r\n        {test ts = new test();";
+        private string shname = "Firstshort";
+        public string mainmeth = "\r\n    {\r\n        public void main()\r\n        {test ts = new test();\r\n            bluetooth bt = new bluetooth();\r\n            dark dt = new dark();\r\n            Mute mt = new Mute();";
 
-        private String import = "using System;\r\nusing System.Collections.Generic;\r\nusing System.Linq;\r\nusing System.Text;\r\nusing System.Threading.Tasks;\r\n\r\nnamespace Swifter1\r\n{\r\n    class ";
+        private String import = "using System;using System.Diagnostics;using Microsoft.Win32;using System.Runtime.InteropServices;using NAudio.CoreAudioApi;using System.Collections.Generic;using System.Linq;using System.Text;using System.Threading.Tasks;using Windows.Devices.Radios;namespace Swifter1 {    class ";
 
         private void Ifwifion_Click(object sender, RoutedEventArgs e)
         {
