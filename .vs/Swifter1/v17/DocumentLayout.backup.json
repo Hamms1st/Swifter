@@ -3,36 +3,32 @@
   "WorkspaceRootPath": "D:\\Text\\Swifter1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9EBFA95E-E5D2-4CAB-91AA-E80E3141F2EA}|Swifter1\\Swifter1.csproj|d:\\text\\swifter1\\swifter1\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9EBFA95E-E5D2-4CAB-91AA-E80E3141F2EA}|Swifter1\\Swifter1.csproj|solutionrelative:swifter1\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9EBFA95E-E5D2-4CAB-91AA-E80E3141F2EA}|Swifter1\\Swifter1.csproj|d:\\text\\swifter1\\swifter1\\dark.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EBFA95E-E5D2-4CAB-91AA-E80E3141F2EA}|Swifter1\\Swifter1.csproj|solutionrelative:swifter1\\dark.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9EBFA95E-E5D2-4CAB-91AA-E80E3141F2EA}|Swifter1\\Swifter1.csproj|d:\\text\\swifter1\\swifter1\\sytemfunc.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9EBFA95E-E5D2-4CAB-91AA-E80E3141F2EA}|Swifter1\\Swifter1.csproj|solutionrelative:swifter1\\sytemfunc.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9EBFA95E-E5D2-4CAB-91AA-E80E3141F2EA}|Swifter1\\Swifter1.csproj|d:\\text\\swifter1\\swifter1\\sytemfunc.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{9EBFA95E-E5D2-4CAB-91AA-E80E3141F2EA}|Swifter1\\Swifter1.csproj|solutionrelative:swifter1\\sytemfunc.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9EBFA95E-E5D2-4CAB-91AA-E80E3141F2EA}|Swifter1\\Swifter1.csproj|d:\\text\\swifter1\\swifter1\\ifcheck.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{9EBFA95E-E5D2-4CAB-91AA-E80E3141F2EA}|Swifter1\\Swifter1.csproj|solutionrelative:swifter1\\ifcheck.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9EBFA95E-E5D2-4CAB-91AA-E80E3141F2EA}|Swifter1\\Swifter1.csproj|d:\\text\\swifter1\\swifter1\\ifcheck.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
-      "RelativeMoniker": "D:0:0:{9EBFA95E-E5D2-4CAB-91AA-E80E3141F2EA}|Swifter1\\Swifter1.csproj|solutionrelative:swifter1\\ifcheck.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+      "AbsoluteMoniker": "D:0:0:{9EBFA95E-E5D2-4CAB-91AA-E80E3141F2EA}|Swifter1\\Swifter1.csproj|d:\\text\\swifter1\\swifter1\\bluetooth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EBFA95E-E5D2-4CAB-91AA-E80E3141F2EA}|Swifter1\\Swifter1.csproj|solutionrelative:swifter1\\bluetooth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9EBFA95E-E5D2-4CAB-91AA-E80E3141F2EA}|Swifter1\\Swifter1.csproj|d:\\text\\swifter1\\swifter1\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9EBFA95E-E5D2-4CAB-91AA-E80E3141F2EA}|Swifter1\\Swifter1.csproj|solutionrelative:swifter1\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9EBFA95E-E5D2-4CAB-91AA-E80E3141F2EA}|Swifter1\\Swifter1.csproj|d:\\text\\swifter1\\swifter1\\actionin.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9EBFA95E-E5D2-4CAB-91AA-E80E3141F2EA}|Swifter1\\Swifter1.csproj|solutionrelative:swifter1\\actionin.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9EBFA95E-E5D2-4CAB-91AA-E80E3141F2EA}|Swifter1\\Swifter1.csproj|d:\\text\\swifter1\\swifter1\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EBFA95E-E5D2-4CAB-91AA-E80E3141F2EA}|Swifter1\\Swifter1.csproj|solutionrelative:swifter1\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9EBFA95E-E5D2-4CAB-91AA-E80E3141F2EA}|Swifter1\\Swifter1.csproj|d:\\text\\swifter1\\swifter1\\json\\temporary.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{9EBFA95E-E5D2-4CAB-91AA-E80E3141F2EA}|Swifter1\\Swifter1.csproj|solutionrelative:swifter1\\json\\temporary.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{9EBFA95E-E5D2-4CAB-91AA-E80E3141F2EA}|Swifter1\\Swifter1.csproj|d:\\text\\swifter1\\swifter1\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EBFA95E-E5D2-4CAB-91AA-E80E3141F2EA}|Swifter1\\Swifter1.csproj|solutionrelative:swifter1\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EBFA95E-E5D2-4CAB-91AA-E80E3141F2EA}|Swifter1\\Swifter1.csproj|d:\\text\\swifter1\\swifter1\\createshort.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EBFA95E-E5D2-4CAB-91AA-E80E3141F2EA}|Swifter1\\Swifter1.csproj|solutionrelative:swifter1\\createshort.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EBFA95E-E5D2-4CAB-91AA-E80E3141F2EA}|Swifter1\\Swifter1.csproj|d:\\text\\swifter1\\swifter1\\sytemfunc.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{9EBFA95E-E5D2-4CAB-91AA-E80E3141F2EA}|Swifter1\\Swifter1.csproj|solutionrelative:swifter1\\sytemfunc.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -57,109 +53,97 @@
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             },
             {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "dark.cs",
+              "DocumentMoniker": "D:\\Text\\Swifter1\\Swifter1\\dark.cs",
+              "RelativeDocumentMoniker": "Swifter1\\dark.cs",
+              "ToolTip": "D:\\Text\\Swifter1\\Swifter1\\dark.cs",
+              "RelativeToolTip": "Swifter1\\dark.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T15:16:46.97Z",
+              "EditorCaption": ""
+            },
+            {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Temporary.json",
-              "DocumentMoniker": "D:\\Text\\Swifter1\\Swifter1\\json\\Temporary.json",
-              "RelativeDocumentMoniker": "Swifter1\\json\\Temporary.json",
-              "ToolTip": "D:\\Text\\Swifter1\\Swifter1\\json\\Temporary.json",
-              "RelativeToolTip": "Swifter1\\json\\Temporary.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-05T18:39:35.197Z",
+              "DocumentIndex": 5,
+              "Title": "CreateShort.xaml.cs",
+              "DocumentMoniker": "D:\\Text\\Swifter1\\Swifter1\\CreateShort.xaml.cs",
+              "RelativeDocumentMoniker": "Swifter1\\CreateShort.xaml.cs",
+              "ToolTip": "D:\\Text\\Swifter1\\Swifter1\\CreateShort.xaml.cs",
+              "RelativeToolTip": "Swifter1\\CreateShort.xaml.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAABoAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T15:11:20.986Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "ActionIN.xaml.cs",
-              "DocumentMoniker": "D:\\Text\\Swifter1\\Swifter1\\ActionIN.xaml.cs",
-              "RelativeDocumentMoniker": "Swifter1\\ActionIN.xaml.cs",
-              "ToolTip": "D:\\Text\\Swifter1\\Swifter1\\ActionIN.xaml.cs",
-              "RelativeToolTip": "Swifter1\\ActionIN.xaml.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAA5wCoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-05T18:14:12.921Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Class1.cs",
-              "DocumentMoniker": "D:\\Text\\Swifter1\\Swifter1\\Class1.cs",
-              "RelativeDocumentMoniker": "Swifter1\\Class1.cs",
-              "ToolTip": "D:\\Text\\Swifter1\\Swifter1\\Class1.cs",
-              "RelativeToolTip": "Swifter1\\Class1.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAawBEAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-05T13:35:31.692Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Ifcheck.xaml.cs",
-              "DocumentMoniker": "D:\\Text\\Swifter1\\Swifter1\\Ifcheck.xaml.cs",
-              "RelativeDocumentMoniker": "Swifter1\\Ifcheck.xaml.cs",
-              "ToolTip": "D:\\Text\\Swifter1\\Swifter1\\Ifcheck.xaml.cs",
-              "RelativeToolTip": "Swifter1\\Ifcheck.xaml.cs",
-              "ViewState": "AgIAAFsAAAAAAAAAAAAowG0AAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-05T13:33:01.386Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Ifcheck.xaml",
-              "DocumentMoniker": "D:\\Text\\Swifter1\\Swifter1\\Ifcheck.xaml",
-              "RelativeDocumentMoniker": "Swifter1\\Ifcheck.xaml",
-              "ToolTip": "D:\\Text\\Swifter1\\Swifter1\\Ifcheck.xaml",
-              "RelativeToolTip": "Swifter1\\Ifcheck.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-05T11:57:06.278Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "test.cs",
-              "DocumentMoniker": "D:\\Text\\Swifter1\\Swifter1\\test.cs",
-              "RelativeDocumentMoniker": "Swifter1\\test.cs",
-              "ToolTip": "D:\\Text\\Swifter1\\Swifter1\\test.cs",
-              "RelativeToolTip": "Swifter1\\test.cs",
-              "ViewState": "AgIAAHEAAAAAAAAAAAAwwH4AAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-05T12:35:14.268Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "Sytemfunc.xaml",
               "DocumentMoniker": "D:\\Text\\Swifter1\\Swifter1\\Sytemfunc.xaml",
               "RelativeDocumentMoniker": "Swifter1\\Sytemfunc.xaml",
               "ToolTip": "D:\\Text\\Swifter1\\Swifter1\\Sytemfunc.xaml",
               "RelativeToolTip": "Swifter1\\Sytemfunc.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-05T10:03:56.094Z",
+              "WhenOpened": "2025-04-07T15:09:58.396Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "D:\\Text\\Swifter1\\Swifter1\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Swifter1\\MainWindow.xaml.cs",
+              "ToolTip": "D:\\Text\\Swifter1\\Swifter1\\MainWindow.xaml.cs",
+              "RelativeToolTip": "Swifter1\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABgAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T14:37:39.277Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "D:\\Text\\Swifter1\\Swifter1\\Class1.cs",
+              "RelativeDocumentMoniker": "Swifter1\\Class1.cs",
+              "ToolTip": "D:\\Text\\Swifter1\\Swifter1\\Class1.cs",
+              "RelativeToolTip": "Swifter1\\Class1.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABQAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T14:31:22.782Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Sytemfunc.xaml.cs",
-              "DocumentMoniker": "D:\\Text\\Swifter1\\Swifter1\\Sytemfunc.xaml.cs",
-              "RelativeDocumentMoniker": "Swifter1\\Sytemfunc.xaml.cs",
-              "ToolTip": "D:\\Text\\Swifter1\\Swifter1\\Sytemfunc.xaml.cs",
-              "RelativeToolTip": "Swifter1\\Sytemfunc.xaml.cs",
-              "ViewState": "AgIAAHcAAAAAAAAAAAAuwIYAAAAAAAAAAAAAAA==",
+              "Title": "bluetooth.cs",
+              "DocumentMoniker": "D:\\Text\\Swifter1\\Swifter1\\bluetooth.cs",
+              "RelativeDocumentMoniker": "Swifter1\\bluetooth.cs",
+              "ToolTip": "D:\\Text\\Swifter1\\Swifter1\\bluetooth.cs",
+              "RelativeToolTip": "Swifter1\\bluetooth.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-05T10:05:44.902Z",
+              "WhenOpened": "2025-04-07T14:24:03.092Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "test.cs",
+              "DocumentMoniker": "D:\\Text\\Swifter1\\Swifter1\\test.cs",
+              "RelativeDocumentMoniker": "Swifter1\\test.cs",
+              "ToolTip": "D:\\Text\\Swifter1\\Swifter1\\test.cs",
+              "RelativeToolTip": "Swifter1\\test.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAwwEgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T14:23:16.524Z",
               "EditorCaption": ""
             }
           ]

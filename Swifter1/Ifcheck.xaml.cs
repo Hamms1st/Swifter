@@ -50,6 +50,12 @@ namespace Swifter1
 
         private void Ifonwifi_Click(object sender, RoutedEventArgs e)
         {
+            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, jsonFileName);
+            if (File.Exists(path))
+            {
+                string existing = File.ReadAllText(path);
+                steps = JsonConvert.DeserializeObject<List<Step>>(existing) ?? new List<Step>();
+            }
             string code = "if(ts.main(2) == 1) \r\n            {";
             string conca;
             if (count == 1)
@@ -65,7 +71,7 @@ namespace Swifter1
                 steps.Add(st);
 
                 String save = JsonConvert.SerializeObject(steps, Formatting.Indented);
-                File.WriteAllText(jsonFileName, save);
+                File.WriteAllText(path, save);
             }
             else
             {
@@ -79,12 +85,18 @@ namespace Swifter1
                 steps.Add(st);
 
                 String save = JsonConvert.SerializeObject(steps, Formatting.Indented);
-                File.WriteAllText(jsonFileName, save);
+                File.WriteAllText(path, save);
             }
         }
 
         private void IfWifiof_Click(object sender, RoutedEventArgs e)
         {
+            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, jsonFileName);
+            if (File.Exists(path))
+            {
+                string existing = File.ReadAllText(path);
+                steps = JsonConvert.DeserializeObject<List<Step>>(existing) ?? new List<Step>();
+            }
             string code = "if(ts.main(2) == 0) \r\n            {";
             string conca;
             if (count == 1)
@@ -100,7 +112,7 @@ namespace Swifter1
                 steps.Add(st);
 
                 String save = JsonConvert.SerializeObject(steps, Formatting.Indented);
-                File.WriteAllText(jsonFileName, save);
+                File.WriteAllText(path, save);
             }
             else
             {
@@ -114,7 +126,7 @@ namespace Swifter1
                 steps.Add(st);
 
                 String save = JsonConvert.SerializeObject(steps, Formatting.Indented);
-                File.WriteAllText(jsonFileName, save);
+                File.WriteAllText(path, save);
             }
         }
 

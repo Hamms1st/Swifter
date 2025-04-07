@@ -19,10 +19,11 @@ namespace Swifter1
         public MainWindow()
         {
             InitializeComponent();
-
             //Main2.Content = new Load();
-            MainFrame1.Content = new CreateShort();
-
+            //MainFrame1.Content = new CreateShort();
+            Class1 cs = new Class1();
+            cs.main();
+            
             
 
         }

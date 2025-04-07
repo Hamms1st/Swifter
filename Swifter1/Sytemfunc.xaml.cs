@@ -60,6 +60,13 @@ namespace Swifter1
 
         private void Ifwifion_Click(object sender, RoutedEventArgs e)
         {
+
+            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, jsonFileName);
+            if (File.Exists(path))
+            {
+                string existing = File.ReadAllText(path);
+                steps = JsonConvert.DeserializeObject<List<Step>>(existing) ?? new List<Step>();
+            }
             string code = "\r\n            ts.main(1);";
             string conca;
             if (count == 1)
@@ -75,7 +82,7 @@ namespace Swifter1
                 steps.Add(st);
                 
                 String save = JsonConvert.SerializeObject(steps, Formatting.Indented);
-                File.WriteAllText(jsonFileName,save);
+                File.WriteAllText(path,save);
             }
             else
             {
@@ -89,7 +96,7 @@ namespace Swifter1
                 steps.Add(st);
 
                 String save = JsonConvert.SerializeObject(steps, Formatting.Indented);
-                File.WriteAllText(jsonFileName, save);
+                File.WriteAllText(path, save);
             }
         }
 
@@ -97,6 +104,12 @@ namespace Swifter1
 
         private void Ifof_Click(object sender, RoutedEventArgs e)
         {
+            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, jsonFileName);
+            if (File.Exists(path))
+            {
+                string existing = File.ReadAllText(path);
+                steps = JsonConvert.DeserializeObject<List<Step>>(existing) ?? new List<Step>();
+            }
             string code = "ts.main(0);";
             string conca;
             if (count == 1)
@@ -112,7 +125,7 @@ namespace Swifter1
                 steps.Add(st);
 
                 String save = JsonConvert.SerializeObject(steps, Formatting.Indented);
-                File.WriteAllText(jsonFileName, save);
+                File.WriteAllText(path, save);
             }
             else
             {
@@ -126,7 +139,7 @@ namespace Swifter1
                 steps.Add(st);
 
                 String save = JsonConvert.SerializeObject(steps, Formatting.Indented);
-                File.WriteAllText(jsonFileName, save);
+                File.WriteAllText(path, save);
             }
         }
 
