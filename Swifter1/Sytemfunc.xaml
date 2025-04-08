@@ -96,7 +96,7 @@ BorderThickness="0">
                                     </ControlTemplate>
                                 </Button.Template>
                             </Button>
-                            <Button x:Name="Ifblof"  Content="Off" Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="17" FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" >
+                            <Button x:Name="Ifblof"  Click="Ifblof_Click"  Content="Off" Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="17" FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" >
                                 <Button.Template>
                                     <ControlTemplate TargetType="Button">
                                         <Border x:Name="ButtonBorder" Width="90" Margin="5" Height="30" Background="#121D55" CornerRadius="15">
@@ -125,7 +125,7 @@ BorderThickness="0">
                     <StackPanel Width="250" Margin="10" Orientation="Vertical">
                         <TextBlock HorizontalAlignment="Center" Text="Turn Dark Mode On/Off ?" Margin="1" FontSize="20"   FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" Foreground="#121D55" FontWeight="Light"></TextBlock>
                         <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-                            <Button x:Name="IfNgon" Content="On" Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="17" FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" >
+                            <Button x:Name="IfNgon" Click="IfNgon_Click" Content="On" Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="17" FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" >
                                 <Button.Template>
                                     <ControlTemplate TargetType="Button">
                                         <Border x:Name="ButtonBorder" Width="90" Margin="5" Height="30" Background="#121D55" CornerRadius="15">
@@ -147,7 +147,7 @@ BorderThickness="0">
                                     </ControlTemplate>
                                 </Button.Template>
                             </Button>
-                            <Button x:Name="IfNgof"  Content="Off" Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="17" FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" >
+                            <Button x:Name="IfNgof" Click="IfNgof_Click" Content="Off" Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="17" FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" >
                                 <Button.Template>
                                     <ControlTemplate TargetType="Button">
                                         <Border x:Name="ButtonBorder" Width="90" Margin="5" Height="30" Background="#121D55" CornerRadius="15">
@@ -177,7 +177,7 @@ BorderThickness="0">
                     <StackPanel Width="250" Margin="10" Orientation="Vertical" >
                         <TextBlock HorizontalAlignment="Center" Text="Turn Silent Mode On/Off" Margin="1" FontSize="20"   FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" Foreground="#121D55" FontWeight="Light"></TextBlock>
                         <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-                            <Button x:Name="IfAron" Content="On" Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="17" FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" >
+                            <Button x:Name="IfAron" Click="IfAron_Click" Content="On" Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="17" FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" >
                                 <Button.Template>
                                     <ControlTemplate TargetType="Button">
                                         <Border x:Name="ButtonBorder" Width="90" Margin="5" Height="30" Background="#121D55" CornerRadius="15">
@@ -199,7 +199,7 @@ BorderThickness="0">
                                     </ControlTemplate>
                                 </Button.Template>
                             </Button>
-                            <Button x:Name="IfArof"  Content="Off" Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="17" FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" >
+                            <Button x:Name="IfArof" Click="IfArof_Click" Content="Off" Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="17" FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" >
                                 <Button.Template>
                                     <ControlTemplate TargetType="Button">
                                         <Border x:Name="ButtonBorder" Width="90" Margin="5" Height="30" Background="#121D55" CornerRadius="15">

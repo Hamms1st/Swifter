@@ -28,6 +28,7 @@
     <None Remove="images\Wifi.png" />
     <None Remove="json\automate.json" />
     <None Remove="json\shortcut.json" />
+    <None Remove="S.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -81,6 +82,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="json\shortcut.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="S.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

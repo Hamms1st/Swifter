@@ -38,5 +38,10 @@ namespace Swifter1
             
             NavigationService.Navigate(new Sytemfunc());
         }
+
+        private void Key_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Keystroke());
+        }
     }
 }

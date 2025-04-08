@@ -11,6 +11,7 @@ namespace Swifter1
             bluetooth bt = new bluetooth();
             dark dt = new dark();
             Mute mt = new Mute();
+            battery battery = new battery();
             Energy eg = new Energy();
 
             try

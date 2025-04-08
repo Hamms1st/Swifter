@@ -35,7 +35,7 @@
                     </Button.Template>
                 </Button>
 
-                <Button x:Name="Key" Content="Keystrokes" Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="17" FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" >
+                <Button x:Name="Key" Click="Key_Click" Content="Keystrokes" Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="17" FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" >
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Border x:Name="ButtonBorder" Width="180" Margin="20" Height="30" Background="#121D55" CornerRadius="15">

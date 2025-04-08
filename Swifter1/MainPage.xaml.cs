@@ -26,15 +26,13 @@ namespace Swifter1
         {
             InitializeComponent();
             var mainWindow = (MainWindow)Application.Current.MainWindow;
-            //mainWindow.showborder();
-            LoadShortcuts();
+            mainWindow.showborder();
+            //LoadShortcuts();
         }
 
         public class Shortcut
         {
-            public string Title { get; set; }
-            public string Procedure {  get; set; }
-            public string Description { get; set; }
+            public string ShortcutName { get; set; }
             public string IconPath { get; set; }
         }
 
@@ -122,7 +120,7 @@ namespace Swifter1
 
             TextBlock title = new TextBlock
             {
-                Text = shortcut.Title,
+                Text = shortcut.ShortcutName,
                 FontWeight = FontWeights.Light,
                 HorizontalAlignment = HorizontalAlignment.Center,
                 FontFamily = new FontFamily(new Uri("pack://application:,,,/"), "./Fonts/#Jost"),
@@ -140,13 +138,12 @@ namespace Swifter1
 
         public void OnShortcutClick(Shortcut shortcut)
         {
-            MessageBox.Show($"You clicked: {shortcut.Title}");
+            MessageBox.Show($"You clicked: {shortcut.ShortcutName}");
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var mainWindow = (MainWindow)Application.Current.MainWindow;
-            mainWindow.MainFrame1.Content = new CreateShort();
+            NavigationService.Navigate(new CreateShort());
             
         }
     }

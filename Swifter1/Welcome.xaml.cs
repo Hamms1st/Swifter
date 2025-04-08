@@ -79,10 +79,10 @@ namespace Swifter1
             fadeOut.Completed += (s, eArgs) =>
             {
                 // Remove Main2 and show MainPage
-                mainWindow.Main2.Content = null;
-                
-                mainWindow.MainFrame1.Content = new MainPage();
-                mainWindow.showborder();
+                mainWindow.Main2.RemoveBackEntry();
+                NavigationService.Navigate(new MainPage());
+
+                //mainWindow.showborder();
             };
 
             // Step 3: Apply the animation to Main2

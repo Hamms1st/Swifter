@@ -52,7 +52,7 @@ namespace Swifter1
         private string shname = "Firstshort";
         public string mainmeth = "\r\n    {\r\n        public void main()\r\n        {test ts = new test();\r\n            bluetooth bt = new bluetooth();\r\n            dark dt = new dark();\r\n            Mute mt = new Mute();";
 
-        private String import = "using System;using System.Diagnostics;using Microsoft.Win32;using System.Runtime.InteropServices;using NAudio.CoreAudioApi;using System.Collections.Generic;using System.Linq;using System.Text;using System.Threading.Tasks;using Windows.Devices.Radios;namespace Swifter1 {    class ";
+        private String import = "using System;using System.Windows.Forms;using System.Diagnostics;using Microsoft.Win32;using System.Runtime.InteropServices;using NAudio.CoreAudioApi;using System.Collections.Generic;using System.Linq;using System.Text;using System.Threading.Tasks;using Windows.Devices.Radios;namespace Swifter1 {    class ";
 
         private void Ifwifion_Click(object sender, RoutedEventArgs e)
         {
@@ -141,7 +141,248 @@ namespace Swifter1
 
         private void IfBlon_Click(object sender, RoutedEventArgs e)
         {
+            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, jsonFileName);
+            if (File.Exists(path))
+            {
+                string existing = File.ReadAllText(path);
+                steps = JsonConvert.DeserializeObject<List<Step>>(existing) ?? new List<Step>();
+            }
+            string code = "\r\n            bt.main(1);";
+            string conca;
+            if (count == 1)
+            {
+                conca = import + shname + mainmeth;
+                conca = conca + code;
+                var st = new Step
+                {
+                    Title = "BluetoothOn",
+                    Count = count.ToString(),
+                    code = conca
+                };
+                steps.Add(st);
 
+                String save = JsonConvert.SerializeObject(steps, Formatting.Indented);
+                File.WriteAllText(path, save);
+            }
+            else
+            {
+                conca = code;
+                var st = new Step
+                {
+                    Title = "BluetoothOn",
+                    Count = count.ToString(),
+                    code = conca
+                };
+                steps.Add(st);
+
+                String save = JsonConvert.SerializeObject(steps, Formatting.Indented);
+                File.WriteAllText(path, save);
+            }
+        }
+
+        private void Ifblof_Click(object sender, RoutedEventArgs e)
+        {
+            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, jsonFileName);
+            if (File.Exists(path))
+            {
+                string existing = File.ReadAllText(path);
+                steps = JsonConvert.DeserializeObject<List<Step>>(existing) ?? new List<Step>();
+            }
+            string code = "bt.main(0);";
+            string conca;
+            if (count == 1)
+            {
+                conca = import + shname + mainmeth;
+                conca = conca + code;
+                var st = new Step
+                {
+                    Title = "BluetoothOff",
+                    Count = count.ToString(),
+                    code = conca
+                };
+                steps.Add(st);
+
+                String save = JsonConvert.SerializeObject(steps, Formatting.Indented);
+                File.WriteAllText(path, save);
+            }
+            else
+            {
+                conca = code;
+                var st = new Step
+                {
+                    Title = "BluetoothOff",
+                    Count = count.ToString(),
+                    code = conca
+                };
+                steps.Add(st);
+
+                String save = JsonConvert.SerializeObject(steps, Formatting.Indented);
+                File.WriteAllText(path, save);
+            }
+        }
+
+        private void IfNgon_Click(object sender, RoutedEventArgs e)
+        {
+            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, jsonFileName);
+            if (File.Exists(path))
+            {
+                string existing = File.ReadAllText(path);
+                steps = JsonConvert.DeserializeObject<List<Step>>(existing) ?? new List<Step>();
+            }
+            string code = "\r\n            dt.main(1);";
+            string conca;
+            if (count == 1)
+            {
+                conca = import + shname + mainmeth;
+                conca = conca + code;
+                var st = new Step
+                {
+                    Title = "DarkModeON",
+                    Count = count.ToString(),
+                    code = conca
+                };
+                steps.Add(st);
+
+                String save = JsonConvert.SerializeObject(steps, Formatting.Indented);
+                File.WriteAllText(path, save);
+            }
+            else
+            {
+                conca = code;
+                var st = new Step
+                {
+                    Title = "DarkModeON",
+                    Count = count.ToString(),
+                    code = conca
+                };
+                steps.Add(st);
+
+                String save = JsonConvert.SerializeObject(steps, Formatting.Indented);
+                File.WriteAllText(path, save);
+            }
+        }
+
+        private void IfNgof_Click(object sender, RoutedEventArgs e)
+        {
+            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, jsonFileName);
+            if (File.Exists(path))
+            {
+                string existing = File.ReadAllText(path);
+                steps = JsonConvert.DeserializeObject<List<Step>>(existing) ?? new List<Step>();
+            }
+            string code = "dt.main(0);";
+            string conca;
+            if (count == 1)
+            {
+                conca = import + shname + mainmeth;
+                conca = conca + code;
+                var st = new Step
+                {
+                    Title = "DarkModeOff",
+                    Count = count.ToString(),
+                    code = conca
+                };
+                steps.Add(st);
+
+                String save = JsonConvert.SerializeObject(steps, Formatting.Indented);
+                File.WriteAllText(path, save);
+            }
+            else
+            {
+                conca = code;
+                var st = new Step
+                {
+                    Title = "DarkModeOff",
+                    Count = count.ToString(),
+                    code = conca
+                };
+                steps.Add(st);
+
+                String save = JsonConvert.SerializeObject(steps, Formatting.Indented);
+                File.WriteAllText(path, save);
+            }
+        }
+
+        private void IfAron_Click(object sender, RoutedEventArgs e)
+        {
+            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, jsonFileName);
+            if (File.Exists(path))
+            {
+                string existing = File.ReadAllText(path);
+                steps = JsonConvert.DeserializeObject<List<Step>>(existing) ?? new List<Step>();
+            }
+            string code = "\r\n            mt.main(1);";
+            string conca;
+            if (count == 1)
+            {
+                conca = import + shname + mainmeth;
+                conca = conca + code;
+                var st = new Step
+                {
+                    Title = "MuteON",
+                    Count = count.ToString(),
+                    code = conca
+                };
+                steps.Add(st);
+
+                String save = JsonConvert.SerializeObject(steps, Formatting.Indented);
+                File.WriteAllText(path, save);
+            }
+            else
+            {
+                conca = code;
+                var st = new Step
+                {
+                    Title = "MuteON",
+                    Count = count.ToString(),
+                    code = conca
+                };
+                steps.Add(st);
+
+                String save = JsonConvert.SerializeObject(steps, Formatting.Indented);
+                File.WriteAllText(path, save);
+            }
+        }
+
+        private void IfArof_Click(object sender, RoutedEventArgs e)
+        {
+            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, jsonFileName);
+            if (File.Exists(path))
+            {
+                string existing = File.ReadAllText(path);
+                steps = JsonConvert.DeserializeObject<List<Step>>(existing) ?? new List<Step>();
+            }
+            string code = "dt.main(0);";
+            string conca;
+            if (count == 1)
+            {
+                conca = import + shname + mainmeth;
+                conca = conca + code;
+                var st = new Step
+                {
+                    Title = "DarkModeOff",
+                    Count = count.ToString(),
+                    code = conca
+                };
+                steps.Add(st);
+
+                String save = JsonConvert.SerializeObject(steps, Formatting.Indented);
+                File.WriteAllText(path, save);
+            }
+            else
+            {
+                conca = code;
+                var st = new Step
+                {
+                    Title = "DarkModeOff",
+                    Count = count.ToString(),
+                    code = conca
+                };
+                steps.Add(st);
+
+                String save = JsonConvert.SerializeObject(steps, Formatting.Indented);
+                File.WriteAllText(path, save);
+            }
         }
     }
 }

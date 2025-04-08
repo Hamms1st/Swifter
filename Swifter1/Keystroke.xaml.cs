@@ -11,7 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.IO;
 
 namespace Swifter1
 {
@@ -26,6 +26,7 @@ namespace Swifter1
             
         }
 
+        List<string> keys = new List<string>();
 
 
         private void hold_Checked(object sender, RoutedEventArgs e)
@@ -51,7 +52,98 @@ namespace Swifter1
 
         }
 
+        private void TextBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            e.Handled = true;
+
+            String a = "";
+            if (Keyboard.IsKeyDown(Key.LeftCtrl) || Keyboard.IsKeyDown(Key.RightCtrl))
+            {
+                a += "Ctrl + ";
+            }
+            if (Keyboard.IsKeyDown(Key.LeftShift) || Keyboard.IsKeyDown(Key.RightShift))
+            {
+                a += "Shift + ";
+            }
+            if (Keyboard.IsKeyDown(Key.LeftAlt) || Keyboard.IsKeyDown(Key.RightAlt))
+            {
+                a += "Alt + ";
+            }
+            if (Keyboard.IsKeyDown(Key.Tab))
+            {
+                a += "Tab + ";
+            }
+            if (Keyboard.IsKeyDown(Key.Space))
+                a += "Space + ";
+            if (Keyboard.IsKeyDown(Key.Back))
+                a += "Backspace + ";
+            if (Keyboard.IsKeyDown(Key.Escape))
+                a += "Escape + ";
+            if (Keyboard.IsKeyDown(Key.Delete))
+                a += "Delete + ";
+            if (Keyboard.IsKeyDown(Key.Insert))
+                a += "Insert + ";
+            if (Keyboard.IsKeyDown(Key.Up))
+                a += "↑ + ";
+            if (Keyboard.IsKeyDown(Key.Down))
+                a += "↓ + ";
+            if (Keyboard.IsKeyDown(Key.Left))
+                a += "← + ";
+            if (Keyboard.IsKeyDown(Key.Right))
+                a += "→ + ";
+            for (char c = 'A'; c <= 'Z'; c++)
+            {
+                Key key = (Key)Enum.Parse(typeof(Key), c.ToString());
+                if (Keyboard.IsKeyDown(key))
+                {
+                    a += c + " + ";
+                    break;
+                }
+            }
 
 
+            for (int i = 0; i <= 9; i++)
+            {
+                Key key = (Key)Enum.Parse(typeof(Key), "D" + i); // D0–D9 are the main number keys
+                if (Keyboard.IsKeyDown(key))
+                {
+                    a += i + " + ";
+                    break;
+                }
+            }
+
+            if (a.EndsWith(" + "))
+                a = a.Substring(0, a.Length - 3);
+            Autoenter.Text = a;
+
+            var parts = Autoenter.Text.Split(new[] { " + " }, StringSplitOptions.RemoveEmptyEntries);
+
+            int modifierCount = 0;
+            int otherKeyCount = 0;
+
+            foreach (var part in parts)
+            {
+                if (part == "Ctrl" || part == "Shift" || part == "Alt")
+                    modifierCount++;
+                else
+                    otherKeyCount++;
+            }
+
+
+            if ((modifierCount >= 2 || otherKeyCount >=2) || (modifierCount == 1 && otherKeyCount == 1))
+            {
+                Autoenter.Clear();
+
+            }
+            else
+            {
+                
+            }
+        }
+
+        private void Confirm_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
