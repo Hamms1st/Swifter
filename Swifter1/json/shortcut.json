@@ -1,5 +1,6 @@
 [
-  
+  {
+    "ShortcutName": "Class1",
+    "Trigger": "Ctrl+Alt+N"
+  }
 ]
-
-

@@ -15,7 +15,7 @@ namespace Swifter1
 
             try
             {
-                eg.main();
+                mt.main(1);
             }
             catch (Exception ex)
             {

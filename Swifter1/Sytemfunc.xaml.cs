@@ -25,9 +25,7 @@ using Windows.Devices.Radios;
 
 namespace Swifter1
 {
-    /// <summary>
-    /// Interaction logic for Sytemfunc.xaml
-    /// </summary>
+
     public partial class Sytemfunc : Page
     {
         public Sytemfunc()
