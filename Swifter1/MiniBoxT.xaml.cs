@@ -95,6 +95,8 @@ namespace Swifter1
 
         private void Trigbut_Click(object sender, RoutedEventArgs e)
         {
+            Application.Current.Properties["Trigger"] = Autoenter.Text;
+
             if (Application.Current.Properties.Contains("UserCount"))
             {
                 Application.Current.Properties["UserCount"] = 0;

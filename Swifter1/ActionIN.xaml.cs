@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.IO;
+using System.Xml.Linq;
 
 namespace Swifter1
 {
@@ -197,7 +198,7 @@ namespace Swifter1
         private List<Step> steps = new List<Step>();
 
 
-        private string shname = "Firstshort";
+        private string shname = Application.Current.Properties["shname"].ToString();
         public string mainmeth = "\r\n    {\r\n        public void main()\r\n        {test ts = new test();\r\n            bluetooth bt = new bluetooth();\r\n            dark dt = new dark();\r\n            Mute mt = new Mute();\r\n            PasteText pt = new PasteText();\r\n             OpenApp op = new OpenApp();\r\n         battery bat = new battery();";
 
         private String import = "using System;\r\nusing System.Windows.Forms;\r\nusing System.Diagnostics;\r\nusing Microsoft.Win32;\r\nusing System.Runtime.InteropServices;\r\nusing NAudio.CoreAudioApi;\r\nusing System.Collections.Generic;\r\nusing System.Linq;\r\nusing System.Text;\r\nusing System.Threading.Tasks;\r\nusing Windows.Devices.Radios;\r\nusing WindowsInput;\r\nusing WindowsInput.Native;\r\nusing System.Windows.Input; namespace Swifter1 {    class ";
@@ -229,6 +230,7 @@ namespace Swifter1
 
                     String save = JsonConvert.SerializeObject(steps, Formatting.Indented);
                     File.WriteAllText(path, save);
+                NavigationService.Navigate(new ActionIN());
                 }
         }
 
@@ -256,6 +258,7 @@ namespace Swifter1
                     steps.Add(st);
                     String save = JsonConvert.SerializeObject(steps, Formatting.Indented);
                     File.WriteAllText(path, save);
+                    NavigationService.Navigate(new ActionIN());
                 }
 
             }
@@ -294,6 +297,7 @@ namespace Swifter1
 
                         String save = JsonConvert.SerializeObject(steps, Formatting.Indented);
                         File.WriteAllText(path, save);
+                        NavigationService.Navigate(new ActionIN());
                     }
                 }
             }
@@ -328,6 +332,7 @@ namespace Swifter1
 
             String save = JsonConvert.SerializeObject(steps, Formatting.Indented);
             File.WriteAllText(path, save);
+            NavigationService.Navigate(new ActionIN());
         }
 
         private void Del_Click(object sender, RoutedEventArgs e)
@@ -335,6 +340,73 @@ namespace Swifter1
             NavigationService.Navigate(new Delay());
         }
 
+        private void Confirm_Click(object sender, RoutedEventArgs e)
+        {
+            string jsonFileName = "json\\Temporary.json";
+            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, jsonFileName);
+            string concatenation = "";
+            if (File.Exists(path))
+            {
+                string json = File.ReadAllText(path);
+                List<Step> shortcuts = JsonConvert.DeserializeObject<List<Step>>(json);
+                foreach (var shortcut in shortcuts)
+                {
+                    concatenation += shortcut.code;
+                }
+                string close = "\r\n      }\r\n      }\r\n      }";
+                concatenation += close;
+                string projectDir = FindProjectDirectory();
+                string fileName = Application.Current.Properties["shname"].ToString() + ".cs";
+                string filePath = System.IO.Path.Combine(projectDir, fileName);
+                string csprojPath = System.IO.Path.Combine(projectDir, "Swifter1.csproj");
+                File.WriteAllText(filePath, concatenation);
+                var doc = XDocument.Load(csprojPath);
+                XNamespace ns = doc.Root.Name.Namespace;
+                 List<Shortcut> steps = new List<Shortcut>();
+        string jsonFileName2 = "json\\shorcut.json";
+                string path2 = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, jsonFileName2);
+                if (File.Exists(path2))
+                {
+                    string existing1 = File.ReadAllText(path2);
+                    steps = JsonConvert.DeserializeObject<List<Shortcut>>(existing1) ?? new List<Shortcut>();
+                }
+                var Short = new Shortcut
+                {
+                    ShortcutName = Application.Current.Properties["shname"].ToString(),
+                    Trigger = Application.Current.Properties["Trigger"].ToString(),
+                    IconPath = "/images/Short.png"
+                };
+                steps.Add(Short);
+                String save2 = JsonConvert.SerializeObject(steps, Formatting.Indented);
+                File.WriteAllText(path2, save2);
+                Thread.Sleep(1000);
+                var mainWindow = (MainWindow)Application.Current.MainWindow;
+                var createShortPage = (CreateShort)mainWindow.Content;
+                createShortPage.Miniframe.Content = null;
+            }
+
+
+        }
+
+        public class Shortcut { 
         
+            public string ShortcutName { get; set; }
+
+            public string Trigger { get; set; }
+            public string IconPath { get; set; }
+        }
+
+        private static string FindProjectDirectory()
+        {
+            string current = AppDomain.CurrentDomain.BaseDirectory;
+
+            while (current != null && !Directory.GetFiles(current, "*.csproj").Any())
+            {
+                current = Directory.GetParent(current)?.FullName;
+            }
+
+            return current ?? throw new Exception("Could not find project directory.");
+        }
+
     }
 }

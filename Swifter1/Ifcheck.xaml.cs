@@ -41,7 +41,7 @@ namespace Swifter1
 
         
         private int count = (int)Application.Current.Properties["UserCount"];
-        private string shname = "Firstshort";
+        private string shname = Application.Current.Properties["shname"].ToString();
         public string mainmeth = "\r\n    {\r\n        public void main()\r\n        {test ts = new test();\r\n            bluetooth bt = new bluetooth();\r\n            dark dt = new dark();\r\n            Mute mt = new Mute();\r\n            PasteText pt = new PasteText();\r\n             OpenApp op = new OpenApp();\r\n         battery bat = new battery();";
 
         private String import = "using System;\r\nusing System.Windows.Forms;\r\nusing System.Diagnostics;\r\nusing Microsoft.Win32;\r\nusing System.Runtime.InteropServices;\r\nusing NAudio.CoreAudioApi;\r\nusing System.Collections.Generic;\r\nusing System.Linq;\r\nusing System.Text;\r\nusing System.Threading.Tasks;\r\nusing Windows.Devices.Radios;\r\nusing WindowsInput;\r\nusing WindowsInput.Native;\r\nusing System.Windows.Input; namespace Swifter1 {    class ";
@@ -70,6 +70,7 @@ namespace Swifter1
 
                 String save = JsonConvert.SerializeObject(steps, Formatting.Indented);
                 File.WriteAllText(path, save);
+                NavigationService.Navigate(new ActionIN());
             }
             else
             {
@@ -84,6 +85,7 @@ namespace Swifter1
 
                 String save = JsonConvert.SerializeObject(steps, Formatting.Indented);
                 File.WriteAllText(path, save);
+                NavigationService.Navigate(new ActionIN());
             }
         }
 
@@ -111,6 +113,7 @@ namespace Swifter1
 
                 String save = JsonConvert.SerializeObject(steps, Formatting.Indented);
                 File.WriteAllText(path, save);
+                NavigationService.Navigate(new ActionIN());
             }
             else
             {
@@ -125,6 +128,7 @@ namespace Swifter1
 
                 String save = JsonConvert.SerializeObject(steps, Formatting.Indented);
                 File.WriteAllText(path, save);
+                NavigationService.Navigate(new ActionIN());
             }
         }
 
@@ -168,6 +172,7 @@ namespace Swifter1
 
                 String save = JsonConvert.SerializeObject(steps, Formatting.Indented);
                 File.WriteAllText(path, save);
+                NavigationService.Navigate(new ActionIN());
             }
             else
             {
@@ -182,6 +187,7 @@ namespace Swifter1
 
                 String save = JsonConvert.SerializeObject(steps, Formatting.Indented);
                 File.WriteAllText(path, save);
+                NavigationService.Navigate(new ActionIN());
             }
         }
 
@@ -209,6 +215,7 @@ namespace Swifter1
 
                 String save = JsonConvert.SerializeObject(steps, Formatting.Indented);
                 File.WriteAllText(path, save);
+                NavigationService.Navigate(new ActionIN());
             }
             else
             {
@@ -223,6 +230,7 @@ namespace Swifter1
 
                 String save = JsonConvert.SerializeObject(steps, Formatting.Indented);
                 File.WriteAllText(path, save);
+                NavigationService.Navigate(new ActionIN());
             }
         }
 
@@ -250,6 +258,7 @@ namespace Swifter1
 
                 String save = JsonConvert.SerializeObject(steps, Formatting.Indented);
                 File.WriteAllText(path, save);
+                NavigationService.Navigate(new ActionIN());
             }
             else
             {
@@ -264,6 +273,7 @@ namespace Swifter1
 
                 String save = JsonConvert.SerializeObject(steps, Formatting.Indented);
                 File.WriteAllText(path, save);
+                NavigationService.Navigate(new ActionIN());
             }
         }
 
@@ -291,6 +301,7 @@ namespace Swifter1
 
                 String save = JsonConvert.SerializeObject(steps, Formatting.Indented);
                 File.WriteAllText(path, save);
+                NavigationService.Navigate(new ActionIN());
             }
             else
             {
@@ -305,6 +316,7 @@ namespace Swifter1
 
                 String save = JsonConvert.SerializeObject(steps, Formatting.Indented);
                 File.WriteAllText(path, save);
+                NavigationService.Navigate(new ActionIN());
             }
         }
 
@@ -332,6 +344,7 @@ namespace Swifter1
 
                 String save = JsonConvert.SerializeObject(steps, Formatting.Indented);
                 File.WriteAllText(path, save);
+                NavigationService.Navigate(new ActionIN());
             }
             else
             {
@@ -346,6 +359,7 @@ namespace Swifter1
 
                 String save = JsonConvert.SerializeObject(steps, Formatting.Indented);
                 File.WriteAllText(path, save);
+                NavigationService.Navigate(new ActionIN());
             }
         }
 
@@ -373,6 +387,7 @@ namespace Swifter1
 
                 String save = JsonConvert.SerializeObject(steps, Formatting.Indented);
                 File.WriteAllText(path, save);
+                NavigationService.Navigate(new ActionIN());
             }
             else
             {
@@ -387,6 +402,7 @@ namespace Swifter1
 
                 String save = JsonConvert.SerializeObject(steps, Formatting.Indented);
                 File.WriteAllText(path, save);
+                NavigationService.Navigate(new ActionIN());
             }
         }
 
@@ -407,7 +423,7 @@ namespace Swifter1
                 conca = conca + code;
                 var st = new Step
                 {
-                    Title = "MuteCheckOff",
+                    Title = "If(BatteryCheck)",
                     Count = count.ToString(),
                     code = conca
                 };
@@ -415,13 +431,14 @@ namespace Swifter1
 
                 String save = JsonConvert.SerializeObject(steps, Formatting.Indented);
                 File.WriteAllText(path, save);
+                NavigationService.Navigate(new ActionIN());
             }
             else
             {
                 conca = code;
                 var st = new Step
                 {
-                    Title = "MuteCheckOff",
+                    Title = "If(BatteryCheck)",
                     Count = count.ToString(),
                     code = conca
                 };
@@ -429,6 +446,7 @@ namespace Swifter1
 
                 String save = JsonConvert.SerializeObject(steps, Formatting.Indented);
                 File.WriteAllText(path, save);
+                NavigationService.Navigate(new ActionIN());
             }
         }
     }

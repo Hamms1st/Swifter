@@ -37,7 +37,7 @@ namespace Swifter1
             public string Trigger { get; set; }
             public string IconPath { get; set; }
         }
-
+        
         public void LoadShortcuts()
         {
             string jsonFileName = "json\\shortcut.json";

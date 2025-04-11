@@ -36,7 +36,7 @@ namespace Swifter1
         private void Trigbut_Click(object sender, RoutedEventArgs e)
         {
 
-            Miniframe.Content = new MiniBoxT();
+            Miniframe.Content = new Username();
 
 
         }

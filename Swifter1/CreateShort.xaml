@@ -87,8 +87,9 @@
                     <Border.Effect>
                     <DropShadowEffect BlurRadius="10" ShadowDepth="0" Opacity="0.4" Color="Black" Direction="270"/>
                     </Border.Effect>
-                    <Frame x:Name="Miniframe" SnapsToDevicePixels="True" UseLayoutRounding="True" Margin="10"   NavigationUIVisibility="Hidden"> 
-                </Frame>
+                    <Frame x:Name="Miniframe" SnapsToDevicePixels="True" UseLayoutRounding="True" Margin="10"   NavigationUIVisibility="Hidden">
+                    </Frame>
+                    
                 </Border>
             </Grid>
         </Grid>

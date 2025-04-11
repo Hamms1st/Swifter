@@ -216,12 +216,12 @@ namespace Swifter1
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame1.Content = new MainPage();
+            Main2.Content = new MainPage();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            MainFrame1.Content = new AutoPage();
+            Main2.Content = new AutoPage();
         }
 
         // Optionally, unregister all hotkeys when closing the window

@@ -1,0 +1,37 @@
+[
+  {
+    "ShortcutName": "Myshortfirst",
+    "Trigger": "Ctrl + Alt + O",
+    "IconPath": "/images/Short.png"
+  },
+  {
+    "ShortcutName": "Digit",
+    "Trigger": "Ctrl + Alt + O",
+    "IconPath": "/images/Short.png"
+  },
+  {
+    "ShortcutName": "rock",
+    "Trigger": "Ctrl + Alt + O",
+    "IconPath": "/images/Short.png"
+  },
+  {
+    "ShortcutName": "rocked",
+    "Trigger": "Ctrl + Alt + O",
+    "IconPath": "/images/Short.png"
+  },
+  {
+    "ShortcutName": "crack",
+    "Trigger": "Ctrl + Alt + O",
+    "IconPath": "/images/Short.png"
+  },
+  {
+    "ShortcutName": "Notsut",
+    "Trigger": "Ctrl + Alt + O",
+    "IconPath": "/images/Short.png"
+  },
+  {
+    "ShortcutName": "Create",
+    "Trigger": "Ctrl + Alt + O",
+    "IconPath": "/images/Short.png"
+  }
+]

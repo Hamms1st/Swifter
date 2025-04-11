@@ -1,17 +1,3 @@
 [
-  {
-    "ShortcutName": "Class1",
-    "Trigger": "Ctrl+Alt+N",
-    "IconPath": "/images/Short.png"
-  },
-  {
-    "ShortcutName": "Class2",
-    "Trigger": "Ctrl+Alt+k",
-    "IconPath": "/images/Short.png"
-  },
-  {
-    "ShortcutName": "Class3",
-    "Trigger": "Ctrl+Alt+j",
-    "IconPath": "/images/Short.png"
-  }
+ 
 ]

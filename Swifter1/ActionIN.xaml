@@ -233,10 +233,29 @@
                         </WrapPanel>
                 </ScrollViewer>
 
-                <ScrollViewer  MaxHeight="250" VerticalScrollBarVisibility="Hidden" BorderThickness="0"  Margin="0,5,0,5" HorizontalAlignment="Center">
+                <ScrollViewer  MaxHeight="200" VerticalScrollBarVisibility="Hidden" BorderThickness="0"  Margin="0,5,0,5" HorizontalAlignment="Center">
                     <WrapPanel  Orientation="Vertical"  HorizontalAlignment="Center"  x:Name="StepsCOntainer">
                     </WrapPanel>
                 </ScrollViewer>
+                <Button x:Name="Confirm" Content="Confirm"   Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="17" FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" Click="Confirm_Click">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border x:Name="ButtonBorder1" Margin="5" Width="185" Height="40" Background="#121D55" CornerRadius="15">
+                                <Border.Effect>
+                                    <DropShadowEffect Color="Black" BlurRadius="8" ShadowDepth="2" Direction="90" Opacity="0.4"/>
+                                </Border.Effect>
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Cursor" Value="Hand"/>
+                                    <Setter TargetName="ButtonBorder1" Property="Background" Value="#545C86" />
+                                </Trigger>
+
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
             </StackPanel>
         </Grid>
     </Border>
