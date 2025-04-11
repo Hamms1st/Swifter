@@ -6,6 +6,8 @@ D:\Text\Swifter1\Swifter1\bin\Debug\net9.0-windows10.0.19041.0\images\Cuwhole.pn
 D:\Text\Swifter1\Swifter1\bin\Debug\net9.0-windows10.0.19041.0\images\Edit.png
 D:\Text\Swifter1\Swifter1\bin\Debug\net9.0-windows10.0.19041.0\images\empty.png
 D:\Text\Swifter1\Swifter1\bin\Debug\net9.0-windows10.0.19041.0\images\import.png
+D:\Text\Swifter1\Swifter1\bin\Debug\net9.0-windows10.0.19041.0\images\keybo.png
+D:\Text\Swifter1\Swifter1\bin\Debug\net9.0-windows10.0.19041.0\images\keyboard.png
 D:\Text\Swifter1\Swifter1\bin\Debug\net9.0-windows10.0.19041.0\images\logocrop.png
 D:\Text\Swifter1\Swifter1\bin\Debug\net9.0-windows10.0.19041.0\images\logo.png
 D:\Text\Swifter1\Swifter1\bin\Debug\net9.0-windows10.0.19041.0\images\plus.png
@@ -13,6 +15,7 @@ D:\Text\Swifter1\Swifter1\bin\Debug\net9.0-windows10.0.19041.0\images\process.pn
 D:\Text\Swifter1\Swifter1\bin\Debug\net9.0-windows10.0.19041.0\images\refresh.png
 D:\Text\Swifter1\Swifter1\bin\Debug\net9.0-windows10.0.19041.0\images\search.png
 D:\Text\Swifter1\Swifter1\bin\Debug\net9.0-windows10.0.19041.0\images\Short.png
+D:\Text\Swifter1\Swifter1\bin\Debug\net9.0-windows10.0.19041.0\images\timee.png
 D:\Text\Swifter1\Swifter1\bin\Debug\net9.0-windows10.0.19041.0\images\Wifi.png
 D:\Text\Swifter1\Swifter1\bin\Debug\net9.0-windows10.0.19041.0\json\automate.json
 D:\Text\Swifter1\Swifter1\bin\Debug\net9.0-windows10.0.19041.0\json\shortcut.json
@@ -77,6 +80,8 @@ D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows10.0.19041.0\Loop.g.cs
 D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows10.0.19041.0\MainPage.g.cs
 D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows10.0.19041.0\MainWindow.g.cs
 D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows10.0.19041.0\MiniBoxT.g.cs
+D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows10.0.19041.0\OpenAppPage.g.cs
+D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows10.0.19041.0\PastePage.g.cs
 D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows10.0.19041.0\Procedure.g.cs
 D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows10.0.19041.0\Sytemfunc.g.cs
 D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows10.0.19041.0\Welcome.g.cs
@@ -96,6 +101,8 @@ D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows10.0.19041.0\Loop.baml
 D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows10.0.19041.0\MainPage.baml
 D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows10.0.19041.0\MainWindow.baml
 D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows10.0.19041.0\MiniBoxT.baml
+D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows10.0.19041.0\OpenAppPage.baml
+D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows10.0.19041.0\PastePage.baml
 D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows10.0.19041.0\Procedure.baml
 D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows10.0.19041.0\Sytemfunc.baml
 D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows10.0.19041.0\Welcome.baml
@@ -111,8 +118,3 @@ D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows10.0.19041.0\refint\Swifter1.d
 D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows10.0.19041.0\Swifter1.pdb
 D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows10.0.19041.0\Swifter1.genruntimeconfig.cache
 D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows10.0.19041.0\ref\Swifter1.dll
-D:\Text\Swifter1\Swifter1\bin\Debug\net9.0-windows10.0.19041.0\images\keybo.png
-D:\Text\Swifter1\Swifter1\bin\Debug\net9.0-windows10.0.19041.0\images\keyboard.png
-D:\Text\Swifter1\Swifter1\bin\Debug\net9.0-windows10.0.19041.0\images\timee.png
-D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows10.0.19041.0\PastePage.g.cs
-D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows10.0.19041.0\PastePage.baml

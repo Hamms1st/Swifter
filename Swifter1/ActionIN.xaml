@@ -231,7 +231,7 @@
                     </StackPanel>
                 </ScrollViewer>
 
-                <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Hidden" Grid.Column="1" BorderThickness="0"  Margin="0,5,0,5" HorizontalAlignment="Center">
+                <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Hidden" BorderThickness="0"  Margin="0,5,0,5" HorizontalAlignment="Center">
                 <StackPanel HorizontalAlignment="Center" Orientation="Vertical">
                         <WrapPanel  HorizontalAlignment="Center"  x:Name="StepsCOntainer">
                         </WrapPanel>

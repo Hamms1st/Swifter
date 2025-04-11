@@ -99,7 +99,7 @@ namespace Swifter1
         private void OnStepClick(object sender, RoutedEventArgs e)
         {
             Application.Current.Properties["UserCount"] = (int)Application.Current.Properties["UserCount"]+1 ;
-
+            Application.Current.Properties["Gap"] = (int)Application.Current.Properties["Gap"]+1;
             Procedure procPage = new Procedure();
             NavigationService.Navigate(procPage);
             
@@ -109,16 +109,14 @@ namespace Swifter1
         
         private void OnIfClick(object sender, RoutedEventArgs e)
         {
+            Application.Current.Properties["UserCount"] = (int)Application.Current.Properties["UserCount"] + 1;
             Application.Current.Properties["Ifcount"]= (int)Application.Current.Properties["Ifcount"]+1;
+            Application.Current.Properties["Gap"] = (int)Application.Current.Properties["Gap"] + 1;
             NavigationService.Navigate(new Ifcheck());
         }
 
 
-        private void OnLoopClick(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new Loop());
-            
-        }
+        
 
         
 
@@ -126,13 +124,13 @@ namespace Swifter1
         {
             Border card = new Border
             {
-                Background = new SolidColorBrush(Colors.LightGray),
                 BorderBrush = new SolidColorBrush(Colors.DarkGray),
                 BorderThickness = new Thickness(1),
                 CornerRadius = new CornerRadius(10),
-                Width = 250,
+                Width = 450,
+                Height = 35,
                 Margin = new Thickness(5),
-                Padding = new Thickness(5),
+                Padding = new Thickness(2),
                 Cursor = Cursors.Hand
             };
 
@@ -143,18 +141,38 @@ namespace Swifter1
             };
 
 
-            StackPanel content = new StackPanel();
-
-            TextBlock title = new TextBlock
+            StackPanel content = new StackPanel
             {
-                Text = shortcut.Title,
-                FontWeight = FontWeights.Light,
+                Orientation = Orientation.Horizontal,
+                HorizontalAlignment = HorizontalAlignment.Stretch,
+                VerticalAlignment = VerticalAlignment.Center,
+            };
+
+            TextBlock count = new TextBlock
+            {
+                Text = "Step : " + shortcut.Count,
                 HorizontalAlignment = HorizontalAlignment.Center,
                 FontFamily = new FontFamily(new Uri("pack://application:,,,/"), "./Fonts/#Jost"),
                 FontSize = 16,
+                VerticalAlignment = VerticalAlignment.Center,
+                Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#484848")),
+                Margin = new Thickness(0, 0, 0, 2)
+            };
+            content.Children.Add(count);
+
+            TextBlock title = new TextBlock
+            {
+                Text = "Step : "+shortcut.Title,
+                HorizontalAlignment = HorizontalAlignment.Center,
+                FontFamily = new FontFamily(new Uri("pack://application:,,,/"), "./Fonts/#Jost"),
+                FontSize = 16,
+                VerticalAlignment = VerticalAlignment.Center,
+                Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#484848")),
                 Margin = new Thickness(0, 0, 0, 2)
             };
             content.Children.Add(title);
+
+
             card.Child = content;
             StepsCOntainer.Children.Add(card);
         }
@@ -162,7 +180,6 @@ namespace Swifter1
         private List<Step> steps = new List<Step>();
 
 
-        private int count = (int)Application.Current.Properties["UserCount"];
         private string shname = "Firstshort";
         public string mainmeth = "\r\n    {\r\n        public void main()\r\n        {test ts = new test();\r\n            bluetooth bt = new bluetooth();\r\n            dark dt = new dark();\r\n            Mute mt = new Mute();\r\n            PasteText pt = new PasteText();\r\n             OpenApp op = new OpenApp();\r\n         battery bat = new battery();";
 
@@ -173,6 +190,9 @@ namespace Swifter1
         {
             if((int)Application.Current.Properties["Ifcount"] != 0)
             {
+                Application.Current.Properties["Ifcount"] = (int)Application.Current.Properties["Ifcount"] - 1;
+                Application.Current.Properties["Gap"] = 0;
+
                 string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, jsonFileName);
                 if (File.Exists(path))
                 {
@@ -186,7 +206,6 @@ namespace Swifter1
                     var st = new Step
                     {
                         Title = "EndIf",
-                        Count = count.ToString(),
                         code = conca
                     };
                     steps.Add(st);
@@ -194,32 +213,33 @@ namespace Swifter1
                     String save = JsonConvert.SerializeObject(steps, Formatting.Indented);
                     File.WriteAllText(path, save);
                 }
-            }
         }
 
         private void Else_Click(object sender, RoutedEventArgs e)
         {
-            if ((int)Application.Current.Properties["Ifcount"] != 0)
+            if ((int)Application.Current.Properties["Ifcount"] == 0)
             {
-                Application.Current.Properties["Elsecount"] = (int)Application.Current.Properties["Elsecount"] + 1;
-                string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, jsonFileName);
-                if (File.Exists(path))
+                if ((int)Application.Current.Properties["Gap"] == 0)
                 {
-                    string existing = File.ReadAllText(path);
-                    steps = JsonConvert.DeserializeObject<List<Step>>(existing) ?? new List<Step>();
+                    Application.Current.Properties["Elsecount"] = (int)Application.Current.Properties["Elsecount"] + 1;
+                    string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, jsonFileName);
+                    if (File.Exists(path))
+                    {
+                        string existing = File.ReadAllText(path);
+                        steps = JsonConvert.DeserializeObject<List<Step>>(existing) ?? new List<Step>();
+                    }
+                    string code = "else{";
+                    string conca = "";
+                    conca = conca + code;
+                    var st = new Step
+                    {
+                        Title = "Else",
+                        code = conca
+                    };
+                    steps.Add(st);
+                    String save = JsonConvert.SerializeObject(steps, Formatting.Indented);
+                    File.WriteAllText(path, save);
                 }
-                string code = "else{";
-                string conca = "";
-                conca = conca + code;
-                var st = new Step
-                {
-                    Title = "Else",
-                    Count = count.ToString(),
-                    code = conca
-                };
-                steps.Add(st);
-                String save = JsonConvert.SerializeObject(steps, Formatting.Indented);
-                File.WriteAllText(path, save);
 
             }
             else
@@ -231,12 +251,66 @@ namespace Swifter1
 
         private void Elseend_Click(object sender, RoutedEventArgs e)
         {
+            if ((int)Application.Current.Properties["Elsecount"] > 0)
+            {
+                if ((int)Application.Current.Properties["Gap"] == 0)
+                {
+                    if ((int)Application.Current.Properties["Ifcount"] == 0)
+                    {
+                        Application.Current.Properties["Elsecount"] = (int)Application.Current.Properties["Elsecount"] - 1;
+                        string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, jsonFileName);
+                        if (File.Exists(path))
+                        {
+                            string existing = File.ReadAllText(path);
+                            steps = JsonConvert.DeserializeObject<List<Step>>(existing) ?? new List<Step>();
+                        }
 
+                        string code = "}";
+                        string conca = "";
+                        conca = conca + code;
+                        var st = new Step
+                        {
+                            Title = "Endelse",
+                            code = conca
+                        };
+                        steps.Add(st);
+
+                        String save = JsonConvert.SerializeObject(steps, Formatting.Indented);
+                        File.WriteAllText(path, save);
+                    }
+                }
+            }
+        }
+
+
+        private void OnLoopClick(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Properties["Loop"] = 0;
+            NavigationService.Navigate(new Loop());
         }
 
         private void EndLoop_Click(object sender, RoutedEventArgs e)
         {
+            Application.Current.Properties["Loop"] = (int)Application.Current.Properties["Loop"] - 1;
+            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, jsonFileName);
+            if (File.Exists(path))
+            {
+                string existing = File.ReadAllText(path);
+                steps = JsonConvert.DeserializeObject<List<Step>>(existing) ?? new List<Step>();
+            }
 
+            string code = "}";
+            string conca = "";
+            conca = conca + code;
+            var st = new Step
+            {
+                Title = "LoopEnd",
+                code = conca
+            };
+            steps.Add(st);
+
+            String save = JsonConvert.SerializeObject(steps, Formatting.Indented);
+            File.WriteAllText(path, save);
         }
 
         private void Del_Click(object sender, RoutedEventArgs e)

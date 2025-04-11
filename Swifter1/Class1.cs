@@ -16,7 +16,7 @@ namespace Swifter1
             Energy eg = new Energy();
             OpenApp op = new OpenApp();
             PasteText pt = new PasteText();
-
+            
             try
             {
                 op.main("C:\\Users\\me\\AppData\\Local\\Programs\\Opera\\opera.exe");
