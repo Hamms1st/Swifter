@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Swifter1"
       mc:Ignorable="d" 
-      d:DesignHeight="550" d:DesignWidth="880"
+      d:DesignHeight="470" d:DesignWidth="880"
       Title="Welcome">
     <Page.Triggers>
         <EventTrigger RoutedEvent="FrameworkElement.Unloaded">
@@ -16,7 +16,7 @@
             </BeginStoryboard>
         </EventTrigger>
     </Page.Triggers>
-   <Border x:Name="bor" Background="#CCCCCC" CornerRadius="10"    BorderBrush="#CCCCCC" >
+   <Border x:Name="bor" Background="#CCCCCC" >
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="100px"></RowDefinition>

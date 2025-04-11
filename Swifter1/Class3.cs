@@ -1,5 +1,18 @@
 ﻿
-
+using System;
+using System.Windows.Forms;
+using System.Diagnostics;
+using Microsoft.Win32;
+using System.Runtime.InteropServices;
+using NAudio.CoreAudioApi;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Windows.Devices.Radios;
+using WindowsInput;
+using WindowsInput.Native;
+using System.Windows.Input;
 namespace Swifter1
 {
     class Class3
@@ -17,6 +30,7 @@ namespace Swifter1
             try
             {
                 mt.main(0);
+                Thread.Sleep(check);
             }
             catch (Exception ex)
             {

@@ -44,7 +44,7 @@ namespace Swifter1
         private string shname = "Firstshort";
         public string mainmeth = "\r\n    {\r\n        public void main()\r\n        {test ts = new test();\r\n            bluetooth bt = new bluetooth();\r\n            dark dt = new dark();\r\n            Mute mt = new Mute();\r\nbattery bat = new battery();";
 
-        private String import = "using System;using System.Windows.Forms;using System.Diagnostics;using Microsoft.Win32;using System.Runtime.InteropServices;using NAudio.CoreAudioApi;using System.Collections.Generic;using System.Linq;using System.Text;using System.Threading.Tasks;using Windows.Devices.Radios;namespace Swifter1 {    class ";
+        private String import = "using System;\r\nusing System.Windows.Forms;\r\nusing System.Diagnostics;\r\nusing Microsoft.Win32;\r\nusing System.Runtime.InteropServices;\r\nusing NAudio.CoreAudioApi;\r\nusing System.Collections.Generic;\r\nusing System.Linq;\r\nusing System.Text;\r\nusing System.Threading.Tasks;\r\nusing Windows.Devices.Radios;\r\nusing WindowsInput;\r\nusing WindowsInput.Native;\r\nusing System.Windows.Input; namespace Swifter1 {    class ";
 
         private void Ifonwifi_Click(object sender, RoutedEventArgs e)
         {

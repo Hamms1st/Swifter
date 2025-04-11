@@ -33,9 +33,13 @@ namespace Swifter1
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var page2 = new MainPage();
-            var mainWindow = (MainWindow)Application.Current.MainWindow;
-            mainWindow.MainFrame1.Content = page2;
+            
+
+           var  mainWindow= ((MainWindow)Application.Current.MainWindow);
+            
+
+
+
             //Panel.SetZIndex(mainWindow.MainFrame1, 1);
             //Panel.SetZIndex(mainWindow.Main2, 0);
             /*
@@ -78,11 +82,7 @@ namespace Swifter1
             // Step 2: When fade-out completes
             fadeOut.Completed += (s, eArgs) =>
             {
-                // Remove Main2 and show MainPage
-                mainWindow.Main2.RemoveBackEntry();
                 NavigationService.Navigate(new MainPage());
-
-                //mainWindow.showborder();
             };
 
             // Step 3: Apply the animation to Main2

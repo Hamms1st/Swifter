@@ -13,9 +13,7 @@ using Newtonsoft.Json;
 
 namespace Swifter1
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+
     public partial class MainWindow : Window
     {
         [DllImport("user32.dll")]
@@ -46,7 +44,7 @@ namespace Swifter1
             Main2.Content = new Load();
         }
 
-        protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
+       protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
         {
             e.Cancel = true;      // Prevent app from closing
             this.Hide();          // Just hide the window

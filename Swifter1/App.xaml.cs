@@ -12,7 +12,7 @@ namespace Swifter1
     /// </summary>
     public partial class App : System.Windows.Application
     {
-
+        
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
@@ -40,6 +40,7 @@ namespace Swifter1
             RegistryKey key = Registry.CurrentUser.OpenSubKey(@"Software\Microsoft\Windows\CurrentVersion\Run", true);
             key.SetValue(appName, $"\"{exePath}\"");
         }
+        
 
     }
 

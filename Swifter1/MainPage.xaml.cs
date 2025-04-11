@@ -27,12 +27,14 @@ namespace Swifter1
             InitializeComponent();
             var mainWindow = (MainWindow)Application.Current.MainWindow;
             mainWindow.showborder();
-            //LoadShortcuts();
+            LoadShortcuts();
         }
 
         public class Shortcut
         {
             public string ShortcutName { get; set; }
+
+            public string Trigger { get; set; }
             public string IconPath { get; set; }
         }
 
@@ -83,7 +85,6 @@ namespace Swifter1
             // Hover effect style
             Style hoverStyle = new Style(typeof(Border));
             hoverStyle.Setters.Add(new Setter(Border.BackgroundProperty, Brushes.LightGray));
-
             Trigger hoverTrigger = new Trigger
             {
                 Property = Border.IsMouseOverProperty,

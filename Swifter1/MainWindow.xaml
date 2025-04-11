@@ -18,9 +18,9 @@
     <Grid>
         
         <Grid.RowDefinitions>
-            <RowDefinition MouseLeftButtonDown="RowDefinition_MouseLeftButtonDown"  Height="20px"></RowDefinition>
+            <RowDefinition MouseLeftButtonDown="RowDefinition_MouseLeftButtonDown"  Height="20"></RowDefinition>
             <RowDefinition Height="478"></RowDefinition>
-            <RowDefinition Height="50px"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid   HorizontalAlignment="Right" Grid.Row="0">
             <Grid.ColumnDefinitions>
@@ -69,7 +69,7 @@
         <Frame x:Name="MainFrame1" NavigationUIVisibility="Hidden"/>
         <Frame  x:Name="Main2" NavigationUIVisibility="Hidden"/>
         </Grid>
-            <Border VerticalAlignment="Bottom" x:Name="Below" Grid.Row="2" Visibility="Hidden" Width="250" Background="#5F6790" CornerRadius="8" Margin="3px" BorderThickness="1">
+            <Border VerticalAlignment="Bottom" x:Name="Below" Grid.Row="0" Visibility="Collapsed" Width="250" Background="#5F6790" CornerRadius="8" Margin="3px" BorderThickness="1">
                 <Border.Effect>
                     <DropShadowEffect Color="Black" BlurRadius="8" ShadowDepth="2" Direction="90" Opacity="0.4"/>
                 </Border.Effect>

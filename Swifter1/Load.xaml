@@ -7,9 +7,9 @@
       xmlns:materialexentension="clr-namespace:LoadingSpinnerControl.Converters;assembly=LoadingSpinnerControl"
       xmlns:local="clr-namespace:Swifter1"
       mc:Ignorable="d" 
-      d:DesignHeight="550"  d:DesignWidth="880"
+      d:DesignHeight="470"  d:DesignWidth="880"
       Title="Load">
-    <Border Background="#CCCCCC" CornerRadius="10" BorderThickness="1"   BorderBrush="#CCCCCC" >
+    <Border Background="#CCCCCC" >
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="180px"></RowDefinition>

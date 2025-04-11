@@ -19,6 +19,7 @@
     <None Remove="images\Edit.png" />
     <None Remove="images\empty.png" />
     <None Remove="images\import.png" />
+    <None Remove="images\keybo.png" />
     <None Remove="images\logo.png" />
     <None Remove="images\plus.png" />
     <None Remove="images\process.png" />
@@ -52,6 +53,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="images\import.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\keybo.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="images\logocrop.png">
@@ -90,6 +94,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="InputSimulator" Version="1.0.4" />
     <PackageReference Include="LoadingSpinner.WPF" Version="1.0.0" />
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.13.0" />
     <PackageReference Include="NAudio" Version="2.2.1" />

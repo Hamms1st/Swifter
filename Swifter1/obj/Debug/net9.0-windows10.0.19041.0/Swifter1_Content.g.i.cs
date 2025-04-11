@@ -16,6 +16,7 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/edit.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/empty.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/import.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/keybo.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/logocrop.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/logo.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/plus.png")]
