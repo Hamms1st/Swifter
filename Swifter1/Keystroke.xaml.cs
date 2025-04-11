@@ -164,6 +164,7 @@ namespace Swifter1
 
                 String save = JsonConvert.SerializeObject(steps, Formatting.Indented);
                 File.WriteAllText(path, save);
+                NavigationService.Navigate(new ActionIN());
             }
             else
             {
@@ -178,6 +179,7 @@ namespace Swifter1
 
                 String save = JsonConvert.SerializeObject(steps, Formatting.Indented);
                 File.WriteAllText(path, save);
+                NavigationService.Navigate(new ActionIN());
             }
         }
 

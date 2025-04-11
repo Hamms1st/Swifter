@@ -42,7 +42,7 @@ namespace Swifter1
         
 
         public string jsonFileName = "json\\Temporary.json";
-
+        
         private void ButtonScrollViewer_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
         {
             var sv = sender as ScrollViewer;
@@ -54,15 +54,18 @@ namespace Swifter1
                     sv.ScrollToHorizontalOffset(sv.HorizontalOffset - e.Delta);
                     e.Handled = true;
                 }
+                
             }
+            
         }
+        
 
-     
 
         public void LoadShortcuts()
         {
-
+            string jsonFileName = "json\\Temporary.json";
             string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, jsonFileName);
+
             if (File.Exists(path))
             {
                 string json = File.ReadAllText(path);
@@ -75,7 +78,10 @@ namespace Swifter1
                         AddShortcutCard(shortcut);
                     }
                 }
+                else
+                {
                
+                }
             }
 
             else
@@ -124,12 +130,12 @@ namespace Swifter1
         {
             Border card = new Border
             {
-                BorderBrush = new SolidColorBrush(Colors.DarkGray),
+                BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#484848")),
                 BorderThickness = new Thickness(1),
                 CornerRadius = new CornerRadius(10),
                 Width = 450,
+                Margin= new Thickness(5),
                 Height = 35,
-                Margin = new Thickness(5),
                 Padding = new Thickness(2),
                 Cursor = Cursors.Hand
             };
@@ -140,6 +146,18 @@ namespace Swifter1
                 
             };
 
+            Style hoverStyle = new Style(typeof(Border));
+            hoverStyle.Setters.Add(new Setter(Border.BackgroundProperty, Brushes.LightGray));
+            Trigger hoverTrigger = new Trigger
+            {
+                Property = Border.IsMouseOverProperty,
+                Value = true
+            };
+            hoverTrigger.Setters.Add(new Setter(Border.BackgroundProperty, Brushes.SlateGray));
+            hoverStyle.Triggers.Add(hoverTrigger);
+
+            card.Style = hoverStyle;
+
 
             StackPanel content = new StackPanel
             {
@@ -148,21 +166,9 @@ namespace Swifter1
                 VerticalAlignment = VerticalAlignment.Center,
             };
 
-            TextBlock count = new TextBlock
-            {
-                Text = "Step : " + shortcut.Count,
-                HorizontalAlignment = HorizontalAlignment.Center,
-                FontFamily = new FontFamily(new Uri("pack://application:,,,/"), "./Fonts/#Jost"),
-                FontSize = 16,
-                VerticalAlignment = VerticalAlignment.Center,
-                Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#484848")),
-                Margin = new Thickness(0, 0, 0, 2)
-            };
-            content.Children.Add(count);
-
             TextBlock title = new TextBlock
             {
-                Text = "Step : "+shortcut.Title,
+                Text = "  Step ",
                 HorizontalAlignment = HorizontalAlignment.Center,
                 FontFamily = new FontFamily(new Uri("pack://application:,,,/"), "./Fonts/#Jost"),
                 FontSize = 16,
@@ -172,6 +178,17 @@ namespace Swifter1
             };
             content.Children.Add(title);
 
+            TextBlock count = new TextBlock
+            {
+                Text = shortcut.Count+" : "+shortcut.Title,
+                HorizontalAlignment = HorizontalAlignment.Center,
+                FontFamily = new FontFamily(new Uri("pack://application:,,,/"), "./Fonts/#Jost"),
+                FontSize = 16,
+                VerticalAlignment = VerticalAlignment.Center,
+                Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#484848")),
+                Margin = new Thickness(0, 0, 0, 2)
+            };
+            content.Children.Add(count);
 
             card.Child = content;
             StepsCOntainer.Children.Add(card);

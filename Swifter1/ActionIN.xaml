@@ -18,6 +18,7 @@
                 <TextBlock Text="Setup your Actions" HorizontalAlignment="Center" Margin="5" FontSize="25"  FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" Foreground="#121D55" FontWeight="Light"></TextBlock>
                 <TextBlock Text="Add Steps/Conditions/Loops" HorizontalAlignment="Center" FontSize="14"  FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" Foreground="#121D55" FontWeight="Light"></TextBlock>
                 <ScrollViewer PanningMode="HorizontalOnly" IsManipulationEnabled="True" PreviewMouseWheel="ButtonScrollViewer_PreviewMouseWheel" BorderThickness="0" VerticalScrollBarVisibility="Disabled"   HorizontalScrollBarVisibility="Hidden"  CanContentScroll="True"  >
+                    <WrapPanel>
                     <StackPanel Orientation="Horizontal">
                         <Button x:Name="Step1" Click="OnStepClick"  Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="17" FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" >
                             <StackPanel Orientation="Horizontal">
@@ -229,14 +230,13 @@
                         </Button>
 
                     </StackPanel>
+                        </WrapPanel>
                 </ScrollViewer>
 
-                <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Hidden" BorderThickness="0"  Margin="0,5,0,5" HorizontalAlignment="Center">
-                <StackPanel HorizontalAlignment="Center" Orientation="Vertical">
-                        <WrapPanel  HorizontalAlignment="Center"  x:Name="StepsCOntainer">
-                        </WrapPanel>
-                </StackPanel>
-            </ScrollViewer>
+                <ScrollViewer  MaxHeight="250" VerticalScrollBarVisibility="Hidden" BorderThickness="0"  Margin="0,5,0,5" HorizontalAlignment="Center">
+                    <WrapPanel  Orientation="Vertical"  HorizontalAlignment="Center"  x:Name="StepsCOntainer">
+                    </WrapPanel>
+                </ScrollViewer>
             </StackPanel>
         </Grid>
     </Border>

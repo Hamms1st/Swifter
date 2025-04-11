@@ -11,7 +11,7 @@
         <Grid Margin="5"  Height="450">
             <Grid.RowDefinitions>
                 <RowDefinition Height="50"></RowDefinition>
-                <RowDefinition Height="450"></RowDefinition>
+                <RowDefinition Height="350"></RowDefinition>
             </Grid.RowDefinitions>
             <Border Grid.Row="0"  BorderThickness="1" >
                 <Border.Effect>

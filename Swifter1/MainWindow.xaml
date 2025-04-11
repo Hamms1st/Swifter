@@ -10,7 +10,7 @@
         AllowsTransparency="True"
         Background="Transparent"
          WindowStartupLocation="CenterScreen"
-        Title="MainWindow" Height="550" Width="880">
+        Title="MainWindow" Height="560" Width="890">
     
     
     <Border Background="#CCCCCC" CornerRadius="10"    BorderBrush="#CCCCCC" >

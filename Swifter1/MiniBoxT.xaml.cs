@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.IO;
+using System.Runtime.Intrinsics.Arm;
 
 
 namespace Swifter1
@@ -121,9 +122,8 @@ namespace Swifter1
                 var Create= new CreateShort();
                 Create.Trigbut_Set(Autoenter.Text);
                 string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, jsonFileName);
-                File.WriteAllText(path, "[]");
+                File.WriteAllText(path, []);
                 NavigationService.Navigate(new ActionIN());
-
             }
             else
             {

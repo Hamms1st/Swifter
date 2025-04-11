@@ -118,3 +118,4 @@ D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows10.0.19041.0\refint\Swifter1.d
 D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows10.0.19041.0\Swifter1.pdb
 D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows10.0.19041.0\Swifter1.genruntimeconfig.cache
 D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows10.0.19041.0\ref\Swifter1.dll
+D:\Text\Swifter1\Swifter1\bin\Debug\net9.0-windows10.0.19041.0\json\Temporary.json

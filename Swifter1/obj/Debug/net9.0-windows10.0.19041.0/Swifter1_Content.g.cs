@@ -29,6 +29,7 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/wifi.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("json/automate.json")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("json/shortcut.json")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("json/temporary.json")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("s.ico")]
 
 
