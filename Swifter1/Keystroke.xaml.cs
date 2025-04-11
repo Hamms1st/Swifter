@@ -42,9 +42,9 @@ namespace Swifter1
         public string jsonFileName = "json\\Temporary.json";
         private int count = (int)Application.Current.Properties["UserCount"];
         private string shname = "Firstshort";
-        public string mainmeth = "\r\n    {\r\n        public void main()\r\n        {test ts = new test();\r\n            bluetooth bt = new bluetooth();\r\n            dark dt = new dark();\r\n            Mute mt = new Mute();";
+        public string mainmeth = "\r\n    {\r\n        public void main()\r\n        {test ts = new test();\r\n            bluetooth bt = new bluetooth();\r\n            dark dt = new dark();\r\n            Mute mt = new Mute();\r\n            PasteText pt = new PasteText();\r\n             OpenApp op = new OpenApp();\r\n         battery bat = new battery();";
 
-        private String import = "using System;\r\nusing System.Windows.Forms;\r\nusing System.Diagnostics;\r\nusing Microsoft.Win32;\r\nusing System.Runtime.InteropServices;\r\nusing NAudio.CoreAudioApi;\r\nusing System.Collections.Generic;\r\nusing System.Linq;\r\nusing System.Text;\r\nusing System.Threading.Tasks;\r\nusing Windows.Devices.Radios;\r\nusing WindowsInput;\r\nusing WindowsInput.Native;\r\nusing System.Windows.Input; namespace Swifter1 {    class ";
+        private String import = "using System;\r\nusing System.Windows.Forms;\r\nusing System.Diagnostics;\r\n using Microsoft.Win32;\r\n using System.Runtime.InteropServices;\r\n using NAudio.CoreAudioApi;\r\n using System.Collections.Generic;\r\nusing System.Linq;\r\nusing System.Text;\r\nusing System.Threading.Tasks;\r\nusing Windows.Devices.Radios;\r\nusing WindowsInput;\r\nusing WindowsInput.Native;\r\nusing System.Windows.Input; namespace Swifter1 {    class ";
 
         private List<VirtualKeyCode> recordedKeys = new List<VirtualKeyCode>();
         private InputSimulator inputSimulator = new InputSimulator();
@@ -101,34 +101,43 @@ namespace Swifter1
 
         private void Confirm_Click(object sender, RoutedEventArgs e)
         {
+            String a;
             if (Autoenter.Text != "")
             {
                 if (hold.IsChecked == true)
                 {
+                    a = "KeyHold";
                     code += "inputSimulator.Keyboard.KeyDown(";
+
                 }
                 else if (release.IsChecked == true)
                 {
+                    a = "KeyRelease";
                     code += "inputSimulator.Keyboard.KeyUp(";
                 }
                 else
                 {
+                    a = "KeyPress";
                     code += "inputSimulator.Keyboard.KeyPress(";
                 }
                 code += keyCode + ");";
                 code += "\r\n" + "Thread.Sleep(" + delay.Text + ");\r\n";
-            }
 
-            var addstroke = new Stroke
-            {
-                KeyName = keyCode.ToString(),
-                Delay = delay.Text
-            };
-            try
-            {
-                AddShortcutCard(addstroke);
+
+                var addstroke = new Stroke
+                {
+                    KeyName = keyCode.ToString(),
+                    Type = a,
+                    Delay = delay.Text
+                };
+
+
+                try
+                {
+                    AddShortcutCard(addstroke);
+                }
+                catch (Exception ex) { MessageBox.Show(ex.ToString()); };
             }
-            catch (Exception ex) { MessageBox.Show(ex.ToString()); };
 
         }
 
@@ -176,7 +185,10 @@ namespace Swifter1
         {
             public string KeyName { get; set; }
 
+            public string Type {  get; set; }
             public string Delay { get; set; }
+
+
 
         }
 
@@ -193,7 +205,7 @@ namespace Swifter1
                 Width=450,
                 Height = 35,
                 Margin = new Thickness(5),
-                Padding = new Thickness(5),
+                Padding = new Thickness(2),
                 Cursor = Cursors.Hand
             };
 
@@ -222,17 +234,19 @@ namespace Swifter1
             
                 Image icon = new Image
                 {
-                    Source = new BitmapImage(new Uri("/images/keybo.png", UriKind.Relative)),
-                    Width = 20,
-                    Height = 20,
-                    Margin = new Thickness(0, 0, 0, 5)
+                    Source = new BitmapImage(new Uri("/images/keyboard.png", UriKind.Relative)),
+                    Width = 32,
+                    Height = 25,
+                    Margin = new Thickness(0, 0, 0, 5),
+                    VerticalAlignment = VerticalAlignment.Center,
+                    
                 };
                 content.Children.Add(icon);
         
             TextBlock divider = new TextBlock
             {
-                Text = "|",
-                Foreground = new SolidColorBrush(Colors.DarkGray),
+                Text = " ",
+                Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#484848")),
                 FontSize = 16,
                 VerticalAlignment = VerticalAlignment.Center,
                 Margin = new Thickness(5, 0, 5, 0)
@@ -241,30 +255,45 @@ namespace Swifter1
 
             TextBlock title = new TextBlock
             {
-                Text = "Key : " +shortcut.KeyName,
-                FontWeight = FontWeights.Light,
+                Text = "Key : "+shortcut.KeyName,
+                
                 HorizontalAlignment = HorizontalAlignment.Center,
                 FontFamily = new FontFamily(new Uri("pack://application:,,,/"), "./Fonts/#Jost"),
                 FontSize = 16,
-                Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#121D55")),
+                VerticalAlignment = VerticalAlignment.Center,
+                Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#484848")),
                 Margin = new Thickness(0, 0, 0, 2)
             };
             content.Children.Add(title);
+            TextBlock Type = new TextBlock
+            {
+                Text = "    Type : "+shortcut.Type+"    ",
+                VerticalAlignment = VerticalAlignment.Center,
+                HorizontalAlignment = HorizontalAlignment.Center,
+                FontFamily = new FontFamily(new Uri("pack://application:,,,/"), "./Fonts/#Jost"),
+                FontSize = 16,
+                Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#484848")),
+                Margin = new Thickness(0, 0, 0, 2)
+            };
+            content.Children.Add(Type);
 
-            
-                Image icon2 = new Image
+
+
+            Image icon2 = new Image
                 {
-                    Source = new BitmapImage(new Uri("/images/clock.png", UriKind.Relative)),
+                    Source = new BitmapImage(new Uri("/images/timee.png", UriKind.Relative)),
                     Width = 20,
                     Height = 20,
-                    Margin = new Thickness(0, 0, 0, 5)
-                };
+                    Margin = new Thickness(0, 0, 0, 5),
+                VerticalAlignment = VerticalAlignment.Center
+            };
                 content.Children.Add(icon2);
             
 
             TextBlock divider2 = new TextBlock
             {
-                Text = "|",
+                Text = " ",
+                Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#484848")),
                 FontSize = 16,
                 VerticalAlignment = VerticalAlignment.Center,
                 Margin = new Thickness(5, 0, 5, 0)
@@ -273,12 +302,13 @@ namespace Swifter1
 
             TextBlock title2 = new TextBlock
             {
-                Text = "Delay : "+shortcut.Delay,
+                Text = "Delay : " + shortcut.Delay,
                 FontWeight = FontWeights.Light,
                 HorizontalAlignment = HorizontalAlignment.Center,
                 FontFamily = new FontFamily(new Uri("pack://application:,,,/"), "./Fonts/#Jost"),
                 FontSize = 16,
-                Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#121D55")),
+                VerticalAlignment = VerticalAlignment.Center,
+                Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#484848")),
                 Margin = new Thickness(0, 0, 0, 2)
             };
             content.Children.Add(title2);

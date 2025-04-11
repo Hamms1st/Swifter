@@ -97,6 +97,8 @@ namespace Swifter1
             if (Application.Current.Properties.Contains("UserCount"))
             {
                 Application.Current.Properties["UserCount"] = 0;
+                Application.Current.Properties["Ifcount"] = 0;
+                Application.Current.Properties["Elsecount"] = 0;
 
             }
             var parts = Autoenter.Text.Split(new[] { " + " }, StringSplitOptions.RemoveEmptyEntries);

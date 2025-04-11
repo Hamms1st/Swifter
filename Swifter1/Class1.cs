@@ -1,5 +1,6 @@
 ﻿
 
+
 namespace Swifter1
 {
     class Class1
@@ -13,10 +14,12 @@ namespace Swifter1
             Mute mt = new Mute();
             battery battery = new battery();
             Energy eg = new Energy();
+            OpenApp op = new OpenApp();
+            PasteText pt = new PasteText();
 
             try
             {
-                mt.main(1);
+                op.main("C:\\Users\\me\\AppData\\Local\\Programs\\Opera\\opera.exe");
             }
             catch (Exception ex)
             {

@@ -42,6 +42,12 @@
     <Compile Update="MiniBoxT.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="OpenAppPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="PastePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Procedure.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -87,6 +93,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MiniBoxT.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="OpenAppPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PastePage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Procedure.xaml">

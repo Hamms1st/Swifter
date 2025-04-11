@@ -106,12 +106,11 @@ namespace Swifter1
 
 
         }
-
+        
         private void OnIfClick(object sender, RoutedEventArgs e)
         {
+            Application.Current.Properties["Ifcount"]= (int)Application.Current.Properties["Ifcount"]+1;
             NavigationService.Navigate(new Ifcheck());
-
-            
         }
 
 
@@ -160,14 +159,79 @@ namespace Swifter1
             StepsCOntainer.Children.Add(card);
         }
 
+        private List<Step> steps = new List<Step>();
+
+
+        private int count = (int)Application.Current.Properties["UserCount"];
+        private string shname = "Firstshort";
+        public string mainmeth = "\r\n    {\r\n        public void main()\r\n        {test ts = new test();\r\n            bluetooth bt = new bluetooth();\r\n            dark dt = new dark();\r\n            Mute mt = new Mute();\r\n            PasteText pt = new PasteText();\r\n             OpenApp op = new OpenApp();\r\n         battery bat = new battery();";
+
+        private String import = "using System;\r\nusing System.Windows.Forms;\r\nusing System.Diagnostics;\r\nusing Microsoft.Win32;\r\nusing System.Runtime.InteropServices;\r\nusing NAudio.CoreAudioApi;\r\nusing System.Collections.Generic;\r\nusing System.Linq;\r\nusing System.Text;\r\nusing System.Threading.Tasks;\r\nusing Windows.Devices.Radios;\r\nusing WindowsInput;\r\nusing WindowsInput.Native;\r\nusing System.Windows.Input; namespace Swifter1 {    class ";
+
+
         private void Endif_Click(object sender, RoutedEventArgs e)
         {
+            if((int)Application.Current.Properties["Ifcount"] != 0)
+            {
+                string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, jsonFileName);
+                if (File.Exists(path))
+                {
+                    string existing = File.ReadAllText(path);
+                    steps = JsonConvert.DeserializeObject<List<Step>>(existing) ?? new List<Step>();
+                }
+                
+                string code = "}";
+                string conca="";
+                    conca = conca + code;
+                    var st = new Step
+                    {
+                        Title = "EndIf",
+                        Count = count.ToString(),
+                        code = conca
+                    };
+                    steps.Add(st);
 
+                    String save = JsonConvert.SerializeObject(steps, Formatting.Indented);
+                    File.WriteAllText(path, save);
+                }
+            }
         }
 
         private void Else_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Procedure());
+            if ((int)Application.Current.Properties["Ifcount"] != 0)
+            {
+                Application.Current.Properties["Elsecount"] = (int)Application.Current.Properties["Elsecount"] + 1;
+                string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, jsonFileName);
+                if (File.Exists(path))
+                {
+                    string existing = File.ReadAllText(path);
+                    steps = JsonConvert.DeserializeObject<List<Step>>(existing) ?? new List<Step>();
+                }
+                string code = "else{";
+                string conca = "";
+                conca = conca + code;
+                var st = new Step
+                {
+                    Title = "Else",
+                    Count = count.ToString(),
+                    code = conca
+                };
+                steps.Add(st);
+                String save = JsonConvert.SerializeObject(steps, Formatting.Indented);
+                File.WriteAllText(path, save);
+
+            }
+            else
+            {
+                MessageBox.Show("Error");
+            }
+            
+        }
+
+        private void Elseend_Click(object sender, RoutedEventArgs e)
+        {
+
         }
 
         private void EndLoop_Click(object sender, RoutedEventArgs e)
@@ -179,5 +243,7 @@ namespace Swifter1
         {
             NavigationService.Navigate(new Delay());
         }
+
+        
     }
 }

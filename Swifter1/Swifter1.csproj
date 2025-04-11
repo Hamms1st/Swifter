@@ -20,12 +20,14 @@
     <None Remove="images\empty.png" />
     <None Remove="images\import.png" />
     <None Remove="images\keybo.png" />
+    <None Remove="images\keyboard.png" />
     <None Remove="images\logo.png" />
     <None Remove="images\plus.png" />
     <None Remove="images\process.png" />
     <None Remove="images\refresh.png" />
     <None Remove="images\search.png" />
     <None Remove="images\Short.png" />
+    <None Remove="images\timee.png" />
     <None Remove="images\Wifi.png" />
     <None Remove="json\automate.json" />
     <None Remove="json\shortcut.json" />
@@ -58,6 +60,9 @@
     <Content Include="images\keybo.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="images\keyboard.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="images\logocrop.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -77,6 +82,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="images\Short.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\timee.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="images\Wifi.png">

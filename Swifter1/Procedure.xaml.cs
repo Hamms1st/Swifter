@@ -43,5 +43,15 @@ namespace Swifter1
         {
             NavigationService.Navigate(new Keystroke());
         }
+
+        private void txt_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new PastePage());   
+        }
+
+        private void App_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new OpenAppPage());  
+        }
     }
 }

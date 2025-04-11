@@ -58,7 +58,7 @@
                     </Button.Template>
                 </Button>
 
-                <Button x:Name="txt" Content="Paste Text" Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="17" FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" >
+                <Button x:Name="txt" Click="txt_Click" Content="Paste Text" Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="17" FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" >
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Border x:Name="ButtonBorder" Width="180" Margin="20" Height="30" Background="#121D55" CornerRadius="15">
@@ -81,7 +81,7 @@
                     </Button.Template>
                 </Button>
 
-                <Button x:Name="App" Content="Open Application" Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="17" FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost">
+                <Button x:Name="App" Content="Open Application" Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="17" FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" Click="App_Click">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Border x:Name="ButtonBorder" Width="180" Margin="20" Height="30" Background="#121D55" CornerRadius="15">
