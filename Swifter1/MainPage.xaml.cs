@@ -37,11 +37,26 @@ namespace Swifter1
             public string Trigger { get; set; }
             public string IconPath { get; set; }
         }
-        
+
+        private static string FindProjectDirectory()
+        {
+            string current = AppDomain.CurrentDomain.BaseDirectory;
+
+            while (current != null && !Directory.GetFiles(current, "*.csproj").Any())
+            {
+                current = Directory.GetParent(current)?.FullName;
+            }
+
+            return current ?? throw new Exception("Could not find project directory.");
+        }
+
         public void LoadShortcuts()
         {
-            string jsonFileName = "json\\shortcut.json";
-            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, jsonFileName);
+
+
+            string baseDir = AppDomain.CurrentDomain.BaseDirectory;
+            string projectDir = FindProjectDirectory();
+            string path = Path.Combine(projectDir,"shortcut.json");
 
             if (File.Exists(path))
             {

@@ -45,9 +45,21 @@ namespace Swifter1
             public String code { get; set; }
         }
 
+        private static string FindProjectDirectory()
+        {
+            string current = AppDomain.CurrentDomain.BaseDirectory;
+
+            while (current != null && !Directory.GetFiles(current, "*.csproj").Any())
+            {
+                current = Directory.GetParent(current)?.FullName;
+            }
+
+            return current ?? throw new Exception("Could not find project directory.");
+        }
+
         private List<Step> steps = new List<Step>();
 
-        public string jsonFileName = "json\\Temporary.json";
+        
         private int count = (int)Application.Current.Properties["UserCount"];
         private string shname = Application.Current.Properties["shname"].ToString();
         public string mainmeth = "\r\n    {\r\n        public void main()\r\n        {test ts = new test();\r\n            bluetooth bt = new bluetooth();\r\n            dark dt = new dark();\r\n            Mute mt = new Mute();\r\n            PasteText pt = new PasteText();\r\n             OpenApp op = new OpenApp();\r\n         battery bat = new battery();";
@@ -55,7 +67,9 @@ namespace Swifter1
 
         private void Ifwifion_Click(object sender, RoutedEventArgs e)
         {
-            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, jsonFileName);
+            string baseDir = AppDomain.CurrentDomain.BaseDirectory;
+            string projectDir = FindProjectDirectory();
+            string path = Path.Combine(projectDir, "Temporary.json");
             if (File.Exists(path))
             {
                 string existing = File.ReadAllText(path);
@@ -100,7 +114,9 @@ namespace Swifter1
 
         private void Ifof_Click(object sender, RoutedEventArgs e)
         {
-            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, jsonFileName);
+            string baseDir = AppDomain.CurrentDomain.BaseDirectory;
+            string projectDir = FindProjectDirectory();
+            string path = Path.Combine(projectDir, "Temporary.json");
             if (File.Exists(path))
             {
                 string existing = File.ReadAllText(path);
@@ -143,7 +159,9 @@ namespace Swifter1
 
         private void IfBlon_Click(object sender, RoutedEventArgs e)
         {
-            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, jsonFileName);
+            string baseDir = AppDomain.CurrentDomain.BaseDirectory;
+            string projectDir = FindProjectDirectory();
+            string path = Path.Combine(projectDir, "Temporary.json");
             if (File.Exists(path))
             {
                 string existing = File.ReadAllText(path);
@@ -186,7 +204,9 @@ namespace Swifter1
 
         private void Ifblof_Click(object sender, RoutedEventArgs e)
         {
-            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, jsonFileName);
+            string baseDir = AppDomain.CurrentDomain.BaseDirectory;
+            string projectDir = FindProjectDirectory();
+            string path = Path.Combine(projectDir, "Temporary.json");
             if (File.Exists(path))
             {
                 string existing = File.ReadAllText(path);
@@ -229,7 +249,9 @@ namespace Swifter1
 
         private void IfNgon_Click(object sender, RoutedEventArgs e)
         {
-            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, jsonFileName);
+            string baseDir = AppDomain.CurrentDomain.BaseDirectory;
+            string projectDir = FindProjectDirectory();
+            string path = Path.Combine(projectDir, "Temporary.json");
             if (File.Exists(path))
             {
                 string existing = File.ReadAllText(path);
@@ -272,7 +294,9 @@ namespace Swifter1
 
         private void IfNgof_Click(object sender, RoutedEventArgs e)
         {
-            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, jsonFileName);
+            string baseDir = AppDomain.CurrentDomain.BaseDirectory;
+            string projectDir = FindProjectDirectory();
+            string path = Path.Combine(projectDir, "Temporary.json");
             if (File.Exists(path))
             {
                 string existing = File.ReadAllText(path);
@@ -315,7 +339,9 @@ namespace Swifter1
 
         private void IfAron_Click(object sender, RoutedEventArgs e)
         {
-            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, jsonFileName);
+            string baseDir = AppDomain.CurrentDomain.BaseDirectory;
+            string projectDir = FindProjectDirectory();
+            string path = Path.Combine(projectDir, "Temporary.json");
             if (File.Exists(path))
             {
                 string existing = File.ReadAllText(path);
@@ -358,7 +384,9 @@ namespace Swifter1
 
         private void IfArof_Click(object sender, RoutedEventArgs e)
         {
-            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, jsonFileName);
+            string baseDir = AppDomain.CurrentDomain.BaseDirectory;
+            string projectDir = FindProjectDirectory();
+            string path = Path.Combine(projectDir, "Temporary.json");
             if (File.Exists(path))
             {
                 string existing = File.ReadAllText(path);

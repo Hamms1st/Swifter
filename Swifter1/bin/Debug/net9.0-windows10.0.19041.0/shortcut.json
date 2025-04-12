@@ -1,0 +1,22 @@
+[
+  {
+    "ShortcutName": "Class1",
+    "Trigger": "Ctrl+Alt+N",
+    "IconPath": "/images/Short.png"
+  },
+  {
+    "ShortcutName": "NwBoxx",
+    "Trigger": "Ctrl + Alt + I",
+    "IconPath": "/images/Short.png"
+  },
+  {
+    "ShortcutName": "OeeBalle",
+    "Trigger": "Ctrl + Alt + U",
+    "IconPath": "/images/Short.png"
+  },
+  {
+    "ShortcutName": "Bro",
+    "Trigger": "Ctrl + Alt + K",
+    "IconPath": "/images/Short.png"
+  }
+]

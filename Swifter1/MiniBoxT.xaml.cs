@@ -27,7 +27,7 @@ namespace Swifter1
             InitializeComponent();
         }
 
-        public string jsonFileName = "json\\Temporary.json";
+        
 
 
         private void TextBox_KeyUp(object sender, KeyEventArgs e)
@@ -123,7 +123,8 @@ namespace Swifter1
             {
                 var Create= new CreateShort();
                 Create.Trigbut_Set(Autoenter.Text);
-                string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, jsonFileName);
+                string projectDir = FindProjectDirectory();
+                string path = Path.Combine(projectDir, "Temporary.json");
                 File.WriteAllText(path, []);
                 NavigationService.Navigate(new ActionIN());
             }
@@ -132,7 +133,17 @@ namespace Swifter1
                 Autoenter.Clear();
             }
         }
+        private static string FindProjectDirectory()
+        {
+            string current = AppDomain.CurrentDomain.BaseDirectory;
 
+            while (current != null && !Directory.GetFiles(current, "*.csproj").Any())
+            {
+                current = Directory.GetParent(current)?.FullName;
+            }
+
+            return current ?? throw new Exception("Could not find project directory.");
+        }
 
         public String Auto;
 

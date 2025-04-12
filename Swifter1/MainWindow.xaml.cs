@@ -56,10 +56,23 @@ namespace Swifter1
             public string Trigger { get; set; } // e.g., "Ctrl+Alt+M"
         }
 
-        private void LoadAndRegisterShortcuts()
+        private static string FindProjectDirectory()
         {
-            string jsonFile = "json\\shortcut.json";
-            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, jsonFile);
+            string current = AppDomain.CurrentDomain.BaseDirectory;
+
+            while (current != null && !Directory.GetFiles(current, "*.csproj").Any())
+            {
+                current = Directory.GetParent(current)?.FullName;
+            }
+
+            return current ?? throw new Exception("Could not find project directory.");
+        }
+
+        public void LoadAndRegisterShortcuts()
+        {
+            string baseDir = AppDomain.CurrentDomain.BaseDirectory;
+            string projectDir = FindProjectDirectory();
+            string path = Path.Combine(projectDir,"shortcut.json");
 
             if (!File.Exists(path))
             {

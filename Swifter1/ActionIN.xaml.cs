@@ -40,10 +40,6 @@ namespace Swifter1
 
         public int ac_count { get; set; }
 
-        
-
-        public string jsonFileName = "json\\Temporary.json";
-        
         private void ButtonScrollViewer_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
         {
             var sv = sender as ScrollViewer;
@@ -59,13 +55,15 @@ namespace Swifter1
             }
             
         }
-        
+
+       
 
 
         public void LoadShortcuts()
         {
-            string jsonFileName = "json\\Temporary.json";
-            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, jsonFileName);
+            string baseDir = AppDomain.CurrentDomain.BaseDirectory;
+            string projectDir = FindProjectDirectory();
+            string path = Path.Combine(projectDir,"Temporary.json");
 
             if (File.Exists(path))
             {
@@ -211,7 +209,9 @@ namespace Swifter1
                 Application.Current.Properties["Ifcount"] = (int)Application.Current.Properties["Ifcount"] - 1;
                 Application.Current.Properties["Gap"] = 0;
 
-                string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, jsonFileName);
+                string baseDir = AppDomain.CurrentDomain.BaseDirectory;
+                string projectDir = FindProjectDirectory();
+                string path = Path.Combine(projectDir, "Temporary.json");
                 if (File.Exists(path))
                 {
                     string existing = File.ReadAllText(path);
@@ -241,7 +241,9 @@ namespace Swifter1
                 if ((int)Application.Current.Properties["Gap"] == 0)
                 {
                     Application.Current.Properties["Elsecount"] = (int)Application.Current.Properties["Elsecount"] + 1;
-                    string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, jsonFileName);
+                    string baseDir = AppDomain.CurrentDomain.BaseDirectory;
+                    string projectDir = FindProjectDirectory();
+                    string path = Path.Combine(projectDir, "Temporary.json");
                     if (File.Exists(path))
                     {
                         string existing = File.ReadAllText(path);
@@ -278,7 +280,9 @@ namespace Swifter1
                     if ((int)Application.Current.Properties["Ifcount"] == 0)
                     {
                         Application.Current.Properties["Elsecount"] = (int)Application.Current.Properties["Elsecount"] - 1;
-                        string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, jsonFileName);
+                        string baseDir = AppDomain.CurrentDomain.BaseDirectory;
+                        string projectDir = FindProjectDirectory();
+                        string path = Path.Combine(projectDir, "Temporary.json");
                         if (File.Exists(path))
                         {
                             string existing = File.ReadAllText(path);
@@ -313,7 +317,9 @@ namespace Swifter1
         private void EndLoop_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Properties["Loop"] = (int)Application.Current.Properties["Loop"] - 1;
-            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, jsonFileName);
+            string baseDir = AppDomain.CurrentDomain.BaseDirectory;
+            string projectDir = FindProjectDirectory();
+            string path = Path.Combine(projectDir, "Temporary.json");
             if (File.Exists(path))
             {
                 string existing = File.ReadAllText(path);
@@ -342,8 +348,11 @@ namespace Swifter1
 
         private void Confirm_Click(object sender, RoutedEventArgs e)
         {
-            string jsonFileName = "json\\Temporary.json";
-            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, jsonFileName);
+
+
+            string baseDir = AppDomain.CurrentDomain.BaseDirectory;
+            string projectDir = FindProjectDirectory();
+            string path = Path.Combine(projectDir, "Temporary.json");
             string concatenation = "";
             if (File.Exists(path))
             {
@@ -355,16 +364,15 @@ namespace Swifter1
                 }
                 string close = "\r\n      }\r\n      }\r\n      }";
                 concatenation += close;
-                string projectDir = FindProjectDirectory();
+                string projectDir2 = FindProjectDirectory();
                 string fileName = Application.Current.Properties["shname"].ToString() + ".cs";
-                string filePath = System.IO.Path.Combine(projectDir, fileName);
-                string csprojPath = System.IO.Path.Combine(projectDir, "Swifter1.csproj");
+                string filePath = System.IO.Path.Combine(projectDir2, fileName);
+                string csprojPath = System.IO.Path.Combine(projectDir2, "Swifter1.csproj");
                 File.WriteAllText(filePath, concatenation);
                 var doc = XDocument.Load(csprojPath);
                 XNamespace ns = doc.Root.Name.Namespace;
-                 List<Shortcut> steps = new List<Shortcut>();
-        string jsonFileName2 = "json\\shorcut.json";
-                string path2 = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, jsonFileName2);
+                List<Shortcut> steps = new List<Shortcut>();
+                string path2 = Path.Combine(projectDir2,"shortcut.json");
                 if (File.Exists(path2))
                 {
                     string existing1 = File.ReadAllText(path2);
@@ -379,10 +387,10 @@ namespace Swifter1
                 steps.Add(Short);
                 String save2 = JsonConvert.SerializeObject(steps, Formatting.Indented);
                 File.WriteAllText(path2, save2);
-                Thread.Sleep(1000);
+                DOne.Visibility = Visibility.Visible;
                 var mainWindow = (MainWindow)Application.Current.MainWindow;
-                var createShortPage = (CreateShort)mainWindow.Content;
-                createShortPage.Miniframe.Content = null;
+                mainWindow.LoadAndRegisterShortcuts();
+
             }
 
 

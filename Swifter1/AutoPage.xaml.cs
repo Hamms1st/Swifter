@@ -31,6 +31,18 @@ namespace Swifter1
             LoadShortcuts();
         }
 
+        private static string FindProjectDirectory()
+        {
+            string current = AppDomain.CurrentDomain.BaseDirectory;
+
+            while (current != null && !Directory.GetFiles(current, "*.csproj").Any())
+            {
+                current = Directory.GetParent(current)?.FullName;
+            }
+
+            return current ?? throw new Exception("Could not find project directory.");
+        }
+
         public class Shortcut
         {
             public string Title { get; set; }
@@ -42,8 +54,8 @@ namespace Swifter1
 
         public void LoadShortcuts()
         {
-            string jsonFileName = "json\\automate.json";
-            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, jsonFileName);
+            string projectDir = FindProjectDirectory();
+            string path = Path.Combine(projectDir, "Temporary.json");
 
             if (File.Exists(path))
             {

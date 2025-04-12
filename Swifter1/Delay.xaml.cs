@@ -33,7 +33,7 @@ namespace Swifter1
 
             public String code { get; set; }
         }
-        public string jsonFileName = "json\\Temporary.json";
+        
         private List<Step> steps = new List<Step>();
 
 
@@ -45,7 +45,9 @@ namespace Swifter1
 
         private void Confirm_Click(object sender, RoutedEventArgs e)
         {
-            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, jsonFileName);
+            string baseDir = AppDomain.CurrentDomain.BaseDirectory;
+            string projectDir = Directory.GetParent(baseDir).Parent.Parent.FullName;
+            string path = Path.Combine(projectDir, "json", "Temporary.json");
             if (File.Exists(path))
             {
                 string existing = File.ReadAllText(path);

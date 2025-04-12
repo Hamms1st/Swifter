@@ -91,13 +91,13 @@
     <Content Include="images\Wifi.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="json\automate.json">
+    <Content Include="automate.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="json\shortcut.json">
+    <Content Include="shortcut.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="json\Temporary.json">
+    <Content Include="Temporary.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="S.ico">
@@ -122,6 +122,7 @@
 
   <ItemGroup>
     <Folder Include="Codes\" />
+    <Folder Include="json\" />
     <Folder Include="testdir\" />
   </ItemGroup>
 

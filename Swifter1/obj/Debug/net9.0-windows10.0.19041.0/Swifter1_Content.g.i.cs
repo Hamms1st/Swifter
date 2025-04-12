@@ -27,9 +27,9 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/short.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/timee.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/wifi.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("json/automate.json")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("json/shortcut.json")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("json/temporary.json")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("automate.json")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("shortcut.json")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("temporary.json")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("s.ico")]
 
 

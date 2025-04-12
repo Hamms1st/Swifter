@@ -30,8 +30,8 @@ namespace Swifter1
 
         private void Stepbut_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Clicked");
-        }
+            NavigationService.Navigate(new MainPage());
+;        }
 
         private void Trigbut_Click(object sender, RoutedEventArgs e)
         {

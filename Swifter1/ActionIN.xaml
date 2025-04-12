@@ -256,6 +256,7 @@
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
+                <TextBlock x:Name="DOne" Visibility="Hidden" Text="Your Shorcut has been Created Successfully!" HorizontalAlignment="Center" FontSize="14"  FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" Foreground="#121D55" FontWeight="Light"></TextBlock>
             </StackPanel>
         </Grid>
     </Border>
