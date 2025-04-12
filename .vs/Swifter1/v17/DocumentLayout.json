@@ -46,8 +46,20 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -56,22 +68,9 @@
               "RelativeDocumentMoniker": "Swifter1\\OeeBalle.cs",
               "ToolTip": "D:\\Text\\Swifter1\\Swifter1\\OeeBalle.cs",
               "RelativeToolTip": "Swifter1\\OeeBalle.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-12T06:59:10.765Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Bro.cs",
-              "DocumentMoniker": "D:\\Text\\Swifter1\\Swifter1\\Bro.cs",
-              "RelativeDocumentMoniker": "Swifter1\\Bro.cs",
-              "ToolTip": "D:\\Text\\Swifter1\\Swifter1\\Bro.cs",
-              "RelativeToolTip": "Swifter1\\Bro.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T06:56:08.728Z",
               "EditorCaption": ""
             },
             {
@@ -84,8 +83,7 @@
               "RelativeToolTip": "Swifter1\\MainWindow.xaml.cs",
               "ViewState": "AgIAADoAAAAAAAAAAAAywEUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T06:52:38.793Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-12T06:52:38.793Z"
             },
             {
               "$type": "Document",
@@ -97,8 +95,7 @@
               "RelativeToolTip": "Swifter1\\MainPage.xaml.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABsAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T06:52:13.826Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-12T06:52:13.826Z"
             },
             {
               "$type": "Document",
@@ -110,8 +107,7 @@
               "RelativeToolTip": "Swifter1\\MiniBoxT.xaml.cs",
               "ViewState": "AgIAAHEAAAAAAAAAAAAwwH4AAABJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T06:46:26.477Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-12T06:46:26.477Z"
             },
             {
               "$type": "Document",
@@ -123,8 +119,7 @@
               "RelativeToolTip": "Swifter1\\shortcut.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-12T06:44:57.868Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-12T06:44:57.868Z"
             },
             {
               "$type": "Document",
@@ -135,8 +130,7 @@
               "ToolTip": "D:\\Text\\Swifter1\\Swifter1\\ActionIN.xaml",
               "RelativeToolTip": "Swifter1\\ActionIN.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-12T06:42:42.217Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-12T06:42:42.217Z"
             },
             {
               "$type": "Document",
@@ -148,12 +142,23 @@
               "RelativeToolTip": "Swifter1\\ActionIN.xaml.cs",
               "ViewState": "AgIAAGkBAAAAAAAAAAAswIcBAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T06:25:36.987Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-12T06:25:36.987Z"
             },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Bro.cs",
+              "DocumentMoniker": "D:\\Text\\Swifter1\\Swifter1\\Bro.cs",
+              "RelativeDocumentMoniker": "Swifter1\\Bro.cs",
+              "ToolTip": "D:\\Text\\Swifter1\\Swifter1\\Bro.cs",
+              "RelativeToolTip": "Swifter1\\Bro.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-12T06:56:08.728Z"
             },
             {
               "$type": "Document",
@@ -165,20 +170,7 @@
               "RelativeToolTip": "Swifter1\\CreateShort.xaml.cs",
               "ViewState": "AgIAAA8AAAAAAAAAAAAAABYAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T06:43:55.953Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+              "WhenOpened": "2025-04-12T06:43:55.953Z"
             }
           ]
         }
