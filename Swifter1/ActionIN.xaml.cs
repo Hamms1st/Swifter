@@ -388,8 +388,8 @@ namespace Swifter1
                 String save2 = JsonConvert.SerializeObject(steps, Formatting.Indented);
                 File.WriteAllText(path2, save2);
                 DOne.Visibility = Visibility.Visible;
-                var mainWindow = (MainWindow)Application.Current.MainWindow;
-                mainWindow.LoadAndRegisterShortcuts();
+                var pagenew = new CreateShort();
+                pagenew.Change();
 
             }
 

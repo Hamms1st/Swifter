@@ -68,7 +68,7 @@ namespace Swifter1
                 string existing = File.ReadAllText(path);
                 steps = JsonConvert.DeserializeObject<List<Step>>(existing) ?? new List<Step>();
             }
-            string code = "\r\n            pt.main("+Maintext.Text+");";
+            string code = "\r\nThread.Sleep(400);\r\n            pt.main(\"" + Maintext.Text+"\");";
             string conca;
             if (count == 1)
             {

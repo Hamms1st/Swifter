@@ -9,6 +9,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Interop;
+using System.Windows.Navigation;
 using Newtonsoft.Json;
 
 namespace Swifter1
@@ -42,9 +43,23 @@ namespace Swifter1
             InitializeComponent();
             LoadAndRegisterShortcuts();
             Main2.Content = new Load();
+            Main2.Navigated += MainFrame1_Navigated;
         }
 
-       protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
+        private void MainFrame1_Navigated(object sender, NavigationEventArgs e)
+        {
+            // Check the type of page now loaded in the frame
+            if (e.Content is Welcome || e.Content is Load)
+            {
+                Below.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                Below.Visibility = Visibility.Visible;
+            }
+        }
+
+        protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
         {
             e.Cancel = true;      // Prevent app from closing
             this.Hide();          // Just hide the window
@@ -103,7 +118,7 @@ namespace Swifter1
             }
         }
 
-        private void ParseTrigger(string trigger, out ModifierKeys modifiers, out Key key)
+        public void ParseTrigger(string trigger, out ModifierKeys modifiers, out Key key)
         {
             modifiers = ModifierKeys.None;
             key = Key.None;
@@ -129,7 +144,7 @@ namespace Swifter1
             }
         }
 
-        private uint ModifierKeyToNative(ModifierKeys modifiers)
+        public uint ModifierKeyToNative(ModifierKeys modifiers)
         {
             uint result = 0;
             if (modifiers.HasFlag(ModifierKeys.Control))
@@ -159,6 +174,8 @@ namespace Swifter1
             }
         }
 
+
+
         private IntPtr HwndHook(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
         {
             const int WM_HOTKEY = 0x0312;
@@ -172,6 +189,30 @@ namespace Swifter1
                 }
             }
             return IntPtr.Zero;
+        }
+
+        public void RegisterSingleShortcut(string shortcutName, string trigger)
+        {
+            ParseTrigger(trigger, out ModifierKeys mods, out Key key);
+
+            var registration = new HotkeyRegistration
+            {
+                Id = nextHotkeyId++,
+                Modifiers = ModifierKeyToNative(mods),
+                VirtualKey = (uint)KeyInterop.VirtualKeyFromKey(key),
+                ShortcutName = shortcutName
+            };
+
+            hotkeyRegistrations.Add(registration);
+            dynamicHotkeyMap[registration.Id] = shortcutName;
+
+            var handle = new WindowInteropHelper(this).Handle;
+            bool registered = RegisterHotKey(handle, registration.Id, registration.Modifiers, registration.VirtualKey);
+            
+            if (!registered)
+            {
+                MessageBox.Show($"Failed to register hotkey for new shortcut: {shortcutName}");
+            }
         }
 
         private void InvokeShortcutMethod(string className)

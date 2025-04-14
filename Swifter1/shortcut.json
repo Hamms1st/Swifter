@@ -10,13 +10,48 @@
     "IconPath": "/images/Short.png"
   },
   {
-    "ShortcutName": "OeeBalle",
-    "Trigger": "Ctrl + Alt + U",
+    "ShortcutName": "Bro",
+    "Trigger": "Ctrl + Alt + K",
     "IconPath": "/images/Short.png"
   },
   {
-    "ShortcutName": "Bro",
-    "Trigger": "Ctrl + Alt + K",
+    "ShortcutName": "LastCHeckNew",
+    "Trigger": "Ctrl + Shift + Q",
+    "IconPath": "/images/Short.png"
+  },
+  {
+    "ShortcutName": "okaycheck",
+    "Trigger": "Ctrl + Shift + B",
+    "IconPath": "/images/Short.png"
+  },
+  {
+    "ShortcutName": "MyNewBoss",
+    "Trigger": "Ctrl + Alt + R",
+    "IconPath": "/images/Short.png"
+  },
+  {
+    "ShortcutName": "BombardinoCrocodilo",
+    "Trigger": "Ctrl + Shift + F",
+    "IconPath": "/images/Short.png"
+  },
+  {
+    "ShortcutName": "LiriLalala",
+    "Trigger": "Ctrl + Alt + T",
+    "IconPath": "/images/Short.png"
+  },
+  {
+    "ShortcutName": "tumtutmsahur",
+    "Trigger": "Ctrl + Shift + G",
+    "IconPath": "/images/Short.png"
+  },
+  {
+    "ShortcutName": "spaceex",
+    "Trigger": "Ctrl + Shift + W",
+    "IconPath": "/images/Short.png"
+  },
+  {
+    "ShortcutName": "shortatme",
+    "Trigger": "Ctrl + Shift + X",
     "IconPath": "/images/Short.png"
   }
 ]

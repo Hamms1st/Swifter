@@ -443,7 +443,7 @@ namespace Swifter1
                 steps = JsonConvert.DeserializeObject<List<Step>>(existing) ?? new List<Step>();
             }
             int chex=Int32.Parse(checkstat.Text);
-            string code = "if(bat.main(2) =="+chex.ToString()+" ) \r\n            {";
+            string code = "if(bat.main() =="+chex.ToString()+" ) \r\n            {";
             string conca;
             if (count == 1)
             {

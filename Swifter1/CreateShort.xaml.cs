@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -28,10 +30,17 @@ namespace Swifter1
 
         }
 
+        public void Change()
+        {
+            txtbo.Text="Make your Shortcut Live.";
+            txtbo2.Visibility=Visibility.Visible;
+            Stepbut.Content = "Restart";
+        }
+
         private void Stepbut_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new MainPage());
-;        }
+            
+        }
 
         private void Trigbut_Click(object sender, RoutedEventArgs e)
         {

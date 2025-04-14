@@ -61,7 +61,8 @@
                     </StackPanel>
                     
                         <StackPanel Grid.Row="1" Margin="20" Orientation="Vertical"  VerticalAlignment="Center">
-                            <TextBlock Text="Setup Action"  FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" FontSize="20" HorizontalAlignment="Center" Foreground="#121D55" FontWeight="Light" ></TextBlock>
+                            <TextBlock x:Name="txtbo" Text="Setup Action"  FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" FontSize="20" HorizontalAlignment="Center" Foreground="#121D55" FontWeight="Light" ></TextBlock>
+                        <TextBlock x:Name="txtbo2" Text="*This will Restart the Application"  FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" FontSize="15" Visibility="Collapsed" HorizontalAlignment="Center" Foreground="#121D55" FontWeight="Light" ></TextBlock>
                         <Button  x:Name="Stepbut" Content="Set"   Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="17" FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" Click="Stepbut_Click">
                                 <Button.Template>
                                     <ControlTemplate TargetType="Button">

@@ -68,7 +68,7 @@
             <Grid x:Name="MyContainer" Grid.Row="1">
                 <Frame  x:Name="Main2" NavigationUIVisibility="Hidden"/>
         </Grid>
-            <Border VerticalAlignment="Bottom" x:Name="Below" Grid.Row="0" Visibility="Collapsed" Width="250" Background="#5F6790" CornerRadius="8" Margin="3px" BorderThickness="1">
+            <Border VerticalAlignment="Bottom" x:Name="Below" Grid.Row="2" Visibility="Collapsed" Width="250" Background="#5F6790" CornerRadius="8" Margin="3px" BorderThickness="1">
                 <Border.Effect>
                     <DropShadowEffect Color="Black" BlurRadius="8" ShadowDepth="2" Direction="90" Opacity="0.4"/>
                 </Border.Effect>

@@ -133,7 +133,7 @@ namespace Swifter1
                     code += "inputSimulator.Keyboard.KeyPress(";
                 }
                 code += keyCode + ");";
-                code += "\r\n" + "Thread.Sleep(" + delay.Text + ");\r\n";
+                code += "\r\n" + "Thread.Sleep(" + (Int32.Parse(delay.Text)*1000) + ");\r\n";
 
 
                 var addstroke = new Stroke
