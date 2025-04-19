@@ -54,7 +54,7 @@ namespace Swifter1
         
         private int count = (int)Application.Current.Properties["UserCount"];
         private string shname = Application.Current.Properties["shname"].ToString();
-        public string mainmeth = "\r\n    {\r\n        public void main()\r\n        {test ts = new test();\r\n            bluetooth bt = new bluetooth();\r\n            dark dt = new dark();\r\n            Mute mt = new Mute();\r\n            PasteText pt = new PasteText();\r\n             OpenApp op = new OpenApp();\r\n         battery bat = new battery();";
+        public string mainmeth = "\r\n    {\r\n      private InputSimulator inputSimulator = new InputSimulator();   public void main()\r\n        {test ts = new test();\r\n            bluetooth bt = new bluetooth();\r\n            dark dt = new dark();\r\n            Mute mt = new Mute();\r\n            PasteText pt = new PasteText();\r\n             OpenApp op = new OpenApp();\r\n         battery bat = new battery();";
 
         private String import = "using System;\r\nusing System.Windows.Forms;\r\nusing System.Diagnostics;\r\n using Microsoft.Win32;\r\n using System.Runtime.InteropServices;\r\n using NAudio.CoreAudioApi;\r\n using System.Collections.Generic;\r\nusing System.Linq;\r\nusing System.Text;\r\nusing System.Threading.Tasks;\r\nusing Windows.Devices.Radios;\r\nusing WindowsInput;\r\nusing WindowsInput.Native;\r\nusing System.Windows.Input; namespace Swifter1 {    class ";
 
@@ -70,13 +70,26 @@ namespace Swifter1
         public VirtualKeyCode keyCode;
         private void Page_PreviewKeyDown(object sender, KeyEventArgs e)
         {
-            e.Handled = true;
-            keyCode = KeyToVirtualKeyCode(e.Key);
-            if (keyCode != 0)
+            
+            if (Autoenter.Text == "SPACE")
             {
-                Autoenter.Text = e.Key.ToString();
-
+                keyCode = VirtualKeyCode.SPACE;
             }
+            else if(Autoenter.Text == "DELETE")
+            {
+                keyCode = VirtualKeyCode.DELETE;
+            }
+            else
+            {
+                e.Handled = true;
+                keyCode = KeyToVirtualKeyCode(e.Key);
+            }
+            
+                if (keyCode != 0)
+                {
+                    Autoenter.Text = e.Key.ToString();
+                }
+            
         }
 
         private VirtualKeyCode KeyToVirtualKeyCode(Key key)
@@ -119,23 +132,23 @@ namespace Swifter1
                 if (hold.IsChecked == true)
                 {
                     a = "KeyHold";
-                    code += "inputSimulator.Keyboard.KeyDown(";
+                    code += "inputSimulator.Keyboard.KeyDown(VirtualKeyCode.";
 
                 }
                 else if (release.IsChecked == true)
                 {
                     a = "KeyRelease";
-                    code += "inputSimulator.Keyboard.KeyUp(";
+                    code += "inputSimulator.Keyboard.KeyUp(VirtualKeyCode.";
                 }
                 else
                 {
                     a = "KeyPress";
-                    code += "inputSimulator.Keyboard.KeyPress(";
+                    code += "inputSimulator.Keyboard.KeyPress(VirtualKeyCode.";
                 }
                 code += keyCode + ");";
-                code += "\r\n" + "Thread.Sleep(" + (Int32.Parse(delay.Text)*1000) + ");\r\n";
+                code += "\r\n" + "Thread.Sleep(" + (float.Parse(delay.Text) * 1000) + ");\r\n";
 
-
+            
                 var addstroke = new Stroke
                 {
                     KeyName = keyCode.ToString(),
@@ -144,11 +157,13 @@ namespace Swifter1
                 };
 
 
+
                 try
                 {
                     AddShortcutCard(addstroke);
                 }
                 catch (Exception ex) { MessageBox.Show(ex.ToString()); };
+
             }
 
         }

@@ -36,24 +36,34 @@ namespace Swifter1
         
         private List<Step> steps = new List<Step>();
 
+        private static string FindProjectDirectory()
+        {
+            string current = AppDomain.CurrentDomain.BaseDirectory;
+
+            while (current != null && !Directory.GetFiles(current, "*.csproj").Any())
+            {
+                current = Directory.GetParent(current)?.FullName;
+            }
+
+            return current ?? throw new Exception("Could not find project directory.");
+        }
 
         private int count = (int)Application.Current.Properties["UserCount"];
         private string shname = "Firstshort";
-        public string mainmeth = "\r\n    {\r\n        public void main()\r\n        {test ts = new test();\r\n            bluetooth bt = new bluetooth();\r\n            dark dt = new dark();\r\n            Mute mt = new Mute();\r\n            PasteText pt = new PasteText();\r\n             OpenApp op = new OpenApp();\r\n         battery bat = new battery();";
+        public string mainmeth = "\r\n    {\r\nprivate InputSimulator inputSimulator = new InputSimulator();\r\n        public void main()\r\n        {test ts = new test();\r\n            bluetooth bt = new bluetooth();\r\n            dark dt = new dark();\r\n            Mute mt = new Mute();\r\n            PasteText pt = new PasteText();\r\n             OpenApp op = new OpenApp();\r\n         battery bat = new battery();";
 
         private String import = "using System;\r\nusing System.Windows.Forms;\r\nusing System.Diagnostics;\r\nusing Microsoft.Win32;\r\nusing System.Runtime.InteropServices;\r\nusing NAudio.CoreAudioApi;\r\nusing System.Collections.Generic;\r\nusing System.Linq;\r\nusing System.Text;\r\nusing System.Threading.Tasks;\r\nusing Windows.Devices.Radios;\r\nusing WindowsInput;\r\nusing WindowsInput.Native;\r\nusing System.Windows.Input; namespace Swifter1 {    class ";
 
         private void Confirm_Click(object sender, RoutedEventArgs e)
         {
-            string baseDir = AppDomain.CurrentDomain.BaseDirectory;
-            string projectDir = Directory.GetParent(baseDir).Parent.Parent.FullName;
-            string path = Path.Combine(projectDir, "json", "Temporary.json");
+            string projectDir = FindProjectDirectory();
+            string path = Path.Combine(projectDir, "Temporary.json");
             if (File.Exists(path))
             {
                 string existing = File.ReadAllText(path);
                 steps = JsonConvert.DeserializeObject<List<Step>>(existing) ?? new List<Step>();
             }
-            string code = "Thread.Sleep("+Dela.Text+");";
+            string code = "Thread.Sleep("+ (float.Parse(Dela.Text) * 1000) + ");";
             string conca;
             if (count == 1)
             {

@@ -18,6 +18,7 @@ namespace Swifter1
     class Class3
     {
         public int check = 0;
+        private InputSimulator inputSimulator = new InputSimulator();
         public void main()
         {
             test ts = new test();
@@ -29,7 +30,6 @@ namespace Swifter1
 
             try
             {
-                mt.main(0);
                 Thread.Sleep(check);
             }
             catch (Exception ex)

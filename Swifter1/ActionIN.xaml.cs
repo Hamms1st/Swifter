@@ -310,6 +310,7 @@ namespace Swifter1
 
         private void OnLoopClick(object sender, RoutedEventArgs e)
         {
+            Application.Current.Properties["UserCount"] = (int)Application.Current.Properties["UserCount"] + 1;
             Application.Current.Properties["Loop"] = 0;
             NavigationService.Navigate(new Loop());
         }
@@ -343,6 +344,7 @@ namespace Swifter1
 
         private void Del_Click(object sender, RoutedEventArgs e)
         {
+            Application.Current.Properties["UserCount"] = (int)Application.Current.Properties["UserCount"] + 1;
             NavigationService.Navigate(new Delay());
         }
 

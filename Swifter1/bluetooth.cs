@@ -1,105 +1,89 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Windows.Devices.Radios;
+using System.Runtime.InteropServices.WindowsRuntime;  // for .AsTask()
 
 namespace Swifter1
 {
     class bluetooth
     {
+        public int ret = 3;
+
         public int main(int args)
         {
-
             switch (args)
             {
-
                 case 0:
                     try
                     {
-                       ToggleBluetooth(false);
+                        ToggleBluetooth(false);
                         return 1;
-
                     }
-                    catch (Exception e) { return 3; }
+                    catch (Exception)
+                    {
+                        return 3;
+                    }
 
                 case 1:
                     try
                     {
-                       ToggleBluetooth(true);
+                        ToggleBluetooth(true);
                         return 1;
                     }
-                    catch (Exception e) { return 3; }
+                    catch (Exception)
+                    {
+                        return 3;
+                    }
 
                 case 2:
                     try
                     {
                         ToggleBluetoothIfOff();
-
                         return ret;
                     }
-                    catch (Exception e) { return 3; }
+                    catch (Exception)
+                    {
+                        return 3;
+                    }
 
                 default:
                     return 0;
-
-
             }
-
         }
 
-        private async Task ToggleBluetooth(bool enable)
+        private void ToggleBluetooth(bool enable)
         {
-            var radios = await Radio.GetRadiosAsync();
+            // Get the list of radios synchronously
+            var radios = Radio.GetRadiosAsync()
+                              .AsTask()
+                              .Result;
 
             foreach (var radio in radios)
             {
                 if (radio.Kind == RadioKind.Bluetooth)
                 {
-                    if (enable)
-                    {
-                        var result = await radio.SetStateAsync(RadioState.On);
-                        
-
-                    }
-                    else
-                    {
-                        var result = await radio.SetStateAsync(RadioState.Off);
-                        
-
-
-                    }
+                    // Set state synchronously
+                    var _ = radio.SetStateAsync(enable ? RadioState.On : RadioState.Off)
+                                 .AsTask()
+                                 .Result;
                     break;
                 }
             }
         }
 
-        public int ret=3;
-
-        private async  Task ToggleBluetoothIfOff()
+        private void ToggleBluetoothIfOff()
         {
-            var radios = await Radio.GetRadiosAsync();
-            
+            var radios = Radio.GetRadiosAsync()
+                              .AsTask()
+                              .Result;
+
             foreach (var radio in radios)
             {
                 if (radio.Kind == RadioKind.Bluetooth)
                 {
-                    if (radio.State == RadioState.On)
-                    {
-                        ret = 1;
-                    }
-                    else
-                    {
-                        ret = 0;
-                    }
-
-                    break; 
+                    ret = (radio.State == RadioState.On) ? 1 : 0;
+                    break;
                 }
             }
-            
         }
-
-
     }
 }
