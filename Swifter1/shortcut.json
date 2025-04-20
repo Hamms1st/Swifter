@@ -8,5 +8,20 @@
     "ShortcutName": "TaskMenu",
     "Trigger": "Ctrl + Shift + M",
     "IconPath": "/images/Short.png"
+  },
+  {
+    "ShortcutName": "Max",
+    "Trigger": "Ctrl + Shift + P",
+    "IconPath": "/images/Short.png"
+  },
+  {
+    "ShortcutName": "NewShortMe",
+    "Trigger": "Ctrl + Shift + I",
+    "IconPath": "/images/Short.png"
+  },
+  {
+    "ShortcutName": "LastShortMe",
+    "Trigger": "Ctrl + Shift + Y",
+    "IconPath": "/images/Short.png"
   }
 ]

@@ -3,6 +3,8 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:material="clr-namespace:LoadingSpinnerControl;assembly=LoadingSpinnerControl"
+      xmlns:materialexentension="clr-namespace:LoadingSpinnerControl.Converters;assembly=LoadingSpinnerControl"
       xmlns:local="clr-namespace:Swifter1"
       mc:Ignorable="d" 
       d:DesignHeight="432" d:DesignWidth="525"
@@ -256,7 +258,12 @@
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
-                <TextBlock x:Name="DOne" Visibility="Hidden" Text="Your Shorcut has been Created Successfully!" HorizontalAlignment="Center" FontSize="14"  FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" Foreground="#121D55" FontWeight="Light"></TextBlock>
+                <TextBlock x:Name="DOne" Visibility="Hidden" 
+           Text="Your Shortcut has been Created Successfully!&#x0a;Please wait while we restart your Application" 
+           HorizontalAlignment="Center" FontSize="14"  
+           FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" 
+           Foreground="#121D55" FontWeight="Light" />
+                <material:LoadingSpinner x:Name="spin" IsLoading="False" Grid.Row="1" Diameter="30" Thickness="1.4" Color="#121D55" Margin="25px" ></material:LoadingSpinner>
             </StackPanel>
         </Grid>
     </Border>

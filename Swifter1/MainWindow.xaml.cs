@@ -160,13 +160,12 @@ namespace Swifter1
         {
             base.OnSourceInitialized(e);
             var helper = new WindowInteropHelper(this);
-            HwndSource source = HwndSource.FromHwnd(helper.Handle);
-            source.AddHook(HwndHook);
-
-            // Register all hotkeys stored in our list
+            _hwnd = helper.Handle;
+            _hwndSource = HwndSource.FromHwnd(_hwnd);
+            _hwndSource.AddHook(HwndHook);
             foreach (var registration in hotkeyRegistrations)
             {
-                bool registered = RegisterHotKey(helper.Handle, registration.Id, registration.Modifiers, registration.VirtualKey);
+                bool registered = RegisterHotKey(_hwnd, registration.Id, registration.Modifiers, registration.VirtualKey);
                 if (!registered)
                 {
                     MessageBox.Show($"Failed to register hotkey: {registration.ShortcutName}");
@@ -174,7 +173,73 @@ namespace Swifter1
             }
         }
 
+        public void RefreshHotkeys()
+        {
+            if (_hwnd == IntPtr.Zero) return;
 
+            // 1) Unregister all existing
+            foreach (var reg in hotkeyRegistrations)
+            {
+                UnregisterHotKey(_hwnd, reg.Id);
+            }
+
+            // 2) Clear our lists
+            hotkeyRegistrations.Clear();
+            dynamicHotkeyMap.Clear();
+            nextHotkeyId = 9000;  // reset if you like; or leave monotonic
+
+            // 3) Reload from JSON
+            string projectDir = FindProjectDirectory();
+            string path = Path.Combine(projectDir, "shortcut.json");
+            if (!File.Exists(path))
+            {
+                MessageBox.Show("Shortcut file not found for refresh.");
+                return;
+            }
+
+            var json = File.ReadAllText(path);
+            var list = JsonConvert.DeserializeObject<List<ShortcutInfo>>(json);
+            if (list == null) return;
+
+            // 4) Parse and register each one
+            foreach (var sc in list)
+            {
+                ParseTrigger(sc.Trigger, out var mods, out var key);
+                var nativeMods = ModifierKeyToNative(mods);
+                var vk = (uint)KeyInterop.VirtualKeyFromKey(key);
+                int id = nextHotkeyId++;
+
+                // store
+                hotkeyRegistrations.Add(new HotkeyRegistration
+                {
+                    Id = id,
+                    Modifiers = nativeMods,
+                    VirtualKey = vk,
+                    ShortcutName = sc.ShortcutName
+                });
+                dynamicHotkeyMap[id] = sc.ShortcutName;
+
+                // register
+                bool ok = RegisterHotKey(_hwnd, id, nativeMods, vk);
+                if (!ok)
+                    MessageBox.Show($"Failed to re-register '{sc.ShortcutName}' → {sc.Trigger}");
+            }
+
+            MessageBox.Show("✅ Hotkeys refreshed!");
+        }
+
+        public void UnregisterAllHotkeys()
+        {
+            if (_hwnd == IntPtr.Zero) return;
+
+            foreach (var reg in hotkeyRegistrations)
+                UnregisterHotKey(_hwnd, reg.Id);
+
+            // Clean slate
+            hotkeyRegistrations.Clear();
+            dynamicHotkeyMap.Clear();
+            nextHotkeyId = 9000;
+        }
 
         private IntPtr HwndHook(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
         {
@@ -182,8 +247,10 @@ namespace Swifter1
             if (msg == WM_HOTKEY)
             {
                 int id = wParam.ToInt32();
+                
                 if (dynamicHotkeyMap.TryGetValue(id, out string shortcutName))
                 {
+                    
                     InvokeShortcutMethod(shortcutName);
                     handled = true;
                 }
@@ -191,29 +258,7 @@ namespace Swifter1
             return IntPtr.Zero;
         }
 
-        public void RegisterSingleShortcut(string shortcutName, string trigger)
-        {
-            ParseTrigger(trigger, out ModifierKeys mods, out Key key);
-
-            var registration = new HotkeyRegistration
-            {
-                Id = nextHotkeyId++,
-                Modifiers = ModifierKeyToNative(mods),
-                VirtualKey = (uint)KeyInterop.VirtualKeyFromKey(key),
-                ShortcutName = shortcutName
-            };
-
-            hotkeyRegistrations.Add(registration);
-            dynamicHotkeyMap[registration.Id] = shortcutName;
-
-            var handle = new WindowInteropHelper(this).Handle;
-            bool registered = RegisterHotKey(handle, registration.Id, registration.Modifiers, registration.VirtualKey);
-            
-            if (!registered)
-            {
-                MessageBox.Show($"Failed to register hotkey for new shortcut: {shortcutName}");
-            }
-        }
+      
 
         private void InvokeShortcutMethod(string className)
         {
@@ -253,6 +298,32 @@ namespace Swifter1
             };
         }
 
+        public void RegisterNewHotkey(string shortcutName, string trigger)
+        {
+            ParseTrigger(trigger, out var mods, out var key);
+            uint nativeMods = ModifierKeyToNative(mods);
+            uint vk = (uint)KeyInterop.VirtualKeyFromKey(key);
+
+            // 2) pick a fresh ID
+            int id = nextHotkeyId++;
+
+            // 3) remember it for unregistering
+            hotkeyRegistrations.Add(new HotkeyRegistration
+            {
+                Id = id,
+                Modifiers = nativeMods,
+                VirtualKey = vk,
+                ShortcutName = shortcutName
+            });
+            dynamicHotkeyMap[id] = shortcutName;
+
+            // 4) call RegisterHotKey on *this* window handle
+            bool ok = RegisterHotKey(_hwnd, id, nativeMods, vk);
+            MessageBox.Show(ok
+      ? $"✅ Hotkey #{id} registered for '{shortcutName}' → {trigger}"
+      : $"❌ Failed to register #{id} for '{shortcutName}' → {trigger}");
+        }
+
         private void Minimize_Click(object sender, RoutedEventArgs e)
         {
             this.WindowState = WindowState.Minimized;
@@ -267,7 +338,8 @@ namespace Swifter1
         {
             Below.Visibility = Visibility.Visible;
         }
-
+        private HwndSource _hwndSource;
+        private IntPtr _hwnd;
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Main2.Content = new MainPage();
@@ -281,10 +353,10 @@ namespace Swifter1
         // Optionally, unregister all hotkeys when closing the window
         protected override void OnClosed(EventArgs e)
         {
-            var helper = new WindowInteropHelper(this);
-            foreach (var registration in hotkeyRegistrations)
+
+            foreach (var reg in hotkeyRegistrations)
             {
-                UnregisterHotKey(helper.Handle, registration.Id);
+                UnregisterHotKey(_hwnd, reg.Id);
             }
             base.OnClosed(e);
         }

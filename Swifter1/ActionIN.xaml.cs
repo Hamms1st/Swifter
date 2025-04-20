@@ -14,6 +14,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.IO;
 using System.Xml.Linq;
+using static Swifter1.MainWindow;
+using System.Runtime.InteropServices;
+using System.Windows.Interop;
+using System.Reflection;
+using System.Diagnostics;
+using Windows.Foundation;
+using System.Windows.Threading;
+
 
 namespace Swifter1
 {
@@ -374,7 +382,7 @@ namespace Swifter1
                 var doc = XDocument.Load(csprojPath);
                 XNamespace ns = doc.Root.Name.Namespace;
                 List<Shortcut> steps = new List<Shortcut>();
-                string path2 = Path.Combine(projectDir2,"shortcut.json");
+                string path2 = Path.Combine(projectDir2, "shortcut.json");
                 if (File.Exists(path2))
                 {
                     string existing1 = File.ReadAllText(path2);
@@ -389,14 +397,51 @@ namespace Swifter1
                 steps.Add(Short);
                 String save2 = JsonConvert.SerializeObject(steps, Formatting.Indented);
                 File.WriteAllText(path2, save2);
-                DOne.Visibility = Visibility.Visible;
-                var pagenew = new CreateShort();
-                pagenew.Change();
+                
+
+                DispatcherTimer timer = new DispatcherTimer();
+                timer.Interval = TimeSpan.FromSeconds(2.5);
+                timer.Tick += (s, e) =>
+                {
+                    timer.Stop(); // Stop the original timer
+
+                    spin.IsLoading = true;
+
+                    DispatcherTimer timer2 = new DispatcherTimer();
+                    timer2.Interval = TimeSpan.FromSeconds(1.8);
+                    timer2.Tick += (s2, e2) =>
+                    {
+                        timer2.Stop(); // Stop the nested timer
+
+                        DOne.Visibility = Visibility.Visible;
+
+                        // Create a new timer for the final transition
+                        DispatcherTimer transitionTimer = new DispatcherTimer();
+                        transitionTimer.Interval = TimeSpan.FromSeconds(2);
+                        transitionTimer.Tick += (s3, e3) =>
+                        {
+                            transitionTimer.Stop(); // Stop the transition timer
+                            Max mx = new Max();
+                            mx.main();
+                        };
+                        transitionTimer.Start(); // Start transition timer
+
+                    };
+                    timer2.Start(); // Start timer2 for loading sequence
+                };
+
+                timer.Start();
+
+
+                
+
 
             }
 
 
         }
+
+     
 
         public class Shortcut { 
         
@@ -417,6 +462,9 @@ namespace Swifter1
 
             return current ?? throw new Exception("Could not find project directory.");
         }
+
+       
+
 
     }
 }
