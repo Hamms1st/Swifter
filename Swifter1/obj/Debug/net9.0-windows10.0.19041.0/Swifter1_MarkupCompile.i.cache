@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET9_0;NETCOREAPP
 D:\Text\Swifter1\Swifter1\App.xaml
-18-1019836205
+19-1542828415
 23-1083742607
-41-247233475
+40292464437
 225678750017
-ActionIN.xaml;AutoPage.xaml;CreateShort.xaml;Delay.xaml;Home.xaml;Ifcheck.xaml;Keystroke.xaml;Load.xaml;Loop.xaml;MainPage.xaml;MainWindow.xaml;MiniBoxT.xaml;OpenAppPage.xaml;PastePage.xaml;Procedure.xaml;Sytemfunc.xaml;Username.xaml;Welcome.xaml;
+ActionIN.xaml;AutoPage.xaml;CreateShort.xaml;Delay.xaml;Home.xaml;Ifcheck.xaml;importPage.xaml;Keystroke.xaml;Load.xaml;Loop.xaml;MainPage.xaml;MainWindow.xaml;MiniBoxT.xaml;OpenAppPage.xaml;PastePage.xaml;Procedure.xaml;Sytemfunc.xaml;Username.xaml;Welcome.xaml;
 
 False
 

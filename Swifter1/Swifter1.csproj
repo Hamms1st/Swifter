@@ -1,5 +1,5 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net9.0-windows10.0.19041.0</TargetFramework>
@@ -8,7 +8,6 @@
     <UseWPF>true</UseWPF>
     <SupportedOSPlatformVersion>10.0.19041.0</SupportedOSPlatformVersion>
   </PropertyGroup>
-
   <ItemGroup>
     <None Remove="Fonts\Jost-VariableFont_wght.ttf" />
     <None Remove="Fonts\Montserrat-VariableFont_wght.ttf" />
@@ -34,7 +33,6 @@
     <None Remove="json\Temporary.json" />
     <None Remove="S.ico" />
   </ItemGroup>
-
   <ItemGroup>
     <Content Include="Fonts\Montserrat-VariableFont_wght.ttf" />
     <Content Include="images\Auto.png">
@@ -104,7 +102,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="InputSimulator" Version="1.0.4" />
     <PackageReference Include="LoadingSpinner.WPF" Version="1.0.0" />
@@ -113,17 +110,14 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="System.Management" Version="9.0.3" />
   </ItemGroup>
-
   <ItemGroup>
     <Resource Include="Fonts\Jost-VariableFont_wght.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
-
   <ItemGroup>
     <Folder Include="Codes\" />
     <Folder Include="json\" />
     <Folder Include="testdir\" />
   </ItemGroup>
-
 </Project>

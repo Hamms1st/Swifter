@@ -10,18 +10,8 @@
     "IconPath": "/images/Short.png"
   },
   {
-    "ShortcutName": "Max",
-    "Trigger": "Ctrl + Shift + P",
-    "IconPath": "/images/Short.png"
-  },
-  {
-    "ShortcutName": "NewShortMe",
-    "Trigger": "Ctrl + Shift + I",
-    "IconPath": "/images/Short.png"
-  },
-  {
-    "ShortcutName": "LastShortMe",
-    "Trigger": "Ctrl + Shift + Y",
+    "ShortcutName": "Elog",
+    "Trigger": "Ctrl + Shift + E",
     "IconPath": "/images/Short.png"
   }
 ]

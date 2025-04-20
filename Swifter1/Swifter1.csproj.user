@@ -27,6 +27,9 @@
     <Compile Update="Ifcheck.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="importPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Keystroke.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -78,6 +81,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Ifcheck.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="importPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Keystroke.xaml">

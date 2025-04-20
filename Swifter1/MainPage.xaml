@@ -72,7 +72,7 @@
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
-                    <Button Grid.Row="1" Height="80" Margin="25" >
+                    <Button Grid.Row="1" Height="80" Margin="25" Click="Button_Click_1" >
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Border Name="ButtonBorder" CornerRadius="14" Background="#5F6790"  >

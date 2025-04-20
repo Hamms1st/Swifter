@@ -1,0 +1,6 @@
+
+  {
+    "ShortcutName": "Elog",
+    "Trigger": "Ctrl + Shift + E",
+    "IconPath": "/images/Short.png"
+  }
