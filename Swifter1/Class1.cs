@@ -16,10 +16,10 @@ namespace Swifter1
             Energy eg = new Energy();
             OpenApp op = new OpenApp();
             PasteText pt = new PasteText();
-            
+            Brightness brg = new Brightness();
             try
             {
-                op.main("C:\\Users\\me\\AppData\\Local\\Programs\\Opera\\opera.exe");
+                brg.main(0, 0)   
             }
             catch (Exception ex)
             {
