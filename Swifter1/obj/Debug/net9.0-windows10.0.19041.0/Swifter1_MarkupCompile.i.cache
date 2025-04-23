@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\anush\Desktop\FINAL\Swifter\Swifter1\obj\Debug\net9.0-windows10.0.19041.0\
+D:\Text\Swifter1\Swifter1\obj\Debug\net9.0-windows10.0.19041.0\
 Swifter1
 none
 false
-TRACE;DEBUG;NET;NET9_0;NETCOREAPP;WINDOWS;WINDOWS10_0_19041_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NET9_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS10_0_19041_0_OR_GREATER;WINDOWS10_0_18362_0_OR_GREATER;WINDOWS10_0_17763_0_OR_GREATER;WINDOWS8_0_OR_GREATER;WINDOWS7_0_OR_GREATER
-C:\Users\anush\Desktop\FINAL\Swifter\Swifter1\App.xaml
+TRACE;DEBUG;NET;NET9_0;NETCOREAPP
+D:\Text\Swifter1\Swifter1\App.xaml
 19-1542828415
 23-1083742607
-41-398044051
-2242034239716
+422118643508
+225678750017
 ActionIN.xaml;AutoPage.xaml;CreateShort.xaml;Delay.xaml;Home.xaml;Ifcheck.xaml;importPage.xaml;Keystroke.xaml;Load.xaml;Loop.xaml;MainPage.xaml;MainWindow.xaml;MiniBoxT.xaml;OpenAppPage.xaml;PastePage.xaml;Procedure.xaml;Sytemfunc.xaml;Username.xaml;Welcome.xaml;
 
-False
+True
 

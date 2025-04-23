@@ -13,5 +13,10 @@
     "ShortcutName": "Elog",
     "Trigger": "Ctrl + Shift + E",
     "IconPath": "/images/Short.png"
+  },
+  {
+    "ShortcutName": "bright",
+    "Trigger": "Ctrl + Shift + B",
+    "IconPath": "/images/Short.png"
   }
 ]

@@ -19,7 +19,7 @@ namespace Swifter1
             Brightness brg = new Brightness();
             try
             {
-                brg.main(0, 0)   
+                brg.main(1, 54);
             }
             catch (Exception ex)
             {

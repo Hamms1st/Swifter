@@ -1,7 +1,17 @@
 [
   {
-    "Title": "Paste",
+    "Title": "SetBrightness",
     "Count": "1",
-    "code": "using System;\r\nusing System.Windows.Forms;\r\nusing System.Diagnostics;\r\nusing Microsoft.Win32;\r\nusing System.Runtime.InteropServices;\r\nusing NAudio.CoreAudioApi;\r\nusing System.Collections.Generic;\r\nusing System.Linq;\r\nusing System.Text;\r\nusing System.Threading.Tasks;\r\nusing Windows.Devices.Radios;\r\nusing WindowsInput;\r\nusing WindowsInput.Native;\r\nusing System.Windows.Input; namespace Swifter1 {    class LastShortMe\r\n    {\r\nprivate InputSimulator inputSimulator = new InputSimulator();\r\n        public void main()\r\n        {test ts = new test();\r\n            bluetooth bt = new bluetooth();\r\n            dark dt = new dark();\r\n            Mute mt = new Mute();\r\n            PasteText pt = new PasteText();\r\n             OpenApp op = new OpenApp();\r\n         battery bat = new battery();\r\nThread.Sleep(400);\r\n            pt.main( \"Write or Paste your Text here!\");"
+    "code": "using System;\r\nusing System.Windows.Forms;\r\nusing System.Diagnostics;\r\nusing Microsoft.Win32;\r\nusing System.Runtime.InteropServices;\r\nusing NAudio.CoreAudioApi;\r\nusing System.Collections.Generic;\r\nusing System.Linq;\r\nusing System.Text;\r\nusing System.Threading.Tasks;\r\nusing Windows.Devices.Radios;\r\nusing WindowsInput;\r\nusing WindowsInput.Native;\r\nusing System.Windows.Input; namespace Swifter1 {    class bright\r\n    {\r\nprivate InputSimulator inputSimulator = new InputSimulator();\r\n        public void main()\r\n        {test ts = new test();\r\n            bluetooth bt = new bluetooth();\r\n            dark dt = new dark();\r\n            Mute mt = new Mute();\r\n            PasteText pt = new PasteText();\r\n             OpenApp op = new OpenApp();\r\n         battery bat = new battery();\r\n       Brightness brg = new Brightness();brg.main(1,20);"
+  },
+  {
+    "Title": "Delay",
+    "Count": "2",
+    "code": "Thread.Sleep(1000);"
+  },
+  {
+    "Title": "DarkModeOff",
+    "Count": "3",
+    "code": "dt.main(0);"
   }
 ]

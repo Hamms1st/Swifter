@@ -426,5 +426,50 @@ namespace Swifter1
                 NavigationService.Navigate(new ActionIN());
             }
         }
+
+        private void Bright_Click(object sender, RoutedEventArgs e)
+        {
+            string baseDir = AppDomain.CurrentDomain.BaseDirectory;
+            string projectDir = FindProjectDirectory();
+            string path = Path.Combine(projectDir, "Temporary.json");
+            if (File.Exists(path))
+            {
+                string existing = File.ReadAllText(path);
+                steps = JsonConvert.DeserializeObject<List<Step>>(existing) ?? new List<Step>();
+            }
+            string code = "brg.main(1,"+RectangleHeight.Value+");";
+            string conca;
+            if (count == 1)
+            {
+                conca = import + shname + mainmeth;
+                conca = conca + code;
+                var st = new Step
+                {
+                    Title = "SetBrightness",
+                    Count = count.ToString(),
+                    code = conca
+                };
+                steps.Add(st);
+
+                String save = JsonConvert.SerializeObject(steps, Formatting.Indented);
+                File.WriteAllText(path, save);
+                NavigationService.Navigate(new ActionIN());
+            }
+            else
+            {
+                conca = code;
+                var st = new Step
+                {
+                    Title = "SetBrightness",
+                    Count = count.ToString(),
+                    code = conca
+                };
+                steps.Add(st);
+
+                String save = JsonConvert.SerializeObject(steps, Formatting.Indented);
+                File.WriteAllText(path, save);
+                NavigationService.Navigate(new ActionIN());
+            }
+        }
     }
 }

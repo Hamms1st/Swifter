@@ -19,7 +19,7 @@ CanContentScroll="True"
 Margin="0,5,0,5"
 BorderThickness="0">
 
-                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Width="300">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Width="380">
                     <StackPanel Margin="10" Width="250" Orientation="Vertical" >
                         <TextBlock HorizontalAlignment="Center" Text="Turn WiFi On/Off" Margin="1" FontSize="20"   FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" Foreground="#121D55" FontWeight="Light"></TextBlock>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
@@ -225,7 +225,7 @@ BorderThickness="0">
 
                     </StackPanel>
 
-                    <StackPanel Width="250" Margin="10" Orientation="Vertical" >
+                    <StackPanel Width="350" Margin="10" Orientation="Vertical" >
                         <TextBlock HorizontalAlignment="Center" Text="Control Volume" Margin="1" FontSize="20"   FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" Foreground="#121D55" FontWeight="Light"></TextBlock>
                         <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
                             <Button x:Name="Volume" Content="Set" Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="17" FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" >
@@ -251,7 +251,7 @@ BorderThickness="0">
                                 </Button.Template>
                             </Button>
 
-                            <Slider Name="Slideme" Margin="10, 0, 0, 0" Width="125" Orientation="Horizontal" HorizontalAlignment="Left" 
+                            <Slider Name="Slideme" Margin="10, 0, 0, 0" Width="150" Orientation="Horizontal" HorizontalAlignment="Left" 
 Value="50" Minimum="0" Maximum="100" SmallChange="10" IsSnapToTickEnabled="True">
                                 <Slider.Template>
                                     <ControlTemplate TargetType="Slider">
@@ -268,10 +268,22 @@ Value="50" Minimum="0" Maximum="100" SmallChange="10" IsSnapToTickEnabled="True"
                                             <!-- Slider Thumb (Knob) -->
                                             <Track x:Name="PART_Track">
                                                 <Track.Thumb>
-                                                    <Thumb Width="15" Height="15" Background="SkyBlue" BorderBrush="DarkBlue" BorderThickness="2">
+                                                    <!-- ↑ only this Thumb has changed ↓ -->
+                                                    <Thumb Width="25" Height="25" Background="SkyBlue" BorderBrush="DarkBlue" BorderThickness="2">
                                                         <Thumb.Template>
                                                             <ControlTemplate TargetType="Thumb">
-                                                                <Ellipse Fill="SkyBlue" Stroke="DarkBlue" StrokeThickness="2"/>
+                                                                <Grid>
+                                                                    <!-- your original circle -->
+                                                                    <Ellipse Fill="SkyBlue" Stroke="DarkBlue" StrokeThickness="2"/>
+                                                                    <!-- new TextBlock showing the Slider’s Value -->
+                                                                    <TextBlock
+                            Text="{Binding Value, 
+                                   RelativeSource={RelativeSource AncestorType=Slider}, 
+                                   StringFormat=F0}"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center"
+                            FontSize="13"   FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" Foreground="#121D55" FontWeight="Light"/>
+                                                                </Grid>
                                                                 <ControlTemplate.Triggers>
                                                                     <Trigger Property="IsMouseOver" Value="True">
                                                                         <Setter Property="Cursor" Value="Hand"/>
@@ -291,10 +303,10 @@ Value="50" Minimum="0" Maximum="100" SmallChange="10" IsSnapToTickEnabled="True"
                         </StackPanel>
                     </StackPanel>
 
-                    <StackPanel Width="250" Margin="10" Orientation="Vertical" >
+                    <StackPanel Width="350" Margin="10" Orientation="Vertical" >
                         <TextBlock HorizontalAlignment="Center" Text="Control Brightness" Margin="1" FontSize="20"   FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" Foreground="#121D55" FontWeight="Light"></TextBlock>
                         <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-                            <Button x:Name="Bright" Content="Set" Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="17" FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" >
+                            <Button x:Name="Bright" Click="Bright_Click" Content="Set" Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="17" FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" >
                                 <Button.Template>
                                     <ControlTemplate TargetType="Button">
                                         <Border x:Name="ButtonBorder" Width="90" Margin="5" Height="30" Background="#121D55" CornerRadius="15">
@@ -317,8 +329,8 @@ Value="50" Minimum="0" Maximum="100" SmallChange="10" IsSnapToTickEnabled="True"
                                 </Button.Template>
                             </Button>
 
-                            <Slider Name="RectangleHeight" Margin="10, 0, 0, 0" Width="125" Orientation="Horizontal" HorizontalAlignment="Left" 
-Value="50" Minimum="0" Maximum="100" SmallChange="10" IsSnapToTickEnabled="True">
+                            <Slider Name="RectangleHeight" Margin="10, 0, 0, 0" Width="150" Orientation="Horizontal" HorizontalAlignment="Left" 
+Value="50" Minimum="0"   Maximum="100" SmallChange="10" IsSnapToTickEnabled="True">
                                 <Slider.Template>
                                     <ControlTemplate TargetType="Slider">
                                         <Grid>
@@ -334,10 +346,22 @@ Value="50" Minimum="0" Maximum="100" SmallChange="10" IsSnapToTickEnabled="True"
                                             <!-- Slider Thumb (Knob) -->
                                             <Track x:Name="PART_Track">
                                                 <Track.Thumb>
-                                                    <Thumb Width="15" Height="15" Background="SkyBlue" BorderBrush="DarkBlue" BorderThickness="2">
+                                                    <!-- ↑ only this Thumb has changed ↓ -->
+                                                    <Thumb Width="25" Height="25" Background="SkyBlue" BorderBrush="DarkBlue" BorderThickness="2">
                                                         <Thumb.Template>
                                                             <ControlTemplate TargetType="Thumb">
-                                                                <Ellipse Fill="SkyBlue" Stroke="DarkBlue" StrokeThickness="2"/>
+                                                                <Grid>
+                                                                    <!-- your original circle -->
+                                                                    <Ellipse Fill="SkyBlue" Stroke="DarkBlue" StrokeThickness="2"/>
+                                                                    <!-- new TextBlock showing the Slider’s Value -->
+                                                                    <TextBlock
+                            Text="{Binding Value, 
+                                   RelativeSource={RelativeSource AncestorType=Slider}, 
+                                   StringFormat=F0}"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center"
+                            FontSize="13"   FontFamily="pack://application:,,,/Swifter1;component/Fonts/Jost-VariableFont_wght.ttf#Jost" Foreground="#121D55" FontWeight="Light"/>
+                                                                </Grid>
                                                                 <ControlTemplate.Triggers>
                                                                     <Trigger Property="IsMouseOver" Value="True">
                                                                         <Setter Property="Cursor" Value="Hand"/>

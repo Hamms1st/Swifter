@@ -19,6 +19,7 @@ namespace Swifter1
             else
             {
                 SetBrightness(setvalue);
+                return 1;
             }
         }
 

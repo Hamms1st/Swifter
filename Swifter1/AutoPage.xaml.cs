@@ -55,7 +55,7 @@ namespace Swifter1
         public void LoadShortcuts()
         {
             string projectDir = FindProjectDirectory();
-            string path = Path.Combine(projectDir, "Temporary.json");
+            string path = Path.Combine(projectDir, "automate.json");
 
             if (File.Exists(path))
             {
